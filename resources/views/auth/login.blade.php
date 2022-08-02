@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="section login-register-section section-padding">
         <div class="container">
 
@@ -22,37 +21,41 @@
                                 <form action="{{ route('login') }}" method="POST">
                                     @csrf
                                     <div class="single-form">
-                                        <input type="email" name="email" class="form-control" placeholder="Email ">
+                                        <input type="email" name="email" class="form-control" placeholder="Email">
                                         @error('email')
                                             <strong class="text-danger">{{ $message }}</strong>
                                         @enderror
                                     </div>
-                                    <div class="single-form">
+                                    <div class="single- form">
                                         <input type="password" class="form-control" placeholder="Password">
-                                    </div>
-                                    <div class="single-form form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">Remember me</label>
-                                    </div>
-                                    <div class="form-btn">
-                                        <button class="btn-2">Login</button>
-                                    </div>
-                                    <div class="single-form">
-                                        <p><a href="#">Lost your password?</a></p>
-                                    </div>
-                                </form>
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                        <div class="single-form form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+                                        </div>
+                                        <div class="form-btn">
+                                            <button class="btn-2">Login</button>
+                                        </div>
+                                        <div class="single-form">
+                                            <p><a href="#">Lost your password?</a></p>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <!-- Login & Register Box End -->
+                            <!-- Login & Register Box End -->
 
+                        </div>
                     </div>
                 </div>
+                <!-- Login & Register Wrapper End -->
+
             </div>
-            <!-- Login & Register Wrapper End -->
-
         </div>
-    </div>
-    <!-- Login & Register End -->
-
-@endsection
+        <!-- Login & Register End -->
+    @endsection
