@@ -42,7 +42,16 @@
 <body>
 
     @include('layouts.menu')
+    <br>
+    <br>
+    <br>
+    <br>
         @yield('content')
+
+      <div class="mt-5">
+
+        @yield('content_re')
+      </div>
 
 
         <!-- back to top start -->
@@ -56,6 +65,7 @@
         ============================================ -->
 
         <!-- Modernizer & jQuery JS -->
+        @include('layouts.footer')
         <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
         <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
 

@@ -1,5 +1,4 @@
-@extends('layouts/app')
-@section('content_menu')
+
 <div class="main-wrapper">
 
     <!-- Preloader start -->
@@ -86,4 +85,4 @@
 
 </div>
 <!-- Header End -->
-@endsection
+
