@@ -41,7 +41,7 @@
 
 <body>
 
-    @include('layouts/menu')
+    @include('layouts.menu')
         @yield('content')
 
 
