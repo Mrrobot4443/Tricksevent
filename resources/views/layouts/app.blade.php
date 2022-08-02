@@ -1,23 +1,17 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Meeta - Event & Conference HTML5 Template</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
@@ -42,67 +36,136 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
 </head>
+
 <body>
-    @yield('content')
 
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <div class="main-wrapper">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+        <!-- Preloader start -->
+        <div id="preloader">
+            <div class="preloader">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- Preloader End -->
 
-                    </ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+ <!-- Header Start -->
+ <div class="meeta-header-section meeta-header-2 meeta-header-3 meeta-header-5">
+
+    <!-- Header Middle Start -->
+    <div class="header-middle header-sticky">
+        <div class="container">
+
+            <div class="header-wrap">
+                <!-- Header Logo Start -->
+                <div class="header-logo header-logo-3">
+                    <a class="logo-black" href="index.html"><img src="assets/images/logo-3.png"
+                            alt="Logo"></a>
+                    <a class="logo-white" href="index.html"><img src="assets/images/logo-4.png"
+                            alt="Logo"></a>
+                </div>
+                <!-- Header Logo End -->
+
+                <!-- Header Navigation Start -->
+                <div class="header-navigation d-none d-lg-block">
+                    <ul class="main-menu">
+                        <li class="active-menu"><a href="#">Home</a>
+
                         </li>
-                        @endif
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Pages</a>
+                            <ul class="sub-menu">
 
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+                                <li><a href="event-list.html">Event List</a></li>
+                                <li><a href="event-single.html">Event Single</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="price.html">Pricing</a></li>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
+                                <li><a href="login-register.html">Login Register</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Blog</a>
+                            <ul class="sub-menu">
+                                <li><a href="blog.html">Blog Grid</a></li>
+                                <li><a href="blog-standard.html">Latest News</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-            </div>
-        </nav>
+                <!-- Header Navigation End -->
 
-        <main class="py-4">
-        </main>
+                <!-- Header Meta Start -->
+                <div class="header-meta">
+
+                    <div class="header-btn d-none d-md-block">
+                        <a href="price.html" class="btn-2">Buy Ticket</a>
+                    </div>
+
+                    <!-- Header Toggle Start -->
+                    <div class="header-toggle d-lg-none">
+                        <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                    <!-- Header Toggle End -->
+
+                </div>
+                <!-- Header Meta End -->
+
+            </div>
+
+        </div>
     </div>
+    <!-- Header Middle End -->
+
+</div>
+<!-- Header End -->
+        @yield('content')
+
+
+        <!-- back to top start -->
+        <div class="progress-wrap">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+        <!-- back to top end -->
+        <!-- JS
+        ============================================ -->
+
+        <!-- Modernizer & jQuery JS -->
+        <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
+        <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+
+        <!-- Bootstrap JS -->
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+
+        <!-- Plugins JS -->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/back-to-top.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/waypoints.min.js"></script>
+        <script src="assets/js/aos.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+
+
+        <!-- Main JS -->
+        <script src="assets/js/main.js"></script>
 
 </body>
+
+
+
 </html>
+
+
