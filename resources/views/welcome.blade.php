@@ -80,15 +80,8 @@
         <div class="offcanvas-body">
             <div class="offcanvas-menu offcanvas-menu-2">
                 <ul class="main-menu">
-                    <li class="active-menu"><a href="#">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Home 01</a></li>
-                            <li><a href="index-2.html">Home 02</a></li>
-                            <li><a href="index-3.html">Home 03</a></li>
-                            <li><a href="index-4.html">Home 04</a></li>
-                            <li><a class="active" href="index-5.html">Home 05</a></li>
-                            <li><a href="index-6.html">Home 06</a></li>
-                        </ul>
+                    <li class="active-menu"><a href="{{rout ('welcome') }}">Home</a>
+
                     </li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="#">Pages</a>
