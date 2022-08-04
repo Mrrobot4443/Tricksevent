@@ -32,30 +32,30 @@
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                            @enderror
-                                        </div>
-                                        <div class="single-form form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">Remember me</label>
-                                        </div>
-                                        <div class="form-btn">
-                                            <button class="btn-2">Login</button>
-                                        </div>
-                                        <div class="single-form">
-                                            <p><a href="#">Lost your password?</a></p>
-                                        </div>
-                                    </form>
-                                </div>
+                                        @enderror
+                                    </div>
+                                    <div class="single-form form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+                                    </div>
+                                    <div class="form-btn">
+                                        <button class="btn-2">Login</button>
+                                    </div>
+                                    <div class="single-form">
+                                        <p><a href="#">Lost your password?</a></p>
+                                    </div>
+                                </form>
                             </div>
-                            <!-- Login & Register Box End -->
-
                         </div>
+                        <!-- Login & Register Box End -->
+
                     </div>
                 </div>
-                <!-- Login & Register Wrapper End -->
-
             </div>
+            <!-- Login & Register Wrapper End -->
+
         </div>
-        <!-- Login & Register End -->
-    @endsection
+    </div>
+    <!-- Login & Register End -->
+@endsection

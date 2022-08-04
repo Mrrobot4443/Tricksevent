@@ -20,9 +20,9 @@
         <div class="header-wrap">
             <!-- Header Logo Start -->
             <div class="header-logo header-logo-3">
-                <a class="logo-black" href="index.html"><img src="assets/images/logo-3.png"
+                <a class="logo-black" href="/"><img src="assets/images/logo-3.png"
                         alt="Logo"></a>
-                <a class="logo-white" href="index.html"><img src="assets/images/logo-4.png"
+                <a class="logo-white" href="/"><img src="assets/images/logo-4.png"
                         alt="Logo"></a>
             </div>
             <!-- Header Logo End -->
@@ -30,7 +30,7 @@
             <!-- Header Navigation Start -->
             <div class="header-navigation d-none d-lg-block">
                 <ul class="main-menu">
-                    <li class="active-menu"><a href="{{ route('welcome') }}">Home</a>
+                    <li class="active-menu"><a href="/">Home</a>
 
                     </li>
                     <li><a href="about.html">About</a></li>
@@ -42,7 +42,8 @@
                             <li><a href="gallery.html">Gallery</a></li>
                             <li><a href="price.html">Pricing</a></li>
 
-                            <li><a href="login-register.html">Login Register</a></li>
+                            <li><a href="/login">Login </a></li>
+                            <li><a href="/register">Register</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Blog</a>

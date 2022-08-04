@@ -48,10 +48,7 @@
     <br>
         @yield('content')
 
-      <div class="mt-5">
 
-        @yield('content_re')
-      </div>
 
 
         <!-- back to top start -->
