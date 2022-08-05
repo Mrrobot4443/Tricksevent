@@ -29,16 +29,16 @@ class HomeController extends Controller
     }
     public function dashboard()
     {
-        return view('admin.dashboard');
+        return view('dashboard');
 
     }
 
-    public function admin(){
-        {
-            if(Auth::check() && Auth::user()->user_type==='admin'){                 //  {{check pour savoir si les gens cont connectés ou non }}
-                return redirect()->route('home');
-            }
-        };
-    }
+    // public function admin(){
+    //     {
+    //         if(Auth::check() && Auth::user()->user_type==='admin'){                 //  {{check pour savoir si les gens cont connectés ou non }}
+    //             return redirect('')->route('admin.dashboard');
+    //         }
+    //     };
+    // }
 
 }

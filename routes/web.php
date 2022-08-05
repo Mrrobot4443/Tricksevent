@@ -20,6 +20,6 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
-Route::get('admin', [HomeController::class, 'dashboard'])->name('admin');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('admin');
 
 // Route::get('/home', [HomeController::class, 'admin'])->name('hello');

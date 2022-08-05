@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
         <meta charset="utf-8" />
-        <title>Dashboard | UBold - Responsive Admin Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
+        <title>Dastone - Admin & Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <!-- Plugins css -->
-        <link href="{{asset ('assets/libs/flatpickr/flatpickr.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{asset ('assets/libs/selectize/css/selectize.bootstrap3.css') }}" rel="stylesheet" type="text/css" />
+        <!-- jvectormap -->
+        <link href="../plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
 
-        <!-- Bootstrap css -->
-        <link href="{{asset ('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- App css -->
-        <link href="{{asset ('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style"/>
-        <!-- icons -->
-        <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-        <!-- Head js -->
-        <script src="{{ asset('assets/js/head.js') }}"></script>
+        <link href="{{ asset('admin/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('admin/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('admin/css/metisMenu.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="../plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('admin/css/app.min.css') }}" rel="stylesheet" type="text/css" />
 
     </head>
 
-    <!-- body start -->
-    <body data-layout-mode="default" data-theme="light" data-layout-width="fluid" data-topbar-color="dark" data-menu-position="fixed" data-leftbar-color="light" data-leftbar-size='default' data-sidebar-user='false'>
+  <body>
+    @include('admin.layouts.top_menu')
+    @include('admin.layouts.menu')
+    @yield('content')
+        <!-- jQuery  -->
+        <script src="{{ asset('admin/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('admin/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('admin/js/metismenu.min.js') }}"></script>
+        <script src="{{ asset('admin/js/waves.js') }}"></script>
+        <script src="{{ asset('admin/js/feather.min.js') }}"></script>
+        <script src="{{ asset('admin/js/simplebar.min.js') }}"></script>
+        <script src="{{ asset('admin/js/moment.js') }}"></script>
+        <script src="../plugins/daterangepicker/daterangepicker.js"></script>
 
+        <script src="../plugins/apex-charts/apexcharts.min.js"></script>
+        <script src="../plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="../plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+        <script src="{{ asset('admin/pages/jquery.analytics_dashboard.init.js') }}"></script>
 
-        @include('admin.layouts.top_menu')
-        @include('admin.layouts.menu')
-        @yield('content')
-        <!-- Vendor js -->
-        <script src="{{asset ('assets/js/vendor.min.js') }}"></script>
-
-        <!-- Plugins js-->
-        <script src="{{asset ('assets/libs/flatpickr/flatpickr.min.js') }}"></script>
-        <script src="{{asset ('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-
-        <script src="{{asset ('assets/libs/selectize/js/standalone/selectize.min.js') }}"></script>
-
-        <!-- Dashboar 1 init js-->
-        <script src="{{asset ('assets/js/pages/dashboard-1.init.js') }}"></script>
-
-        <!-- App js-->
-        <script src="{{asset ('assets/js/app.min.js') }}"></script>
+        <!-- App js -->
+        <script src="{{ asset('admin/js/app.js') }}"></script>
 
     </body>
-
-<!-- Mirrored from coderthemes.com/ubold/layouts/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Aug 2022 14:34:33 GMT -->
 </html>
