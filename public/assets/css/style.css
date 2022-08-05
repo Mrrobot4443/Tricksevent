@@ -9948,17 +9948,20 @@ only screen and (max-width: 767px) {
 
 .footer-newsletter {
     padding-top: 32px;
+    background-image: ('assets/images/footer-bg');
 }
 
 .footer-newsletter p {
     font-size: 18px;
     font-weight: 400;
     color: #ffffff;
+    padding-left: 34%;
 }
 
 @media only screen and (max-width: 575px) {
     .footer-newsletter p {
         font-size: 16px;
+        padding-left: 34%;
     }
 }
 

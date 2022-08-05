@@ -13,10 +13,10 @@
                         <div class="login-register-box">
                             <!-- Section Title Start -->
                             <div class="section-title">
-                                <h2 class="title">Login</h2>
+                                <h2 class="title">{{ __('Login') }}</h2>
                             </div>
                             <!-- Section Title End -->
-
+                            <div></div>
                             <div class="login-register-form">
                                 <form action="{{ route('login') }}" method="POST">
                                     @csrf
@@ -40,7 +40,7 @@
                                         <label class="form-check-label" for="flexCheckDefault">Remember me</label>
                                     </div>
                                     <div class="form-btn">
-                                        <button class="btn-2">Login</button>
+                                        <button class="btn-2">  {{ __('Login') }}</button>
                                     </div>
                                     <div class="single-form">
                                         <p><a href="#">Lost your password?</a></p>

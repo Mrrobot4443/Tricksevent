@@ -48,7 +48,9 @@
     <br>
         @yield('content')
 
-
+        <br>
+        <br>
+        <br>
 
 
         <!-- back to top start -->
