@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Category;
 use App\Http\Controllers\HomeController;
 
@@ -25,5 +26,6 @@ Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/login_admin', [HomeController::class, 'login_admin'])->name('login_admin');
 Route::post('/login_admin', [HomeController::class, 'admin_login_submit'])->name('login_admin');
-Route::resource('category',Category::class);
+Route::resource('category', Category::class);
 // Route::get('/home', [HomeController::class, 'admin'])->name('hello');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');

@@ -20,8 +20,12 @@ class IsAdmin
         if(Auth::check() && Auth::user()->user_type === "admin")
         {
             return $next($request);
+            return redirect()->route('index');
         }
-        return redirect()->route('index');
+        else {
+            return redirect()->route('index');
+        }
     }
+
 
 }
