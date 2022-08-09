@@ -15,7 +15,7 @@
 <body>
 
 @include('admin.layouts.top_menu')
-@include('admin/layouts.side_bar')
+@include('admin.layouts.side_bar')
 
 @yield('content')
 
