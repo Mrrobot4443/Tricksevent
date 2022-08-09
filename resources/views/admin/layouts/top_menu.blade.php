@@ -1,4 +1,17 @@
 
+    <div class="nav-header">
+        <a href="index.html" class="brand-logo">
+            <span class="logo-abbr">D</span>
+            <span class="logo-compact">Dlab</span>
+            <span class="brand-title">Dlab</span>
+        </a>
+
+        <div class="nav-control">
+            <div class="hamburger">
+                <span class="toggle-icon"><i class="icon-menu"></i></span>
+            </div>
+        </div>
+    </div>
 <div class="header">
     <div class="header-content">
         <nav class="navbar navbar-expand">
@@ -18,7 +31,7 @@
 
                 <ul class="navbar-nav header-right">
                     <li class="nav-item border-0">
-                        <a class="btn btn-primary create-event-btn" href="#" target="_blank">Create Event</a>
+                        <a class="btn btn-primary create-event-btn" href="{{ route('category.create') }}" target="_blank">Create Event</a>
                     </li>
                     <li class="nav-item dropdown notification_dropdown">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

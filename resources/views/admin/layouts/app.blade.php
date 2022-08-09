@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Dlab - Event Admin Dashboard</title>
+    <title>@yield('title') | {{ config('app.name') }}</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <link href="{{asset ('admin/css/style.css') }}" rel="stylesheet">
+    <link href="{{asset ('admin/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -36,6 +37,9 @@
 
     <script src="{{asset ('admin/vendor/chart.js/Chart.bundle.min.js') }}"></script>
     <script src="{{ asset('admin/js/dashboard/dashboard-2.js') }}"></script>
+      <!-- Datatable -->
+      <script src="{{asset ('admin/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+      <script src="{{ asset('admin/js/plugins-init/datatables.init.js') }}"></script>
 
 
 </body>

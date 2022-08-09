@@ -117,7 +117,7 @@
                     <li><a href="table-foo.html">Foo</a></li>
                     <li><a href="table-bootgrid.html">Bootgrid</a></li>
                     <li><a href="table-jsgrid.html">Jsgrid</a></li>
-                    <li><a href="table-datatable.html">Datatable</a></li>
+                    <li><a href="{{route('category.index') }}">Category</a></li>
                 </ul>
             </li>
             <li class="nav-label">Extra</li>
