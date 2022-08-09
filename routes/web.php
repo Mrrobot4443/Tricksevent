@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Category;
 use App\Http\Controllers\HomeController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('admin');
-
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+Route::get('/login_admin', [HomeController::class, 'login_admin'])->name('login_admin');
+Route::post('/login_admin', [HomeController::class, 'admin_login_submit'])->name('login_admin');
+Route::resource('category',Category::class);
 // Route::get('/home', [HomeController::class, 'admin'])->name('hello');
