@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Villes;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 class VillesController extends Controller
 {
     /**
@@ -14,7 +14,10 @@ class VillesController extends Controller
      */
     public function index()
     {
-        //
+
+        $ville = Villes::all();
+        return view('admin.ville.index', compact('ville'));
+
     }
 
     /**
@@ -24,7 +27,7 @@ class VillesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.ville.create');
     }
 
     /**
@@ -35,7 +38,14 @@ class VillesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+        $villes = new Villes();
+        $villes->name = $request->name;
+        $villes->slug = Str::slug($request->name);
+        $villes->save();
+        return redirect()->route('ville.index');
     }
 
     /**
@@ -57,7 +67,8 @@ class VillesController extends Controller
      */
     public function edit(Villes $villes)
     {
-        //
+        $villes =Villes::find(decrypt($villes));
+        return view('admin.ville.edit', compact('ville'));
     }
 
     /**
@@ -69,7 +80,14 @@ class VillesController extends Controller
      */
     public function update(Request $request, Villes $villes)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+        $villes = Villes::find($villes);
+        $villes->name = $request->name;
+
+        $villes->save();
+        return redirect()->route('ville.index');
     }
 
     /**
@@ -80,6 +98,7 @@ class VillesController extends Controller
      */
     public function destroy(Villes $villes)
     {
-        //
+                Villes::destroy($villes);
+                return redirect()->route('ville.index');
     }
 }

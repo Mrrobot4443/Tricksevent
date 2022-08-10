@@ -16,7 +16,10 @@
 
 @include('admin.layouts.top_menu')
 @include('admin.layouts.side_bar')
-
+<br>
+<br>
+<br>
+<br>
 @yield('content')
 
     <script src="{{asset ('admin/vendor/jquery/jquery.min.js') }}"></script>

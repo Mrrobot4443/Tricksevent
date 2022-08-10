@@ -7,13 +7,13 @@
                 <div class="col-sm-6 p-md-0">
                     <div class="breadcrumb-range-picker">
                         <span><i class="icon-calender"></i></span>
-                        <span class="ml-1">Category</span>
+                        <span class="ml-1">Villes</span>
                     </div>
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Category</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Villes</a></li>
                     </ol>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">All Categories</h4>
+                            <h4 class="card-title">All Villes</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -32,25 +32,24 @@
                                     <thead>
                                         <tr class="text-white">
                                             <th scope="col" class="text-white">n°</th>
-                                            <th scope="col" class="text-white">Nom de la catégorie</th>
+                                            <th scope="col" class="text-white">Nom de la ville</th>
                                             <th scope="col" class="text-white">Date de création</th>
                                             <th scope="col" class="text-white">Date de modification</th>
-                                            <th scope="col" class="text-white">Actions</th>
                                           </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($categories as $key => $category)
+                                        @foreach ($ville as $key => $villes)
                                             <tr>
                                                 <th>{{ $key + 1 }}</th>
-                                                <td>{{ $category->name }}</td>
-                                                <td>{{ $category->created_at->diffForHumans() }}</td>
-                                                <td>{{ $category->updated_at->diffForHumans() }}</td>
-                                                <td> <form action="{{ route('category.destroy', $category->id) }}" method="POST">
+                                                <td>{{ $villes->name }}</td>
+                                                <td>{{ $villes->created_at->diffForHumans() }}</td>
+                                                <td>{{ $villes->updated_at->diffForHumans() }}</td>
+                                                <td> <form action="{{ route('ville.destroy', $villes->id) }}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                     <div class="modal-footer">
                                                         <button type="submit" class="btn btn-danger">Supprimer</button>
-                                                        <a class="btn btn-secondary text-white" data-bs-dismiss="modal" href="{{ route('category.edit',encrypt($category->id)) }}" >modifier</a>
+                                                        <a class="btn btn-secondary text-white" data-bs-dismiss="modal" href="{{ route('ville.edit',encrypt($villes->id)) }}" >modifier</a>
                                                     </div>
                                                 </form></td>
 
@@ -71,5 +70,3 @@
             </div>
         </div>
     </div>
-
-
