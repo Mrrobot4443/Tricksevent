@@ -23,9 +23,11 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-Route::get('/login_admin', [HomeController::class, 'login_admin'])->name('login_admin');
-Route::post('/login_admin', [HomeController::class, 'admin_login_submit'])->name('login_admin');
-Route::resource('category', CategoryController::class);
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard')->middleware('auth','admin');
+
+// Route::get('/login_admin', [HomeController::class, 'login_admin'])->name('login_admin')->middleware('auth','admin');
+// Route::post('/login_admin', [HomeController::class, 'admin_login_submit'])->name('login_admin')->middleware('auth','admin');
+Route::resource('category', CategoryController::class)->middleware('auth','admin');
 // Route::get('/home', [HomeController::class, 'admin'])->name('hello');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('contact-us', [HomeController::class, 'showContactForm'])->name('contact');

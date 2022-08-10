@@ -1,6 +1,11 @@
 @extends('admin.layouts.app')
 @section('title', 'Modifier une catégorie')
 @section('content')
+ <br>
+ <br>
+ <br>
+ <br>
+
 <div class="col-md-6 offset-md-3">
     <div class="card mt-5 shadow">
         <div class="card-body">

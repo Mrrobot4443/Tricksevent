@@ -21,13 +21,13 @@
                                 <form action="{{ route('login') }}" method="POST">
                                     @csrf
                                     <div class="single-form">
-                                        <input type="email" name="email" class="form-control" placeholder="Email">
+                                        <input type="email" name="email" class="form-control" placeholder="Email"value="{{ old('email') }}"  required autocomplete="email" autofocus>
                                         @error('email')
                                             <strong class="text-danger">{{ $message }}</strong>
                                         @enderror
                                     </div>
                                     <div class="single- form">
-                                        <input type="password" class="form-control" placeholder="Password" name="password">
+                                        <input type="password" class="form-control" placeholder="Password" name="password" required autocomplete="current-password">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -37,13 +37,13 @@
                                     <div class="single-form form-check">
                                         <input class="form-check-input" type="checkbox" value=""
                                             id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+                                        <label class="form-check-label" for="flexCheckDefault">{{ __('Remember me') }}</label>
                                     </div>
                                     <div class="form-btn">
                                         <button class="btn-2">  {{ __('Login') }}</button>
                                     </div>
                                     <div class="single-form">
-                                        <p><a href="#">Lost your password?</a></p>
+                                        <p><a href="{{ route('password.request') }}">{{__('Lost your password?') }}</a></p>
                                     </div>
                                 </form>
                             </div>

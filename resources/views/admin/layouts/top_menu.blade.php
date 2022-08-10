@@ -1,9 +1,9 @@
-
+<div id="preloader"><div class="spinner"><div class="spinner-a"></div><div class="spinner-b"></div></div></div>
     <div class="nav-header">
-        <a href="index.html" class="brand-logo">
+        <a href="{{ route('dashboard') }}" class="brand-logo">
             <span class="logo-abbr">D</span>
-            <span class="logo-compact">Dlab</span>
-            <span class="brand-title">Dlab</span>
+            <span class="logo-compact">Y-dashboard</span>
+            <span class="brand-title">Y-dashboard</span>
         </a>
 
         <div class="nav-control">
@@ -85,12 +85,12 @@
                     </li>
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="images/users/2.jpg" alt="">
+                            <img src="{{ asset('assets/images/new1.jpg') }}" alt="">
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <div class="dropdown-profile-header">
-                                <img src="images/users/2.jpg" alt="">
-                                <span class="avatar-name ml-2">John Doe</span>
+                        <div class="dropdown-menu dropdown-menu-right" enctype="multipart/form-data"    >
+                            <div class="dropdown-profile-header" >
+                                <img src="{{ asset('assets/images/new1.jpg') }}" alt="">
+                                <span class="avatar-name ml-2">Hello! Yassine</span>
                             </div>
                             <a href="app-profile.html" class="dropdown-item">
                                 <i class="mdi mdi-account"></i>
@@ -108,9 +108,9 @@
                                 <i class="mdi mdi-email"></i>
                                 <span>Inbox</span>
                             </a>
-                            <a href="page-login.html" class="dropdown-item">
+                            <a href="{{ route('logout') }}" class="dropdown-item">
                                 <i class="mdi mdi-power"></i>
-                                <span>{{ route('logout') }}</span>
+                                <span>logout</span>
                             </a>
                         </div>
                     </li>

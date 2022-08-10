@@ -43,5 +43,10 @@ class HomeController extends Controller
             return view('admin.auth.login');
         }
     }
+    public function showContactForm()
+    {
+        return view('contact.contact');
+    }
+
 
 }
