@@ -13,11 +13,12 @@
                    <!-- Contact Form Wrap Start -->
                    <div class="contact-form-wrap">
                        <form action="{{ route('contact') }}" method="POST" >
+                        @csrf
                            <div class="row">
                                <div class="col-md-6">
                                    <!-- Single Form Start -->
                                    <div class="single-form">
-                                       <input class="form-control" type="text" placeholder="Your Name" @error('name') is-invalid @enderror id="name">
+                                       <input class="form-control" type="text" placeholder="Your Name" @error('name') is-invalid @enderror id="name" name="name">
                                        @error('name')
                                        <strong class="text-danger">{{ $message }}</strong>
                                    @enderror
@@ -27,7 +28,7 @@
                                <div class="col-md-6">
                                    <!-- Single Form Start -->
                                    <div class="single-form">
-                                       <input class="form-control" type="email" placeholder="Your Email" >
+                                       <input class="form-control" type="email" placeholder="Your Email" name="email" >
                                        @error('email')
                                        <strong class="text-danger">{{ $message }}</strong>
                                    @enderror
@@ -37,7 +38,7 @@
                                <div class="col-md-6">
                                    <!-- Single Form Start -->
                                    <div class="single-form">
-                                       <input class="form-control" type="text" placeholder="Your Number" @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone') }}">
+                                       <input class="form-control" type="text" placeholder="Your Number" @error('phone') is-invalid @enderror id="phone" name="phone" value="{{ old('phone') }}">
                                        @error('phone')
                                            <strong class="text-danger">{{ $message }}</strong>
                                        @enderror
@@ -57,7 +58,7 @@
                                        <textarea class="form-control" placeholder="Write A Message"@error('content') is-invalid @enderror id="content" name="content">{{ old('content') }}</textarea>
                                        @error('content')
                                            <strong class="text-danger">{{ $message }}</strong>
-                                       @enderrors
+                                       @enderror
                                    </div>
                                    <!-- Single Form End -->
                                </div>

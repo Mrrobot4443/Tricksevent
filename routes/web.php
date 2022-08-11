@@ -32,3 +32,4 @@ Route::resource('ville', VillesController::class)->middleware('auth','admin');
 // Route::get('/home', [HomeController::class, 'admin'])->name('hello');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('contact-us', [HomeController::class, 'showContactForm'])->name('contact');
+Route::post('contact-us', [HomeController::class, 'submitContactForm'])->name('contact');

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Requests\ContactRequest;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 class HomeController extends Controller
 {
     /**
@@ -47,6 +49,11 @@ class HomeController extends Controller
     {
         return view('contact.contact');
     }
-
+    public function submitContactForm(ContactRequest $request) {
+        Mail::to('yazo-yazo@hotmail.com')->send(new ContactMail(
+            $request->name, $request->email, $request->phone, $request->content
+        ));
+        return back();
+    }
 
 }

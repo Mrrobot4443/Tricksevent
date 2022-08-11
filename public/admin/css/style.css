@@ -6174,7 +6174,7 @@ a.close.disabled {
     align-items: center;
     justify-content: flex-end;
     padding: 1rem;
-    border-top: 1px solid #e5e9f2;
+    /* border-top: 1px solid #e5e9f2; */
     border-bottom-right-radius: 0.3rem;
     border-bottom-left-radius: 0.3rem;
 }
