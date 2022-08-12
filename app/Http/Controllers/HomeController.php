@@ -55,5 +55,10 @@ class HomeController extends Controller
         ));
         return back();
     }
+    public function submitEvents()
+    {
+        return view('admin.events.index');
+
+    }
 
 }

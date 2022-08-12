@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Event;
+use App\Models\Villes;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -13,7 +16,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $events = Event::all();
+        return view('admin.events.index', compact('events'));
     }
 
     /**
@@ -23,7 +27,10 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        $villes = Villes::all();
+        $categories = Category::all();
+        return view('admin.events.create',compact('villes','categories'));
+
     }
 
     /**
@@ -34,7 +41,22 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+        $events = new Event();
+        $events->titre = $request->titre;
+        $events->category_id= $request->category_id;
+        $events->villes_id = $request->villes_id;
+        $events->prix = $request->prix;
+        $events->content = $request->content;
+        $events->date_debut = $request->date_debut;
+        $events->date_fin = $request->date_fin;
+        $events->image = $request->image;
+        $events->sponsor = $request->sponsor;
+        $events->user_type = $request->user_type;
+        $events->save();
+        return redirect()->route('events.index');
     }
 
     /**
@@ -56,7 +78,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $events =Event::find(decrypt($id));
+        return view('admin.events.edit', compact('events'));
     }
 
     /**
@@ -68,7 +91,23 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+        $events = Event::find($id);
+        $events->name = $request->name;
+        $events->titre = $request->titre;
+        $events->category_id= $request->category_id;
+        $events->ville_id = $request->ville_id;
+        $events->content = $request->content;
+        $events->prix = $request->prix;
+        $events->date_debut = $request->date_debut;
+        $events->date_fin = $request->date_fin;
+        $events->sponsor = $request->sponsor;
+        $events->user_type = $request->user_type;
+        $events->image = $request->image;
+        $events->save();
+        return redirect()->route('events.index');
     }
 
     /**
@@ -79,6 +118,7 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Event::destroy($id);
+        return redirect()->route('events.index');
     }
 }
