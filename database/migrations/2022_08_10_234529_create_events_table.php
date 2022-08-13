@@ -24,8 +24,8 @@ class CreateEventsTable extends Migration
             // $table->foreignId('ville_id');
             $table->longText('content');
             $table->string('prix')->nullable();
-            $table->string('date_debut');
-            $table->string('date_fin')->nullable();
+            $table->timestamp('date_debut');
+            $table->timestamp('date_fin')->nullable();
             $table->string('sponsor');
             $table->string('user_type');
             $table->string('image')->nullable();

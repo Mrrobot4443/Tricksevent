@@ -1,3 +1,4 @@
+</div>
 @extends('admin.layouts.app');
 
 @section('content')
@@ -23,8 +24,19 @@
                                                 name="titre">
                                         </div>
                                         <div class="form-group col-md-6">
+                                            <label for="category">Category</label>
+                                            <select id="category" class="form-control" name="category_id">
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('category_id')
+                                                <strong class="text-danger">{{ $message }}</strong>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group col-md-6">
                                             <label for="ville">ville</label>
-                                            <select id="ville" class="form-control" name="ville" type="text">
+                                            <select id="ville" class="form-control" name="ville_id" type="text">
                                                 @foreach ($villes as $villes)
                                                     <option value="{{ $villes->id }}">{{ $villes->name }}</option>
                                                 @endforeach
@@ -33,31 +45,7 @@
                                                 <strong class="text-danger">{{ $message }}</strong>
                                             @enderror
                                         </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="admin">admin's</label>
-                                            <input id="admin" class="form-control" name="user_type" type="text">
-                                            <option value="19">who?</option>
-                                        </div>
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="prix">Prix</label>
-                                            <input type="number" class="form-control" id="prix" placeholder=""
-                                                name="prix">
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="category">Category</label>
-                                        <select id="category" class="form-control" name="category_id">
-                                            @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('category_id')
-                                            <strong class="text-danger">{{ $message }}</strong>
-                                        @enderror
-                                    </div>
-
                                     <div class="form-group">
                                         <label for="content">Content</label>
                                         <textarea class="form-control" placeholder="Write the description"@error('content') is-invalid @enderror id="content"
@@ -66,23 +54,31 @@
                                             <strong class="text-danger">{{ $message }}</strong>
                                         @enderror
                                     </div>
-                                    <h5 class="my-4">time</h5>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="start">Event Starts</label>
-                                            <input type="date" class="form-control" id="start" placeholder=""
-                                                name="date_debut">
-                                            @error('start')
-                                                <strong class="text-danger">{{ $message }}</strong>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="prix">Prix</label>
+                                    <input type="number" class="form-control" id="prix" placeholder="" name="prix">
+                                </div>
+
+
+
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="start">Event Starts</label>
+                                        <input type="date" class="form-control" id="start" placeholder=""
+                                        name="date_debut">
+                                        @error('start')
+                                            <strong class="text-danger">{{ $message }}</strong>
                                             @enderror
-                                        </div>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="end">Event Ends</label>
                                         <input type="date" class="form-control" id="end" placeholder=""
-                                            name="date_fin">
+                                        name="date_fin">
                                         @error('end')
-                                            <strong class="text-danger">{{ $message }}</strong>
+                                        <strong class="text-danger">{{ $message }}</strong>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
@@ -90,13 +86,20 @@
                                         <input type="text" class="form-control" id="sponsors" placeholder="" name="sponsor">
                                     </div>
                                     <div class="form-group col-md-6">
+                                        <label for="admin">admin's</label>
+                                        <input id="admin" class="form-control" name="user_type" type="text">
+
+                                    </div>
+
+                                    <div class="form-group col-md-6">
                                         <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                            id="image" name="image">
+                                        id="image" name="image">
                                         @error('image')
-                                            <strong class="text-danger">{{ $message }}</strong>
+                                        <strong class="text-danger">{{ $message }}</strong>
                                         @enderror
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Sign in</button>
                                 </form>
                             </div>
                         </div>

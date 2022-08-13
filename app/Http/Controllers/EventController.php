@@ -42,18 +42,25 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'prix' => 'required',
+            'content' => 'required',
+            'category_id' => 'required',
+            'ville_id' => 'required',
+            'date_fin' => 'required',
+            'date_debut' => 'required',
+            'image' => 'required'
         ]);
         $events = new Event();
         $events->titre = $request->titre;
         $events->category_id= $request->category_id;
         $events->villes_id = $request->villes_id;
-        $events->prix = $request->prix;
         $events->content = $request->content;
+        $events->prix = $request->prix;
         $events->date_debut = $request->date_debut;
         $events->date_fin = $request->date_fin;
-        $events->image = $request->image;
         $events->sponsor = $request->sponsor;
+        $events->image = $request->image;
         $events->user_type = $request->user_type;
         $events->save();
         return redirect()->route('events.index');
@@ -92,10 +99,14 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'prix' => 'required',
+            'content' => 'required',
+
+
         ]);
+
         $events = Event::find($id);
-        $events->name = $request->name;
         $events->titre = $request->titre;
         $events->category_id= $request->category_id;
         $events->ville_id = $request->ville_id;

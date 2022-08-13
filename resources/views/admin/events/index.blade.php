@@ -35,13 +35,13 @@
                                             <th scope="col" class="text-white">title</th>
                                             <th scope="col" class="text-white">category</th>
                                             <th scope="col" class="text-white">ville</th>
-                                            <th scope="col" class="text-white">prix</th>
                                             <th scope="col" class="text-white">content</th>
+                                            <th scope="col" class="text-white">prix</th>
                                             <th scope="col" class="text-white">date_debut</th>
                                             <th scope="col" class="text-white">date_end</th>
-                                            <th scope="col" class="text-white">image</th>
                                             <th scope="col" class="text-white">sponsor</th>
                                             <th scope="col" class="text-white">admin's</th>
+                                            <th scope="col" class="text-white">image</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -51,13 +51,13 @@
                                                 <td>{{ $events->titre }}</td>
                                                 <td>{{ $events->category_id }}</td>
                                                 <td>{{ $events->villes_id }}</td>
-                                                <td>{{ $events->prix }}</td>
                                                 <td>{{ $events->content }}</td>
+                                                <td>{{ $events->prix }}</td>
                                                 <td>{{ $events->date_debut }}</td>
-                                                <td>{{ $events->date_end }}</td>
-                                                <td>{{ $events->image }}</td>
+                                                <td>{{ $events->date_fin }}</td>
                                                 <td>{{ $events->sponsor }}</td>
                                                 <td>{{ $events->user_type }}</td>
+                                                <td>{{ $events->image }}</td>
                                                 <td>
                                                     <form action="{{ route('events.destroy', $events->id) }}"
                                                         method="POST">
