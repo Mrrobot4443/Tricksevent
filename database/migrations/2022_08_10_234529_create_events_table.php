@@ -16,16 +16,16 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on ('categories')->onDelete('cascade');
-            $table->unsignedBigInteger('villes_id');
-            $table->foreign('villes_id')->references('id')->on ('villes')->onDelete('cascade');
+
+            $table->foreignId('category_id');
+            // $table->unsignedBigInteger('villes_id');
+            $table->foreignId('villes_id');
             // $table->foreignId('category_id');
             // $table->foreignId('ville_id');
-            $table->longText('content');
-            $table->string('prix')->nullable();
-            $table->timestamp('date_debut');
-            $table->timestamp('date_fin')->nullable();
+            $table->longText('content')->nullable();
+            $table->string('prix');
+            $table->date('date_debut');
+            $table->date('date_fin');
             $table->string('sponsor');
             $table->string('user_type');
             $table->string('image')->nullable();

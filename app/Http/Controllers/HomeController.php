@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
+use App\Models\Event;
 use Illuminate\Support\Facades\Mail;
 class HomeController extends Controller
 {
@@ -26,7 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $events=Event::all();
+        return view('welcome',compact('events'));
 
     }
     public function dashboard()

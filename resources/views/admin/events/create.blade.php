@@ -36,7 +36,7 @@
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="ville">ville</label>
-                                            <select id="ville" class="form-control" name="ville_id" type="text">
+                                            <select id="ville" class="form-control" name="villes_id" type="text">
                                                 @foreach ($villes as $villes)
                                                     <option value="{{ $villes->id }}">{{ $villes->name }}</option>
                                                 @endforeach

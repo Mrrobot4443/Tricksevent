@@ -16,7 +16,7 @@ Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard'
 
 Route::resource('category', CategoryController::class)->middleware('auth','admin');
 Route::resource('ville', VillesController::class)->middleware('auth','admin');
-Route::resource('event', EventController::class)->middleware('auth','admin');
+Route::resource('event', EventController::class);
 // Route::get('/home', [HomeController::class, 'admin'])->name('hello');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('contact-us', [HomeController::class, 'showContactForm'])->name('contact');

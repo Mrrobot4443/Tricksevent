@@ -19,17 +19,17 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="category">category</label>
-                        <input type="text" value="{{ $events->category }}"
+                        <input type="text" value="{{ $events->category->name  }}"
                             class="form-control @error('category') is-invalid @enderror" id="category" name="category_id">
-                        @error('category')
+                        @error('category_id')
                             <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>
                     <div class="form-group mb-3">
                         <label for="ville">ville</label>
-                        <input type="text" value="{{ $events->ville }}"
-                            class="form-control @error('ville') is-invalid @enderror" id="ville" name="ville_id">
-                        @error('ville')
+                        <input type="text" value="{{ $events->villes->name }}"
+                            class="form-control @error('villes_id') is-invalid @enderror" id="ville" name="villes_id">
+                        @error('villes_id')
                         <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>

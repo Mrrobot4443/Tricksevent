@@ -90,8 +90,7 @@
                     <div class="col">
                         <!-- Category Item Start -->
                         <div class="category-item cat-1">
-                            <a href="#"><img src="assets/images/cat-2.png"
-                                    alt=""><span>Concert</span></a>
+                            <a href="#"><img src="assets/images/cat-2.png" alt=""><span>Concert</span></a>
                         </div>
                         <!-- Category Item End -->
                     </div>
@@ -236,173 +235,36 @@
                 <!-- Section Title End -->
                 <div class="meeta-event-featured">
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <!-- Single Item Start -->
-                            <div class="single-item">
-                                <div class="featured-img">
-                                    <a href="event-single.html"><img src="assets/images/featured/featured-1.jpg"
-                                            alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>15</span>Sept</span>
+                        @foreach ($events as $event)
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <!-- Single Item Start -->
+                                <div class="single-item">
+                                    <div class="featured-img">
+                                        <a href="event-single.html"><img src="{{ asset('assets/images/$event->image') }}"
+                                                alt=""></a>
+                                        <div class="top-meta">
+                                            <span class="date"><span>15</span>Sept</span>
+                                        </div>
+                                    </div>
+                                    <div class="featured-content">
+                                        <span class="category color-4">Art & Craft</span>
+                                        <h3 class="title text-black"><a href="event-single.html">{{ $event->titre }}</a></h3>
+                                        <span class="meta"><i class="fas fa-map-marker-alt"></i> Sand diego,
+                                            Canada</span>
                                     </div>
                                 </div>
-                                <div class="featured-content">
-                                    <span class="category color-4">Art & Craft</span>
-                                    <h3 class="title"><a href="event-single.html">Designers, Web developers &
-                                            Digital artists</a></h3>
-                                    <span class="meta"><i class="fas fa-map-marker-alt"></i> Sand diego,
-                                        Canada</span>
-                                </div>
+                                <!-- Single Item End -->
                             </div>
-                            <!-- Single Item End -->
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <!-- Single Item Start -->
-                            <div class="single-item">
-                                <div class="featured-img">
-                                    <a href="event-single.html"><img src="assets/images/featured/featured-9.jpg"
-                                            alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>25</span>Sept</span>
-                                    </div>
-                                </div>
-                                <div class="featured-content">
-                                    <span class="category color-1">Art & Craft</span>
-                                    <h3 class="title"><a href="event-single.html">Designers, Web developers &
-                                            Digital artists</a></h3>
-                                    <span class="meta"><i class="fas fa-map-marker-alt"></i> Sand diego,
-                                        Canada</span>
-                                </div>
-                            </div>
-                            <!-- Single Item End -->
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <!-- Single Item Start -->
-                            <div class="single-item">
-                                <div class="featured-img">
-                                    <a href="event-single.html"><img src="assets/images/featured/featured-10.jpg"
-                                            alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>30</span>Sept</span>
-                                    </div>
-                                </div>
-                                <div class="featured-content">
-                                    <span class="category color-2">Art & Craft</span>
-                                    <h3 class="title"><a href="event-single.html">Designers, Web developers &
-                                            Digital artists</a></h3>
-                                    <span class="meta"><i class="fas fa-map-marker-alt"></i> Sand diego,
-                                        Canada</span>
-                                </div>
-                            </div>
-                            <!-- Single Item End -->
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <!-- Single Item Start -->
-                            <div class="single-item">
-                                <div class="featured-img">
-                                    <a href="event-single.html"><img src="assets/images/featured/featured-11.jpg"
-                                            alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>25</span>Sept</span>
-                                    </div>
-                                </div>
-                                <div class="featured-content">
-                                    <span class="category color-3">Art & Craft</span>
-                                    <h3 class="title"><a href="event-single.html">Designers, Web developers &
-                                            Digital artists</a></h3>
-                                    <span class="meta"><i class="fas fa-map-marker-alt"></i> Sand diego,
-                                        Canada</span>
-                                </div>
-                            </div>
-                            <!-- Single Item End -->
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <!-- Single Item Start -->
-                            <div class="single-item">
-                                <div class="featured-img">
-                                    <a href="event-single.html"><img src="assets/images/featured/featured-5.jpg"
-                                            alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>25</span>Sept</span>
-                                    </div>
-                                </div>
-                                <div class="featured-content">
-                                    <span class="category color-4">Art & Craft</span>
-                                    <h3 class="title"><a href="event-single.html">Designers, Web developers &
-                                            Digital artists</a></h3>
-                                    <span class="meta"><i class="fas fa-map-marker-alt"></i> Sand diego,
-                                        Canada</span>
-                                </div>
-                            </div>
-                            <!-- Single Item End -->
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <!-- Single Item Start -->
-                            <div class="single-item">
-                                <div class="featured-img">
-                                    <a href="event-single.html"><img src="assets/images/featured/featured-6.jpg"
-                                            alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>23</span>Sept</span>
-                                    </div>
-                                </div>
-                                <div class="featured-content">
-                                    <span class="category color-1">Art & Craft</span>
-                                    <h3 class="title"><a href="event-single.html">Designers, Web developers &
-                                            Digital artists</a></h3>
-                                    <span class="meta"><i class="fas fa-map-marker-alt"></i> Sand diego,
-                                        Canada</span>
-                                </div>
-                            </div>
-                            <!-- Single Item End -->
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <!-- Single Item Start -->
-                            <div class="single-item">
-                                <div class="featured-img">
-                                    <a href="event-single.html"><img src="assets/images/featured/featured-7.jpg"
-                                            alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>25</span>Sept</span>
-                                    </div>
-                                </div>
-                                <div class="featured-content">
-                                    <span class="category color-2">Art & Craft</span>
-                                    <h3 class="title"><a href="event-single.html">Designers, Web developers &
-                                            Digital artists</a></h3>
-                                    <span class="meta"><i class="fas fa-map-marker-alt"></i> Sand diego,
-                                        Canada</span>
-                                </div>
-                            </div>
-                            <!-- Single Item End -->
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <!-- Single Item Start -->
-                            <div class="single-item">
-                                <div class="featured-img">
-                                    <a href="event-single.html"><img src="assets/images/featured/featured-8.jpg"
-                                            alt=""></a>
-                                    <div class="top-meta">
-                                        <span class="date"><span>27</span>Sept</span>
-                                    </div>
-                                </div>
-                                <div class="featured-content">
-                                    <span class="category color-3">Art & Craft</span>
-                                    <h3 class="title"><a href="event-single.html">Designers, Web developers &
-                                            Digital artists</a></h3>
-                                    <span class="meta"><i class="fas fa-map-marker-alt"></i> Sand diego,
-                                        Canada</span>
-                                </div>
-                            </div>
-                            <!-- Single Item End -->
-                        </div>
+                        @endforeach
+                        <!-- Single Item End -->
                     </div>
                 </div>
-                <div class="featured-more text-center">
-                    <a class="btn-2" href="event-single.html">More Featured Events</a>
-                </div>
+            </div>
+            <div class="featured-more text-center">
+                <a class="btn-2" href="event-single.html">More Featured Events</a>
             </div>
         </div>
+    </div>
     </div>
     <!-- Featured Section End -->
 
@@ -422,8 +284,7 @@
 
                     <div class="swiper-slide">
                         <div class="project-item">
-                            <div class="event-project-thumb"
-                                style="background-image: url(assets/images/up-event-1.jpg);">
+                            <div class="event-project-thumb" style="background-image: url(assets/images/up-event-1.jpg);">
                             </div>
                             <div class="event-project-content">
                                 <h3 class="title">Mindfull App Pi Meets Soundproof Booth 2021 summer</h3>
@@ -463,8 +324,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="project-item">
-                            <div class="event-project-thumb"
-                                style="background-image: url(assets/images/up-event-2.jpg);">
+                            <div class="event-project-thumb" style="background-image: url(assets/images/up-event-2.jpg);">
                             </div>
                             <div class="event-project-content">
                                 <h3 class="title">Mindfull App Pi Meets Soundproof Booth 2021 summer</h3>
@@ -504,8 +364,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="project-item">
-                            <div class="event-project-thumb"
-                                style="background-image: url(assets/images/up-event-3.jpg);">
+                            <div class="event-project-thumb" style="background-image: url(assets/images/up-event-3.jpg);">
                             </div>
                             <div class="event-project-content">
                                 <h3 class="title">Mindfull App Pi Meets Soundproof Booth 2021 summer</h3>
@@ -646,8 +505,7 @@
                         <!-- Single Blog Start -->
                         <div class="single-blog-3">
                             <div class="blog-image">
-                                <a href="blog-details.html"><img src="assets/images/blog/blog-1.jpg"
-                                        alt=""></a>
+                                <a href="blog-details.html"><img src="assets/images/blog/blog-1.jpg" alt=""></a>
                                 <div class="top-meta">
                                     <span class="category color-4">Conference</span>
                                 </div>
@@ -666,8 +524,7 @@
                         <!-- Single Blog Start -->
                         <div class="single-blog-3">
                             <div class="blog-image">
-                                <a href="blog-details.html"><img src="assets/images/blog/blog-2.jpg"
-                                        alt=""></a>
+                                <a href="blog-details.html"><img src="assets/images/blog/blog-2.jpg" alt=""></a>
                                 <div class="top-meta">
                                     <span class="category color-1">Conference</span>
                                 </div>
@@ -686,8 +543,7 @@
                         <!-- Single Blog Start -->
                         <div class="single-blog-3">
                             <div class="blog-image">
-                                <a href="blog-details.html"><img src="assets/images/blog/blog-3.jpg"
-                                        alt=""></a>
+                                <a href="blog-details.html"><img src="assets/images/blog/blog-3.jpg" alt=""></a>
                                 <div class="top-meta">
                                     <span class="category color-2">Conference</span>
                                 </div>

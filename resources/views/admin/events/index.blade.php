@@ -1,5 +1,4 @@
-@extends('admin.layouts.app');
-
+@extends('admin.layouts.app')
 @section('content')
     <div class="content-body">
         <div class="container-fluid">
@@ -49,8 +48,8 @@
                                             <tr>
                                                 <th>{{ $key + 1 }}</th>
                                                 <td>{{ $events->titre }}</td>
-                                                <td>{{ $events->category_id }}</td>
-                                                <td>{{ $events->villes_id }}</td>
+                                                <td>{{ $events->category->name}}</td>
+                                                <td>{{ $events->villes->name }}</td>
                                                 <td>{{ $events->content }}</td>
                                                 <td>{{ $events->prix }}</td>
                                                 <td>{{ $events->date_debut }}</td>
@@ -59,14 +58,14 @@
                                                 <td>{{ $events->user_type }}</td>
                                                 <td>{{ $events->image }}</td>
                                                 <td>
-                                                    <form action="{{ route('events.destroy', $events->id) }}"
+                                                    <form action="{{ route('event.destroy', $events->id) }}"
                                                         method="POST">
                                                         @method('DELETE')
                                                         @csrf
                                                         <div class="modal-footer">
                                                             <button type="submit" class="btn btn-danger">Supprimer</button>
                                                             <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
-                                                                href="{{ route('events.edit', encrypt($events->id)) }}">modifier</a>
+                                                                href="{{ route('event.edit', encrypt($events->id)) }}">modifier</a>
                                                         </div>
                                                     </form>
                                                 </td>

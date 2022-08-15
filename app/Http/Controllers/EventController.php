@@ -42,14 +42,13 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'prix' => 'required',
-            'content' => 'required',
+            'titre' => 'required',
             'category_id' => 'required',
-            'ville_id' => 'required',
-            'date_fin' => 'required',
+            'villes_id' => 'required',
+            'content' => 'required',
+            'prix' => 'required',
             'date_debut' => 'required',
-            'image' => 'required'
+
         ]);
         $events = new Event();
         $events->titre = $request->titre;
@@ -60,10 +59,10 @@ class EventController extends Controller
         $events->date_debut = $request->date_debut;
         $events->date_fin = $request->date_fin;
         $events->sponsor = $request->sponsor;
-        $events->image = $request->image;
         $events->user_type = $request->user_type;
+        $events->image = $request->file('image')->store('images/event');
         $events->save();
-        return redirect()->route('events.index');
+        return redirect()->route('event.index');
     }
 
     /**
@@ -99,7 +98,7 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
+            'titre' => 'required',
             'prix' => 'required',
             'content' => 'required',
 
@@ -109,7 +108,7 @@ class EventController extends Controller
         $events = Event::find($id);
         $events->titre = $request->titre;
         $events->category_id= $request->category_id;
-        $events->ville_id = $request->ville_id;
+        $events->villes_id = $request->villes_id;
         $events->content = $request->content;
         $events->prix = $request->prix;
         $events->date_debut = $request->date_debut;
@@ -118,7 +117,7 @@ class EventController extends Controller
         $events->user_type = $request->user_type;
         $events->image = $request->image;
         $events->save();
-        return redirect()->route('events.index');
+        return redirect()->route('event.index');
     }
 
     /**
@@ -130,6 +129,6 @@ class EventController extends Controller
     public function destroy($id)
     {
         Event::destroy($id);
-        return redirect()->route('events.index');
+        return redirect()->route('event.index');
     }
 }
