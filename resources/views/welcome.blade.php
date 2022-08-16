@@ -243,14 +243,14 @@
                                         <a href="event-single.html"><img src="{{ asset($event->image) }}"
                                                 alt=""></a>
                                         <div class="top-meta">
-                                            <span class="date"><span>15</span>Sept</span>
+                                            <span class="date"><span>{{ $event->date_debut }}</span></span>
                                         </div>
                                     </div>
                                     <div class="featured-content">
-                                        <span class="category color-4">Art & Craft</span>
+                                        <span class="category color-4">{{ $event->category->name }}</span>
                                         <h3 class="title text-black"><a href="event-single.html">{{ $event->titre }}</a></h3>
-                                        <span class="meta"><i class="fas fa-map-marker-alt"></i> Sand diego,
-                                            Canada</span>
+                                        <span class="meta"><i class="fas fa-map-marker-alt"></i> {{ $event->villes->name }}</span>
+                                        <span class="meta ms-5"><i class="fas fa-map-marker-alt"></i>{{ $event->prix }} Dhs</span>
                                     </div>
                                 </div>
                                 <!-- Single Item End -->

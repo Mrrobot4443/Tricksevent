@@ -67,7 +67,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="start">Event Starts</label>
-                                        <input type="date" class="form-control" id="start" placeholder=""
+                                        <input type="datetime" class="form-control" id="start" placeholder=""
                                         name="date_debut">
                                         @error('start')
                                             <strong class="text-danger">{{ $message }}</strong>
@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="end">Event Ends</label>
-                                        <input type="date" class="form-control" id="end" placeholder=""
+                                        <input type="datetime" class="form-control" id="end" placeholder=""
                                         name="date_fin">
                                         @error('end')
                                         <strong class="text-danger">{{ $message }}</strong>

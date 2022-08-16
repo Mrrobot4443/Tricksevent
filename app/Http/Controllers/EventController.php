@@ -60,7 +60,9 @@ class EventController extends Controller
         $events->date_fin = $request->date_fin;
         $events->sponsor = $request->sponsor;
         $events->user_type = $request->user_type;
-        $events->image = $request->file('image')->store('images/event');
+        if ($request->hasFile('image')) {
+            $events->image = $request->file('image')->store('images/events');
+        }
         $events->save();
         return redirect()->route('event.index');
     }
@@ -117,7 +119,9 @@ class EventController extends Controller
         $events->date_fin = $request->date_fin;
         $events->sponsor = $request->sponsor;
         $events->user_type = $request->user_type;
-        $events->image = $request->image;
+        if ($request->hasFile('image')) {
+            $events->image = $request->file('image')->store('images/events');
+        }
         $events->save();
         return redirect()->route('event.index');
     }
