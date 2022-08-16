@@ -9,7 +9,7 @@ class Villes extends Model
 {
     use HasFactory;
     public function event() {
-        return $this->hasMany(Event::class,'villes_id','id');
+        return $this->hasMany(Event::class);
     }
 
 }

@@ -19,18 +19,27 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="category">category</label>
-                        <input type="text" value="{{ $events->category->name  }}"
-                            class="form-control @error('category') is-invalid @enderror" id="category" name="category_id">
+                        <select type="text" class="form-control @error('category_id') is-invalid @enderror"
+                            id="category" name="category_id">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
                         @error('category_id')
                             <strong class="text-danger">{{ $message }}</strong>
                         @enderror
+
                     </div>
                     <div class="form-group mb-3">
                         <label for="ville">ville</label>
-                        <input type="text" value="{{ $events->villes->name }}"
+                        <select type="text" value="{{ $events->villes->name }}"
                             class="form-control @error('villes_id') is-invalid @enderror" id="ville" name="villes_id">
+                            @foreach ($villes as $ville)
+                                <option value="{{ $ville->id }}">{{ $ville->name }}</option>
+                            @endforeach
+                        </select>
                         @error('villes_id')
-                        <strong class="text-danger">{{ $message }}</strong>
+                            <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>
                     <div class="form-group mb-3">
@@ -44,49 +53,49 @@
                     <div class="form-group mb-3">
                         <label for="prix">Prix</label>
                         <input type="text" value="{{ $events->prix }}"
-                        class="form-control @error('prix') is-invalid @enderror" id="prix" name="prix">
+                            class="form-control @error('prix') is-invalid @enderror" id="prix" name="prix">
                         @error('prix')
-                        <strong class="text-danger">{{ $message }}</strong>
+                            <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>
                     <div class="form-group mb-3">
                         <label for="start">start</label>
                         <input type="text" value="{{ $events->date_debut }}"
-                        class="form-control @error('start') is-invalid @enderror" id="start" name="date_debut">
+                            class="form-control @error('date_debut') is-invalid @enderror" id="start" name="date_debut">
                         @error('date_debut')
-                        <strong class="text-danger">{{ $message }}</strong>
+                            <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>
                     <div class="form-group mb-3">
                         <label for="end">end</label>
-                        <input type="text" value="{{ $events->date_end }}"
-                        class="form-control @error('end') is-invalid @enderror" id="end" name="date_end">
-                        @error('date_end')
-                        <strong class="text-danger">{{ $message }}</strong>
+                        <input type="text" value="{{ $events->date_fin }}"
+                            class="form-control @error('date_fin') is-invalid @enderror" id="end" name="date_fin">
+                        @error('date_fin')
+                            <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>
 
                     <div class="form-group mb-3">
                         <label for="sponsors">sponsors</label>
                         <input type="text" value="{{ $events->sponsor }}"
-                        class="form-control @error('sponsors') is-invalid @enderror" id="sponsors" name="sponsor">
+                            class="form-control @error('sponsor') is-invalid @enderror" id="sponsors" name="sponsor">
                         @error('sponsor')
-                        <strong class="text-danger">{{ $message }}</strong>
+                            <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>
                     <div class="form-group mb-3">
                         <label for="admin">admin</label>
                         <input type="text" value="{{ $events->user_type }}"
-                            class="form-control @error('admin') is-invalid @enderror" id="admin" name="user_type">
+                            class="form-control @error('user_type') is-invalid @enderror" id="admin" name="user_type">
                         @error('user_type')
                             <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>
                     <div class="form-group col-md-6">
                         <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
-                        name="image">
+                            name="image">
                         @error('image')
-                        <strong class="text-danger">{{ $message }}</strong>
+                            <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>
                     <div class="form-group mb-4">

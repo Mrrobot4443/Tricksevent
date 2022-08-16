@@ -240,7 +240,7 @@
                                 <!-- Single Item Start -->
                                 <div class="single-item">
                                     <div class="featured-img">
-                                        <a href="event-single.html"><img src="{{ asset('assets/images/$event->image') }}"
+                                        <a href="event-single.html"><img src="{{ asset($event->image) }}"
                                                 alt=""></a>
                                         <div class="top-meta">
                                             <span class="date"><span>15</span>Sept</span>
