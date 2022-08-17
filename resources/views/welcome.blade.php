@@ -19,31 +19,30 @@
                         <div class="search-form-wrap" data-aos-delay="900" data-aos="fade-up">
                             <div class="search-form-inner">
                                 <form class="search-form" action="#">
-                                    @foreach ($events as $event)
-                                        <div class="single-form">
-                                            <label class="form-label"><i class="fas fa-search"></i>{{ $event->titre }}</label>
-                                            <input type="text" placeholder="Type Event Name">
-                                        </div>
-                                    @endforeach
                                     <div class="single-form">
+                                        <label class="form-label"><i class="fas fa-search"></i></label>
+                                        <input type="text" placeholder="Type Event Name">
                                         @foreach ($events as $event)
-                                            <label class="form-label"><i class="fas fa-list-alt"></i> Category</label>
-                                            <select>
-                                                <option value="0">Select Category</option>
-                                                <option value="1">{{ $event->category->name }}</option>
-
-                                            </select>
+                                            <i >{{ $event->titre }}</i>
                                         @endforeach
                                     </div>
                                     <div class="single-form">
-                                        @foreach ($events as $event)
-                                            <label class="form-label"><i class="fas fa-map"></i> Location</label>
-                                            <select>
-                                                <option value="0">Select Location</option>
+                                        <label class="form-label"><i class="fas fa-list-alt"></i> Category</label>
+                                        <select>
+                                            <option value="0">Select Category</option>
+                                            @foreach ($events as $event)
+                                                <option value="1">{{ $event->category->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="single-form">
+                                        <label class="form-label"><i class="fas fa-map"></i> Location</label>
+                                        <select>
+                                            <option value="0">Select Location</option>
+                                            @foreach ($events as $event)
                                                 <option value="1">{{ $event->villes->name }}</option>
-
-                                            </select>
-                                        @endforeach
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-btn">
                                         <button class="search-btn"><i class="flaticon-loupe"></i></button>
@@ -54,10 +53,10 @@
                         <div class="popular-tag" data-aos-delay="1000" data-aos="fade-up">
                             <span class="label">Popular:</span>
                             @foreach ($events as $event)
-                            <ul>
-                                <li><a href="#">{{ $event->category->name }}</a></li>
+                                <ul>
+                                    <li><a href="#">{{ $event->category->name }}</a></li>
 
-                            </ul>
+                                </ul>
                             @endforeach
                         </div>
                     </div>

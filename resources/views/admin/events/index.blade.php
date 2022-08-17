@@ -39,7 +39,6 @@
                                             <th scope="col" class="text-white">prix</th>
                                             <th scope="col" class="text-white">date_debut</th>
                                             <th scope="col" class="text-white">date_end</th>
-                                            <th scope="col" class="text-white">sponsor</th>
                                             <th scope="col" class="text-white">admin's</th>
                                             <th scope="col" class="text-white">image</th>
                                         </tr>
@@ -49,13 +48,12 @@
                                             <tr>
                                                 <th>{{ $key + 1 }}</th>
                                                 <td>{{ $events->titre }}</td>
-                                                <td>{{ $events->category->name}}</td>
+                                                <td>{{ $events->category->name }}</td>
                                                 <td>{{ $events->villes->name }}</td>
                                                 <td>{{ $events->content }}</td>
                                                 <td>{{ $events->prix }}</td>
                                                 <td>{{ $events->date_debut }}</td>
                                                 <td>{{ $events->date_fin }}</td>
-                                                <td>{{ $events->sponsor }}</td>
                                                 <td>{{ $events->user_type }}</td>
                                                 <td>{{ $events->image }}</td>
                                                 <td>

@@ -60,10 +60,6 @@
                                     <label for="prix">Prix</label>
                                     <input type="number" class="form-control" id="prix" placeholder="" name="prix">
                                 </div>
-
-
-
-
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="start">Event Starts</label>
@@ -80,10 +76,6 @@
                                         @error('end')
                                         <strong class="text-danger">{{ $message }}</strong>
                                         @enderror
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="sponsor">Sponsor 's</label>
-                                        <input type="text" class="form-control" id="sponsors" placeholder="" name="sponsor">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="admin">admin's</label>

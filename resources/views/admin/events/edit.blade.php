@@ -74,8 +74,6 @@
                             <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>
-
-
                     <div class="form-group mb-3">
                         <label for="admin">admin</label>
                         <input type="text" value="{{ $events->user_type }}"
