@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Accueil')
-@section('content');
+@section('content')
     <div class="meeta-hero-section-5 d-flex align-items-center"
         style="background-image: url(assets/images/bg/hero-5-bg.jpg);">
         <img class="image-1" src="assets/images/hero-5-img-1.png" alt="">
@@ -19,32 +19,31 @@
                         <div class="search-form-wrap" data-aos-delay="900" data-aos="fade-up">
                             <div class="search-form-inner">
                                 <form class="search-form" action="#">
+                                    @foreach ($events as $event)
+                                        <div class="single-form">
+                                            <label class="form-label"><i class="fas fa-search"></i>{{ $event->titre }}</label>
+                                            <input type="text" placeholder="Type Event Name">
+                                        </div>
+                                    @endforeach
                                     <div class="single-form">
-                                        <label class="form-label"><i class="fas fa-search"></i> Event
-                                            Title</label>
-                                        <input type="text" placeholder="Type Event Name">
+                                        @foreach ($events as $event)
+                                            <label class="form-label"><i class="fas fa-list-alt"></i> Category</label>
+                                            <select>
+                                                <option value="0">Select Category</option>
+                                                <option value="1">{{ $event->category->name }}</option>
+
+                                            </select>
+                                        @endforeach
                                     </div>
                                     <div class="single-form">
-                                        <label class="form-label"><i class="fas fa-list-alt"></i> Category</label>
-                                        <select>
-                                            <option value="0">Select Category</option>
-                                            <option value="1">Arts & Crafts</option>
-                                            <option value="2">Business</option>
-                                            <option value="3">Education </option>
-                                            <option value="4">Science </option>
-                                            <option value="5">Sports & Travel</option>
-                                        </select>
-                                    </div>
-                                    <div class="single-form">
-                                        <label class="form-label"><i class="fas fa-map"></i> Location</label>
-                                        <select>
-                                            <option value="0">Select Location</option>
-                                            <option value="1">Paris, FR</option>
-                                            <option value="2">Melbourne, AUS</option>
-                                            <option value="3">New York, NY</option>
-                                            <option value="4">IAC Building, US</option>
-                                            <option value="5">Moscow, RA</option>
-                                        </select>
+                                        @foreach ($events as $event)
+                                            <label class="form-label"><i class="fas fa-map"></i> Location</label>
+                                            <select>
+                                                <option value="0">Select Location</option>
+                                                <option value="1">{{ $event->villes->name }}</option>
+
+                                            </select>
+                                        @endforeach
                                     </div>
                                     <div class="form-btn">
                                         <button class="search-btn"><i class="flaticon-loupe"></i></button>
@@ -54,13 +53,12 @@
                         </div>
                         <div class="popular-tag" data-aos-delay="1000" data-aos="fade-up">
                             <span class="label">Popular:</span>
+                            @foreach ($events as $event)
                             <ul>
-                                <li><a href="#">Education</a></li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Art</a></li>
-                                <li><a href="#">Development</a></li>
-                                <li><a href="#">Sport</a></li>
+                                <li><a href="#">{{ $event->category->name }}</a></li>
+
                             </ul>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -243,14 +241,19 @@
                                         <a href="event-single.html"><img src="{{ asset($event->image) }}"
                                                 alt=""></a>
                                         <div class="top-meta">
-                                            <span class="date"><span>{{ $event->date_debut }}</span></span>
+                                            <span
+                                                class="date"><span><strong>{{ $event->date_debut }}</strong></span></span>
                                         </div>
                                     </div>
                                     <div class="featured-content">
-                                        <span class="category color-4">{{ $event->category->name }}</span>
-                                        <h3 class="title text-black"><a href="event-single.html">{{ $event->titre }}</a></h3>
-                                        <span class="meta"><i class="fas fa-map-marker-alt"></i> {{ $event->villes->name }}</span>
-                                        <span class="meta ms-5"><i class="fas fa-map-marker-alt"></i>{{ $event->prix }} Dhs</span>
+                                        <span class="category color-4 mt-5">{{ $event->category->name }}</span>
+                                        <br>
+                                        <h3 class="title text-black mt-4"><a
+                                                href="event-single.html">{{ $event->titre }}</a></h3>
+                                        <span class="meta mt-3"><i class="fas fa-map-marker-alt"></i>
+                                            {{ $event->villes->name }}</span>
+                                        <span class="meta mt-5"><i
+                                                class="fas fa-map-marker-alt"></i><strong>{{ $event->prix }}Dhs</strong></span>
                                     </div>
                                 </div>
                                 <!-- Single Item End -->

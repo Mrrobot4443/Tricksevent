@@ -58,7 +58,6 @@ class EventController extends Controller
         $events->prix = $request->prix;
         $events->date_debut = $request->date_debut;
         $events->date_fin = $request->date_fin;
-        $events->sponsor = $request->sponsor;
         $events->user_type = $request->user_type;
         if ($request->hasFile('image')) {
             $events->image = $request->file('image')->store('images/events');
@@ -117,7 +116,6 @@ class EventController extends Controller
         $events->prix = $request->prix;
         $events->date_debut = $request->date_debut;
         $events->date_fin = $request->date_fin;
-        $events->sponsor = $request->sponsor;
         $events->user_type = $request->user_type;
         if ($request->hasFile('image')) {
             $events->image = $request->file('image')->store('images/events');

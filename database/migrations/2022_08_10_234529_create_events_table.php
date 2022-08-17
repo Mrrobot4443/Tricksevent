@@ -26,7 +26,7 @@ class CreateEventsTable extends Migration
             $table->string('prix');
             $table->date('date_debut');
             $table->date('date_fin');
-            $table->string('sponsor');
+
             $table->string('user_type');
             $table->string('image')->nullable();
             $table->timestamps();
