@@ -8,17 +8,24 @@ use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
 use App\Models\Event;
 use Illuminate\Support\Facades\Mail;
+
 class HomeController extends Controller
 {
+    public function home()
+    {
+        $events = Event::all();
+        return view('welcome',compact('events'));
+    }
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -27,19 +34,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $events=Event::all();
-        return view('welcome',compact('events'));
-
+        if(Auth::user()->user_type == "admin"){
+            return redirect('welcome');
+        } else {
+            return view('user.dashboard');
+        }
     }
-    public function dashboard()
+    public function dashboard_admin()
     {
         return view('admin.dashboard');
-
     }
     public function login_admin()
     {
         if (Auth::check()) {
-            if(Auth::user()->user_type == "admin") {
+            if (Auth::user()->user_type == "admin") {
                 return redirect()->route('dashboard');
             }
             return redirect()->route('welcome');
@@ -51,16 +59,22 @@ class HomeController extends Controller
     {
         return view('contact.contact');
     }
-    public function submitContactForm(ContactRequest $request) {
+    public function submitContactForm(ContactRequest $request)
+    {
         Mail::to('yazo-yazo@hotmail.com')->send(new ContactMail(
-            $request->name, $request->email, $request->phone, $request->content
+            $request->name,
+            $request->email,
+            $request->phone,
+            $request->content
         ));
         return back();
     }
     public function submitEvents()
     {
         return view('admin.events.index');
-
     }
-
+    public function dashboard_user()
+    {
+        return view('user.dashboard');
+    }
 }

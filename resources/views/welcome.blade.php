@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="hero-content">
                         <div class="title-wrap text-center">
-                            <h2 class="title" data-aos-delay="700" data-aos="fade-up">Find event</h2>
+                            <h2 class="title" data-aos-delay="700" data-aos="fade-up">Find Event</h2>
                             <h3 class="sub-title" data-aos-delay="800" data-aos="fade-up">Awesome event,
                                 conference & fest around you</h3>
                         </div>
@@ -54,7 +54,7 @@
                             <span class="label">Popular:</span>
                             @foreach ($events as $event)
                                 <ul>
-                                    <li><a href="#">{{ $event->category->name }}</a></li>
+                                    <li ><a href="#"> {{ $event->category-> name }} </a></li>
 
                                 </ul>
                             @endforeach
@@ -241,7 +241,7 @@
                                                 alt=""></a>
                                         <div class="top-meta">
                                             <span
-                                                class="date"><span><strong>{{ $event->date_debut }}</strong></span></span>
+                                                class="date"><span>{{ $event->date_debut }}</span></span>
                                         </div>
                                     </div>
                                     <div class="featured-content">

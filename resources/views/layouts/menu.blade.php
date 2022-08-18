@@ -30,7 +30,7 @@
             <!-- Header Navigation Start -->
             <div class="header-navigation d-none d-lg-block">
                 <ul class="main-menu">
-                    <li class="active-menu"><a href="{{ route('welcome') }}">Home</a>
+                    <li class="active-menu"><a href="{{ route('home') }}">Home</a>
 
                     </li>
                     <li><a href="about.html">About</a></li>

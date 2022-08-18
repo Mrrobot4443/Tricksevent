@@ -44,52 +44,48 @@
     @include('layouts.menu')
     <br>
     <br>
+    @yield('content')
+
     <br>
     <br>
-        @yield('content')
-
-        <br>
-        <br>
-        <br>
+    <br>
 
 
-        <!-- back to top start -->
-        <div class="progress-wrap">
-            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-            </svg>
-        </div>
-        <!-- back to top end -->
-        <!-- JS
+    <!-- back to top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- back to top end -->
+    <!-- JS
         ============================================ -->
 
-        <!-- Modernizer & jQuery JS -->
-        @include('layouts.footer')
-        <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
-        <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- Modernizer & jQuery JS -->
+    @include('layouts.footer')
+    <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
 
 
-        <!-- Bootstrap JS -->
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 
-        <!-- Plugins JS -->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <script src="assets/js/back-to-top.js"></script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <script src="assets/js/waypoints.min.js"></script>
-        <script src="assets/js/aos.js"></script>
-        <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- Plugins JS -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
 
 
-        <!-- Main JS -->
-        <script src="assets/js/main.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
 
 </body>
 
 
 
 </html>
-
-

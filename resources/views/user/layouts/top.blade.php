@@ -1,6 +1,6 @@
 <div id="preloader"><div class="spinner"><div class="spinner-a"></div><div class="spinner-b"></div></div></div>
     <div class="nav-header">
-        <a href="{{ route('dashboard_admin') }}" class="brand-logo">
+        <a href="{{ route('dashboard_user') }}" class="brand-logo">
             <span class="logo-abbr">D</span>
             <span class="logo-compact">Y-dashboard</span>
             <span class="brand-title">Y-dashboard</span>

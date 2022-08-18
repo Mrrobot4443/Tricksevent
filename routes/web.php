@@ -11,12 +11,15 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('welcome');
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard')->middleware('auth','admin');
+Route::get('/', [HomeController::class, 'home'])->name('home');
+
+Route::get('/home', [HomeController::class, 'index'])->name('welcome');
+Route::get('admin/dashboard', [HomeController::class, 'dashboard_admin'])->name('dashboard_admin')->middleware('auth','IsAdmin');
+Route::get('user/dashboard', [HomeController::class, 'dashboard_user'])->name('dashboard_user')->middleware('auth','User');
 
 Route::resource('category', CategoryController::class)->middleware('auth','admin');
 Route::resource('ville', VillesController::class)->middleware('auth','admin');
-Route::resource('event', EventController::class);
+Route::resource('event', EventController::class)->middleware('auth','admin');
 // Route::get('/home', [HomeController::class, 'admin'])->name('hello');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('contact-us', [HomeController::class, 'showContactForm'])->name('contact');
