@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
-Route::get('/home', [HomeController::class, 'index'])->name('welcome');
+Route::get('/home', [HomeController::class, 'index'])->name('welcome')->middleware('verified');
 Route::get('admin/dashboard', [HomeController::class, 'dashboard_admin'])->name('dashboard_admin')->middleware('auth','IsAdmin');
 Route::get('user/dashboard', [HomeController::class, 'dashboard_user'])->name('dashboard_user')->middleware('auth','User');
 
