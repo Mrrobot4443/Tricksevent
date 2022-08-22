@@ -16,6 +16,12 @@ class HomeController extends Controller
         $events = Event::all();
         return view('welcome',compact('events'));
     }
+    public function detailles()
+    {
+
+        return view('detailles.detailles');
+    }
+
 
     /**
      * Create a new controller instance.

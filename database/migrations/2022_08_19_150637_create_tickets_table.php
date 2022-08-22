@@ -16,11 +16,12 @@ class CreateTicketsTable extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('events_id');
+            $table->foreignId('villes_id');
+            $table->foreignId('user_id');
+            $table->foreignId('category_id');
             $table->string('quantity');
             $table->string('ticket_price_1');
             $table->string('ticket_price_2');
-            $table->string('image');
-            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@
                 <div class="col-sm-6 p-md-0">
                     <div class="breadcrumb-range-picker">
                         <span><i class="icon-calender"></i></span>
-                        <span class="ml-1">Events</span>
+                        <span class="ml-1">Tickets</span>
                     </div>
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -32,11 +32,14 @@
                                     <thead>
                                         <tr class="text-white">
                                             <th scope="col" class="text-white">n°</th>
-                                            <th scope="col" class="text-white">title</th>
+                                            <th scope="col" class="text-white">event_name</th>
                                             <th scope="col" class="text-white">category</th>
                                             <th scope="col" class="text-white">ville</th>
+                                            <th scope="col" class="text-white">Quantity</th>
+                                            <th scope="col" class="text-white">bronze price</th>
+                                            <th scope="col" class="text-white">silver price</th>
+                                            <th scope="col" class="text-white">gold price</th>
                                             <th scope="col" class="text-white">content</th>
-                                            <th scope="col" class="text-white">prix</th>
                                             <th scope="col" class="text-white">date_debut</th>
                                             <th scope="col" class="text-white">date_end</th>
                                             <th scope="col" class="text-white">admin's</th>
@@ -44,27 +47,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($events as $key => $events)
+                                        @foreach ($tickets as $key => $tickets)
                                             <tr>
                                                 <th>{{ $key + 1 }}</th>
-                                                <td>{{ $events->titre }}</td>
-                                                <td>{{ $events->category->name }}</td>
-                                                <td>{{ $events->villes->name }}</td>
-                                                <td>{{ $events->content }}</td>
-                                                <td>{{ $events->prix }}</td>
-                                                <td>{{ $events->date_debut }}</td>
-                                                <td>{{ $events->date_fin }}</td>
-                                                <td>{{ $events->user_type }}</td>
-                                                <td>{{ $events->image }}</td>
+                                                <td>{{ $tickets->titre }}</td>
+                                                <td>{{ $tickets->category->name }}</td>
+                                                <td>{{ $tickets->villes->name }}</td>
+                                                <td>{{ $tickets->content }}</td>
+                                                <td>{{ $tickets->prix }}</td>
+                                                <td>{{ $tickets->date_debut }}</td>
+                                                <td>{{ $tickets->date_fin }}</td>
+                                                <td>{{ $tickets->user_type }}</td>
+                                                <td>{{ $tickets->image }}</td>
                                                 <td>
-                                                    <form action="{{ route('event.destroy', $events->id) }}"
+                                                    <form action="{{ route('ticket.destroy', $tickets->id) }}"
                                                         method="POST">
                                                         @method('DELETE')
                                                         @csrf
                                                         <div class="modal-footer">
                                                             <button type="submit" class="btn btn-danger">Supprimer</button>
                                                             <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
-                                                                href="{{ route('event.edit', encrypt($events->id)) }}">modifier</a>
+                                                                href="{{ route('ticket.edit', encrypt($tickets->id)) }}">modifier</a>
                                                         </div>
                                                     </form>
                                                 </td>
