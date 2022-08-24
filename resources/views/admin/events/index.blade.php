@@ -44,27 +44,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($events as $key => $events)
+                                        @foreach ($events as $key => $event)
                                             <tr>
                                                 <th>{{ $key + 1 }}</th>
-                                                <td>{{ $events->titre }}</td>
-                                                <td>{{ $events->category->name }}</td>
-                                                <td>{{ $events->villes->name }}</td>
-                                                <td>{{ $events->content }}</td>
-                                                <td>{{ $events->prix }}</td>
-                                                <td>{{ $events->date_debut }}</td>
-                                                <td>{{ $events->date_fin }}</td>
-                                                <td>{{ $events->user_type }}</td>
-                                                <td>{{ $events->image }}</td>
+                                                <td>{{ $event->titre }}</td>
+                                                <td>{{ $event->category->name }}</td>
+                                                <td>{{ $event->villes->name }}</td>
+                                                <td>{{ $event->content }}</td>
+                                                <td>{{ $event->prix }}</td>
+                                                <td>{{ $event->date_debut }}</td>
+                                                <td>{{ $event->date_fin }}</td>
+                                                <td>{{ $event->user_type }}</td>
+                                                <td>{{ $event->image }}</td>
                                                 <td>
-                                                    <form action="{{ route('event.destroy', $events->id) }}"
+                                                    <form action="{{ route('event.destroy', $event->id) }}"
                                                         method="POST">
                                                         @method('DELETE')
                                                         @csrf
                                                         <div class="modal-footer">
                                                             <button type="submit" class="btn btn-danger">Supprimer</button>
                                                             <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
-                                                                href="{{ route('event.edit', encrypt($events->id)) }}">modifier</a>
+                                                                href="{{ route('event.edit', encrypt($event->id)) }}">modifier</a>
                                                         </div>
                                                     </form>
                                                 </td>

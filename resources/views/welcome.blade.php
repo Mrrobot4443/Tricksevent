@@ -223,7 +223,7 @@
                                                 <!-- Single Item Start -->
                                                 <div class="single-item">
                                                     <div class="featured-img">
-                                                        <a href="{{ route('detailles') }}"><img src="{{ asset($event->image) }}"
+                                                        <a href="/detailles/{{ $event->id }}"><img src="{{ asset($event->image) }}"
                                                                 alt=""></a>
                                                         <div class="top-meta">
                                                             <span

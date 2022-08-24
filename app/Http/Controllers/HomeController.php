@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
 use App\Models\Event;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -16,10 +18,15 @@ class HomeController extends Controller
         $events = Event::all();
         return view('welcome',compact('events'));
     }
-    public function detailles()
+    public function detailles($id)
     {
-
-        return view('detailles.detailles');
+        $events = Event::find($id);
+        return view('detailles.detailles',compact('events'));
+    }
+    public function profile()
+    {
+        // $user = User::where(Auth::user())->get();
+        return view('admin.profile');
     }
 
 
@@ -41,7 +48,7 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()->user_type == "admin"){
-            return redirect('welcome');
+            return redirect('dashboard_admin');
         } else {
             return view('user.dashboard');
         }
@@ -82,5 +89,36 @@ class HomeController extends Controller
     public function dashboard_user()
     {
         return view('user.dashboard');
+    }
+
+
+
+
+
+    public function updateProfile( Request $request){
+        Auth::user()->name = $request->name;
+        Auth::user()->email = $request->email;
+        if($request->password){
+            Auth::user()->password = Hash::make($request->password);
+        }
+
+        if($request->file('photo')){
+            // Supprimer ancienne photo
+            $file_path = public_path().'/uploads/'.Auth::user()->photo;
+            // unlink($file_path);
+
+            // Upload Image
+            $newName = uniqid(); // Exemple 4gh2ryf8
+            $image = $request->file('photo');
+            $newName.="." . $image->getClientOriginalExtension(); // .jpg
+            // echo $newName; // 4gh2ryf8.jpg
+            $destinationPath = 'uploads';
+            $image->move($destinationPath, $newName);
+
+            Auth::user()->photo = $newName;
+        }
+
+        // Auth::user()->updatePr();
+        // return redirect('profile')->with('success', 'Admin modifier avec succes.. !');
     }
 }

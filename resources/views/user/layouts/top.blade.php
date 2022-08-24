@@ -92,11 +92,11 @@
                                 <img src="{{ asset('assets/images/new1.jpg') }}" alt="">
                                 <span class="avatar-name ml-2">Hello! Yassine</span>
                             </div>
-                            <a href="app-profile.html" class="dropdown-item">
+                            <a href="{{ route('profile') }}" class="dropdown-item">
                                 <i class="mdi mdi-account"></i>
                                 <span>Profile</span>
                             </a>
-                            <a href="home-create-ticket.html" class="dropdown-item">
+                            <a href="{{ route('ticket.create') }}" class="dropdown-item">
                                 <i class="mdi mdi-ticket"></i>
                                 <span>Create Ticket</span>
                             </a>

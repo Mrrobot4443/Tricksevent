@@ -85,14 +85,14 @@
                     </li>
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{{ asset('assets/images/new1.jpg') }}" alt="">
+                            <img src="" alt="">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" enctype="multipart/form-data"    >
                             <div class="dropdown-profile-header" >
-                                <img src="{{ asset('assets/images/new1.jpg') }}" alt="">
+                                <img src="" alt="">
                                 <span class="avatar-name ml-2">Hello! Yassine</span>
                             </div>
-                            <a href="app-profile.html" class="dropdown-item">
+                            <a href="{{ route('profile') }}" class="dropdown-item">
                                 <i class="mdi mdi-account"></i>
                                 <span>Profile</span>
                             </a>
