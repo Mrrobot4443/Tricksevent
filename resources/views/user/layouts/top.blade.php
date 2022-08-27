@@ -1,23 +1,29 @@
-<div id="preloader"><div class="spinner"><div class="spinner-a"></div><div class="spinner-b"></div></div></div>
-    <div class="nav-header">
-        <a href="{{ route('dashboard_user') }}" class="brand-logo">
-            <span class="logo-abbr">D</span>
-            <span class="logo-compact">Y-dashboard</span>
-            <span class="brand-title">Y-dashboard</span>
-        </a>
+<div id="preloader">
+    <div class="spinner">
+        <div class="spinner-a"></div>
+        <div class="spinner-b"></div>
+    </div>
+</div>
+<div class="nav-header">
+    <a href="{{ route('dashboard_user') }}" class="brand-logo">
+        <span class="logo-abbr">D</span>
+        <span class="logo-compact">Y-dashboard</span>
+        <span class="brand-title">Y-dashboard</span>
+    </a>
 
-        <div class="nav-control">
-            <div class="hamburger">
-                <span class="toggle-icon"><i class="icon-menu"></i></span>
-            </div>
+    <div class="nav-control">
+        <div class="hamburger">
+            <span class="toggle-icon"><i class="icon-menu"></i></span>
         </div>
     </div>
+</div>
 <div class="header">
     <div class="header-content">
         <nav class="navbar navbar-expand">
             <div class="header-left">
                 <div class="nav-item dropdown search_bar">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         <i class="mdi mdi-magnify"></i>
                     </a>
                     <div class="dropdown-menu">
@@ -30,11 +36,9 @@
             <div class="collapse navbar-collapse justify-content-end">
 
                 <ul class="navbar-nav header-right">
-                    <li class="nav-item border-0">
-                        <a class="btn btn-primary create-event-btn" href="{{ route('event.create') }}" target="_blank">Create Event</a>
-                    </li>
                     <li class="nav-item dropdown notification_dropdown">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             <i class="mdi mdi-bell"></i>
                             <span class="badge badge-primary">3</span>
                         </a>
@@ -84,29 +88,22 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown header-profile">
-                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{{ asset('assets/images/new1.jpg') }}" alt="">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img src="{{ asset('images') }}/{{ Auth::user()->image }}" alt="">
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" enctype="multipart/form-data"    >
-                            <div class="dropdown-profile-header" >
-                                <img src="{{ asset('assets/images/new1.jpg') }}" alt="">
+                        <div class="dropdown-menu dropdown-menu-right" enctype="multipart/form-data">
+                            <div class="dropdown-profile-header">
+                                <img src="{{ asset('images') }}/{{ Auth::user()->image }}" alt="">
                                 <span class="avatar-name ml-2">Hello! Yassine</span>
                             </div>
-                            <a href="{{ route('profile') }}" class="dropdown-item">
+                            <a href="{{ route('profile_user') }}" class="dropdown-item">
                                 <i class="mdi mdi-account"></i>
                                 <span>Profile</span>
-                            </a>
-                            <a href="{{ route('ticket.create') }}" class="dropdown-item">
-                                <i class="mdi mdi-ticket"></i>
-                                <span>Create Ticket</span>
                             </a>
                             <a href="app-calender.html" class="dropdown-item">
                                 <i class="mdi mdi-calendar-check"></i>
                                 <span>Calendar</span>
-                            </a>
-                            <a href="email-inbox.html" class="dropdown-item">
-                                <i class="mdi mdi-email"></i>
-                                <span>Inbox</span>
                             </a>
                             <a href="{{ route('logout') }}" class="dropdown-item">
                                 <i class="mdi mdi-power"></i>

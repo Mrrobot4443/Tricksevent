@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
 use App\Models\Event;
+use App\Models\Ticket;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -21,13 +22,25 @@ class HomeController extends Controller
     public function detailles($id)
     {
         $events = Event::find($id);
-        return view('detailles.detailles',compact('events'));
+        $tickets = Ticket::find($id);
+        return view('detailles.detailles',compact('events','tickets'));
+    }
+    public function guests()
+    {
+        $users=User::all();
+        return view('admin.Guests.index',compact('users'));
     }
     public function profile()
     {
         // $user = User::where(Auth::user())->get();
         return view('admin.profile');
     }
+    public function profile_user()
+    {
+        return view('user.profile');
+    }
+
+
 
 
     /**
@@ -48,7 +61,7 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()->user_type == "admin"){
-            return redirect('dashboard_admin');
+            return redirect('admin/dashboard');
         } else {
             return view('user.dashboard');
         }
@@ -99,26 +112,52 @@ class HomeController extends Controller
         Auth::user()->name = $request->name;
         Auth::user()->email = $request->email;
         if($request->password){
-            Auth::user()->password = Hash::make($request->password);
+            Auth::user('admin')->password = Hash::make($request->password);
         }
 
-        if($request->file('photo')){
+        if($request->file('image')){
             // Supprimer ancienne photo
-            $file_path = public_path().'/uploads/'.Auth::user()->photo;
+            $file_path = public_path().'/images/'.Auth::user()->photo;
             // unlink($file_path);
 
             // Upload Image
             $newName = uniqid(); // Exemple 4gh2ryf8
-            $image = $request->file('photo');
+            $image = $request->file('image');
             $newName.="." . $image->getClientOriginalExtension(); // .jpg
             // echo $newName; // 4gh2ryf8.jpg
-            $destinationPath = 'uploads';
+            $destinationPath = 'images';
             $image->move($destinationPath, $newName);
 
-            Auth::user()->photo = $newName;
+            Auth::user()->image = $newName;
+
+
+        }
+        return view('admin.profile');
+
+    }
+    public function updateProfile_user(Request $request){
+        Auth::user()->name = $request->name;
+        Auth::user()->email = $request->email;
+        if($request->password){
+            Auth::user('user')->password = Hash::make($request->password);
         }
 
-        // Auth::user()->updatePr();
-        // return redirect('profile')->with('success', 'Admin modifier avec succes.. !');
+        if($request->file('image')){
+            // Supprimer ancienne photo
+            $file_path = public_path().'/images/'.Auth::user()->photo;
+            // unlink($file_path);
+
+            // Upload Image
+            $newName = uniqid(); // Exemple 4gh2ryf8
+            $image = $request->file('image');
+            $newName.="." . $image->getClientOriginalExtension(); // .jpg
+            // echo $newName; // 4gh2ryf8.jpg
+            $destinationPath = 'images';
+            $image->move($destinationPath, $newName);
+
+            Auth::user()->image = $newName;
+        }
+        return view('user.profile');
+
     }
 }

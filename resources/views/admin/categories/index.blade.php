@@ -28,7 +28,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="example"  >
+                                <table id="example">
                                     <thead>
                                         <tr class="text-white">
                                             <th scope="col" class="text-white">n°</th>
@@ -36,7 +36,7 @@
                                             <th scope="col" class="text-white">Date de création</th>
                                             <th scope="col" class="text-white">Date de modification</th>
                                             <th scope="col" class="text-white">Actions</th>
-                                          </tr>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($categories as $key => $category)
@@ -45,23 +45,22 @@
                                                 <td>{{ $category->name }}</td>
                                                 <td>{{ $category->created_at->diffForHumans() }}</td>
                                                 <td>{{ $category->updated_at->diffForHumans() }}</td>
-                                                <td> <form action="{{ route('category.destroy', $category->id) }}" method="POST">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                                                        <a class="btn btn-secondary text-white" data-bs-dismiss="modal" href="{{ route('category.edit',encrypt($category->id)) }}" >modifier</a>
-                                                    </div>
-                                                </form></td>
+                                                <td>
+                                                    <form action="{{ route('category.destroy', $category->id) }}"
+                                                        method="POST">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                                                            <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
+                                                                href="{{ route('category.edit', encrypt($category->id)) }}">modifier</a>
+                                                        </div>
+                                                    </form>
+                                                </td>
 
                                             </tr>
                                         @endforeach
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-
-                                        </tr>
-                                    </tfoot>
 
                                 </table>
                             </div>
@@ -71,5 +70,3 @@
             </div>
         </div>
     </div>
-
-

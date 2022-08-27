@@ -39,9 +39,9 @@
                                         <label class="form-label"><i class="fas fa-map"></i> Location</label>
                                         <select>
                                             <option value="0">Select Location</option>
-                                            @foreach ($events as $event)
+                                            {{-- @foreach ($events as $event)
                                                 <option value="1">{{ $event->villes->name }}</option>
-                                            @endforeach
+                                            @endforeach --}}
                                         </select>
                                     </div>
                                     <div class="form-btn">
@@ -236,7 +236,7 @@
                                                         <h3 class="title text-black mt-4"><a
                                                                 href="event-single.html">{{ $event->titre }}</a></h3>
                                                         <span class="meta mt-3"><i class="fas fa-map-marker-alt"></i>
-                                                            {{ $event->villes->name }}</span>
+                                                            {{-- {{ $event->villes->name }}</span> --}}
                                                         <span class="meta mt-5"><i
                                                                 class="fas fa-map-marker-alt"></i><strong>{{ $event->prix }}Dhs</strong></span>
                                                     </div>

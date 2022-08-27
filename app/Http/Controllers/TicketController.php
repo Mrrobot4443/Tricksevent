@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Ticket;
+use App\Models\User;
 use App\Models\Villes;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,8 @@ class TicketController extends Controller
         $villes = Villes::all();
         $categories = Category::all();
         $events = Event::all();
-        return view('admin.tickets.create',compact('villes','categories','events'));
+        $users = User::all();
+        return view('admin.tickets.create',compact('villes','categories','events','users'));
     }
 
     /**
@@ -43,12 +45,12 @@ class TicketController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            // 'event' => 'required',
-            // 'category_id' => 'required',
-            // 'villes_id' => 'required',
-            // 'content' => 'required',
-            // 'prix' => 'required',
-            // 'date_debut' => 'required',
+            'event' => 'required',
+            'category_id' => 'required',
+            'villes_id' => 'required',
+            'content' => 'required',
+            'prix' => 'required',
+            'date_debut' => 'required',
 
         ]);
         $tickets = new Ticket();
@@ -58,7 +60,7 @@ class TicketController extends Controller
         $tickets->quantity = $request->quantity;
         $tickets->ticket_price_1 = $request->ticket_price_1;
         $tickets->ticket_price_1 = $request->ticket_price_2;
-        $tickets->user_type = $request->user_type;
+        $tickets->users_id = $request->users_id;
         // if ($request->hasFile('image')) {
         //     $ticket->image = $request->file('image')->store('images/events');
         // }
@@ -73,7 +75,7 @@ class TicketController extends Controller
      * @param  \App\Models\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function show(Ticket $ticket)
+    public function show()
     {
         //
     }
@@ -84,12 +86,13 @@ class TicketController extends Controller
      * @param  \App\Models\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ticket $ticket, $id)
+    public function edit($id)
     {
         $tickets =Ticket::find(decrypt($id));
         $categories = Category::all();
         $villes = Villes::all();
-        return view('admin.tickets.edit', compact('tickets','categories','villes'));
+        $users = User::all();
+        return view('admin.tickets.edit', compact('tickets','categories','villes','users'));
     }
 
     /**
@@ -100,7 +103,7 @@ class TicketController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-        public function update(Request $request, Ticket $ticket,$id)
+        public function update(Request $request,$id)
     {
         $tickets = Ticket::find($id);
         $tickets->events_id= $request->events_id;
@@ -109,10 +112,10 @@ class TicketController extends Controller
         $tickets->quantity = $request->quantity;
         $tickets->ticket_price_1 = $request->ticket_price_1;
         $tickets->ticket_price_1 = $request->ticket_price_2;
-        $tickets->user_type = $request->user_type;
-        // if ($request->hasFile('image')) {
-        //     $ticket->image = $request->file('image')->store('images/events');
-        // }
+        $tickets->users_id = $request->users_id;
+        if ($request->hasFile('image')) {
+            $tickets->image = $request->file('image')->store('images/events');
+        }
         $tickets->save();
         return redirect()->route('ticket.index');
     }
@@ -124,7 +127,7 @@ class TicketController extends Controller
      * @param  \App\Models\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ticket $ticket,$id)
+    public function destroy($id)
     {
         Ticket::destroy($id);
         return redirect()->route('ticket.index');

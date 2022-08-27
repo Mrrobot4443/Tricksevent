@@ -119,7 +119,12 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="admin">admin's</label>
-                                        <input id="admin" class="form-control" name="user_type" type="text">
+                                        <select type="text" class="form-control" id="admin" placeholder=""
+                                        name="users_id">
+                                        @foreach ($users as $user)
+                                        <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                        @endforeach
+                                    </select>
 
                                     </div>
 

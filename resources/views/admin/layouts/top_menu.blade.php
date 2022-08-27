@@ -85,11 +85,11 @@
                     </li>
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="" alt="">
+                            <img src="{{ asset('images') }}/{{ Auth::user()->image }}" alt="">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" enctype="multipart/form-data"    >
                             <div class="dropdown-profile-header" >
-                                <img src="" alt="">
+                                <img src="{{ asset('images') }}/{{ Auth::user()->image }}" alt="">
                                 <span class="avatar-name ml-2">Hello! Yassine</span>
                             </div>
                             <a href="{{ route('profile') }}" class="dropdown-item">

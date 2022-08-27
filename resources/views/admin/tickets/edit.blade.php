@@ -47,8 +47,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="quantity">Quantity</label>
-                                        <textarea class="form-control" placeholder="n°"@error('Quantity') is-invalid @enderror id="quantity"
-                                            name="quantity"></textarea>
+                                        <textarea class="form-control" placeholder="n°"@error('Quantity') is-invalid @enderror id="quantity" name="quantity"></textarea>
                                         @error('Quantity')
                                             <strong class="text-danger">{{ $message }}</strong>
                                         @enderror
@@ -57,15 +56,18 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="prix">bronze price</label>
-                                    <input type="number" class="form-control" id="prix" placeholder="" name="events_id">
+                                    <input type="number" class="form-control" id="prix" placeholder=""
+                                        name="events_id">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="prix">silver price</label>
-                                    <input type="number" class="form-control" id="prix" placeholder="" name="ticket_price_1">
+                                    <input type="number" class="form-control" id="prix" placeholder=""
+                                        name="ticket_price_1">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="prix">gold price</label>
-                                    <input type="number" class="form-control" id="prix" placeholder="" name="ticket_price_2">
+                                    <input type="number" class="form-control" id="prix" placeholder=""
+                                        name="ticket_price_2">
                                 </div>
                                 <div class="form-group">
                                     <label for="content">Content</label>
@@ -94,8 +96,11 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="admin">admin's</label>
-                                        <input id="admin" class="form-control" name="user_type" type="text">
-
+                                        <select id="ville" class="form-control" name="users_id" type="text">
+                                            @foreach ($users as $user)
+                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -106,7 +111,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Sign in</button>
+                                <button type="submit" class="btn btn-primary">Valider</button>
                                 </form>
                             </div>
                         </div>

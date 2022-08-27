@@ -17,7 +17,7 @@ class CreateTicketsTable extends Migration
             $table->id();
             $table->foreignId('events_id');
             $table->foreignId('villes_id');
-            $table->foreignId('user_id');
+            $table->foreignId('users_id');
             $table->foreignId('category_id');
             $table->string('quantity');
             $table->string('ticket_price_1');

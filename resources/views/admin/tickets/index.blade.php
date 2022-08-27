@@ -57,7 +57,7 @@
                                                 <td>{{ $tickets->prix }}</td>
                                                 <td>{{ $tickets->date_debut }}</td>
                                                 <td>{{ $tickets->date_fin }}</td>
-                                                <td>{{ $tickets->user_type }}</td>
+                                                <td>{{ $tickets->users_id }}</td>
                                                 <td>{{ $tickets->image }}</td>
                                                 <td>
                                                     <form action="{{ route('ticket.destroy', $tickets->id) }}"

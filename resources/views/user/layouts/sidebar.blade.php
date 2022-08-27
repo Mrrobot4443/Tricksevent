@@ -8,10 +8,10 @@
                         class="nav-text">Dashboard</span></a>
             </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                        class="mdi mdi-guitar-acoustic"></i><span class="nav-text">Categories</span></a>
+                        class="mdi mdi-guitar-acoustic"></i><span class="nav-text">tickets</span></a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('category.create') }}">Ajouter une catégorie</a></li>
-                    <li><a href="{{ route('category.index') }}">Listes des catégories</a></li>
+                    <li><a href="">You're tickets</a></li>
+
                 </ul>
         </ul>
     </div>

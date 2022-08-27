@@ -13,8 +13,8 @@
 </head>
 
 <body> --}}
-    @extends('admin.layouts.app')
-    @section('content')
+@extends('admin.layouts.app')
+@section('content')
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -22,7 +22,7 @@
                     {{-- @include('inc.flash-message') --}}
                     <h2>Client edit profile</h2>
                     <hr>
-                    <form action="/user/profile" method="GET" enctype="multipart/form-data">
+                    <form action="/profile" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ms-5">
                             <label for="name">Username</label>
@@ -39,33 +39,20 @@
                             <input type="password" class="form-control" name="password" id="password">
                         </div>
                         <div class="mb-3">
-                            @if (auth()->user()->photo)
-                                <label for="photo">Modifier image</label>
+                            @if (auth()->user()->image)
+                                <label for="image">Modifier image</label>
                             @else
-                                <label for="photo">Ajouter image</label>
+                                <label for="image">Ajouter image</label>
                             @endif
-                            <input class="form-control" name="image " id="photo" type="file"
+                            <input class="form-control" name="image" id="image" type="file"
                                 placeholder="Tapper image produit...">
-                            @error('photo')
+                            @error('image')
                                 <div class="alert alert-danger">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
-                        <div class="mb-3">
-                            @if (auth()->user()->phone)
-                                <label for="phone">Modifier phone</label>
-                            @else
-                                <label for="phone">Ajouter phone</label>
-                            @endif
-                            <input class="form-control" name="phone" id="phone" type="text"
-                                value="{{ auth()->user()->phone }}" placeholder="Tapper image produit...">
-                            @error('phone')
-                                <div class="alert alert-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
+
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Save</button>
                         </div>
@@ -96,4 +83,4 @@
 
 </body>
 </html> --}}
-@endsection
+    @endsection
