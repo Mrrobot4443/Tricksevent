@@ -223,8 +223,8 @@
                                                 <!-- Single Item Start -->
                                                 <div class="single-item">
                                                     <div class="featured-img">
-                                                        <a href="/detailles/{{ $event->id }}"><img src="{{ asset($event->image) }}"
-                                                                alt=""></a>
+                                                        <a href="/detailles/{{ $event->id }}"><img
+                                                                src="{{ asset($event->image) }}" alt=""></a>
                                                         <div class="top-meta">
                                                             <span
                                                                 class="date"><span>{{ $event->date_debut }}</span></span>
@@ -237,8 +237,8 @@
                                                                 href="event-single.html">{{ $event->titre }}</a></h3>
                                                         <span class="meta mt-3"><i class="fas fa-map-marker-alt"></i>
                                                             {{-- {{ $event->villes->name }}</span> --}}
-                                                        <span class="meta mt-5"><i
-                                                                class="fas fa-map-marker-alt"></i><strong>{{ $event->prix }}Dhs</strong></span>
+                                                            <span class="meta mt-5"><i
+                                                                    class="fas fa-map-marker-alt"></i><strong>{{ $event->prix }}Dhs</strong></span>
                                                     </div>
                                                 </div>
                                                 <!-- Single Item End -->
@@ -567,32 +567,5 @@
                 </div>
                 <!-- Blog End -->
 
-                <!-- Newsletter Section Start -->
-                <div class="newsletter-section">
-                    <div class="container">
-                        <div class="newsletter-wrap">
-                            <div class="row align-items-center">
-                                <div class="col-lg-5">
-                                    <!-- Newsletter Text Start -->
-                                    <div class="newsletter-text">
-                                        <h3 class="title">Subscribe to our newsletter</h3>
-                                    </div>
-                                    <!-- Newsletter Text End -->
-                                </div>
-                                <div class="col-lg-7">
-                                    <!-- Newsletter Form Start -->
-                                    <div class="newsletter-form">
-                                        <form action="#">
-                                            <input type="email" placeholder="Your Email">
-                                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                                        </form>
-                                    </div>
-                                    <!-- Newsletter Form End -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Newsletter Section End -->
 
             @endsection
