@@ -19,10 +19,10 @@
                 <div class="header-wrap">
                     <!-- Header Logo Start -->
                     <div class="header-logo header-logo-3">
-                        <a class="logo-black" href="/"><img src="{{ asset('assets/images/logo-3.png') }}"
+                        <a class="logo-black" href="/"><img src="{{ asset('assets/images/TE505.png') }}"
                                 alt="Logo"></a>
-                        <a class="logo-white" href="/"><img src="{{ asset('assets/images/logo-4.png') }}"
-                                alt="Logo"></a>
+                        {{-- <a class="logo-white" href="/"><img src="{{ asset('assets/images/logo-4.png') }}"
+                                alt="Logo"></a> --}}
                     </div>
                     <!-- Header Logo End -->
 

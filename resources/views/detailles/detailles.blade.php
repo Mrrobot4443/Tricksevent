@@ -45,18 +45,19 @@
         <div class="shape-2"></div>
         <div class="container">
             <div class="page-banner-wrap">
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <!-- Page Banner Content Start -->
-                        <div class="page-banner text-center">
+
                             <h2 class="title">Event Single</h2>
                             <ul class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Event Single</li>
+
+
                             </ul>
                         </div>
                         <!-- Page Banner Content End -->
                     </div>
+                    <li class="breadcrumb-item btn mt-5  "><a href="{{ route('home') }}">Home</a></li>
                 </div>
             </div>
         </div>

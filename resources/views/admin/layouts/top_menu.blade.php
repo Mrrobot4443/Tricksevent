@@ -31,7 +31,10 @@
 
                 <ul class="navbar-nav header-right">
                     <li class="nav-item border-0">
-                        <a class="btn btn-primary create-event-btn" href="{{ route('event.create') }}" target="_blank">Create Event</a>
+                        <a class="btn btn-primary create-event-btn" href="{{ route('event.create') }}" >Create Event</a>
+                    </li>
+                    <li class="nav-item border-0">
+                        <a class="btn btn-primary create-event-btn" href="{{ route('home') }}" >Home</a>
                     </li>
                     <li class="nav-item dropdown notification_dropdown">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
