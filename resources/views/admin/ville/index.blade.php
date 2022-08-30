@@ -28,14 +28,14 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="example"  >
+                                <table id="example">
                                     <thead>
                                         <tr class="text-white">
                                             <th scope="col" class="text-white">n°</th>
                                             <th scope="col" class="text-white">Nom de la ville</th>
                                             <th scope="col" class="text-white">Date de création</th>
                                             <th scope="col" class="text-white">Date de modification</th>
-                                          </tr>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($ville as $key => $villes)
@@ -44,14 +44,18 @@
                                                 <td>{{ $villes->name }}</td>
                                                 <td>{{ $villes->created_at->diffForHumans() }}</td>
                                                 <td>{{ $villes->updated_at->diffForHumans() }}</td>
-                                                <td> <form action="{{ route('ville.destroy', $villes->id) }}" method="POST">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                                                        <a class="btn btn-secondary text-white" data-bs-dismiss="modal" href="{{ route('ville.edit',encrypt($villes->id)) }}" >modifier</a>
-                                                    </div>
-                                                </form></td>
+                                                <td>
+                                                    <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
+                                                        href="{{ route('ville.edit', encrypt($villes->id)) }}">modifier</a>
+                                                    <form action="{{ route('ville.destroy', $villes->id) }}" method="POST">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-danger">Supprimer</button>
+
+                                                        </div>
+                                                    </form>
+                                                </td>
 
                                             </tr>
                                         @endforeach

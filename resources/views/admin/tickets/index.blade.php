@@ -26,8 +26,8 @@
                         <div class="card-header">
                             <h4 class="card-title">Tickets</h4>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
+                        <div class="card-drop">
+                            <div class="table-responsive ">
                                 <table id="example">
                                     <thead>
                                         <tr class="text-white">
@@ -35,15 +35,8 @@
                                             <th scope="col" class="text-white">event_name</th>
                                             <th scope="col" class="text-white">category</th>
                                             <th scope="col" class="text-white">ville</th>
-                                            <th scope="col" class="text-white">Quantity</th>
                                             <th scope="col" class="text-white">bronze price</th>
-                                            <th scope="col" class="text-white">silver price</th>
-                                            <th scope="col" class="text-white">gold price</th>
-                                            <th scope="col" class="text-white">content</th>
-                                            <th scope="col" class="text-white">date_debut</th>
-                                            <th scope="col" class="text-white">date_end</th>
                                             <th scope="col" class="text-white">admin's</th>
-                                            <th scope="col" class="text-white">image</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -54,20 +47,21 @@
                                                 <td>{{ $tickets->category->name }}</td>
                                                 <td>{{ $tickets->villes->name }}</td>
                                                 <td>{{ $tickets->content }}</td>
-                                                <td>{{ $tickets->prix }}</td>
+                                                <td>{{ $tickets->prix}}</td>
                                                 <td>{{ $tickets->date_debut }}</td>
                                                 <td>{{ $tickets->date_fin }}</td>
                                                 <td>{{ $tickets->users_id }}</td>
                                                 <td>{{ $tickets->image }}</td>
                                                 <td>
+                                                    <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
+                                                                href="{{ route('ticket.edit', encrypt($tickets->id)) }}">modifier</a>
                                                     <form action="{{ route('ticket.destroy', $tickets->id) }}"
                                                         method="POST">
                                                         @method('DELETE')
                                                         @csrf
                                                         <div class="modal-footer">
                                                             <button type="submit" class="btn btn-danger">Supprimer</button>
-                                                            <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
-                                                                href="{{ route('ticket.edit', encrypt($tickets->id)) }}">modifier</a>
+
                                                         </div>
                                                     </form>
                                                 </td>

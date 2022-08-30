@@ -57,14 +57,15 @@
                                                 <td>{{ $event->user_type }}</td>
                                                 <td>{{ $event->image }}</td>
                                                 <td>
+                                                    <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
+                                                    href="{{ route('event.edit', encrypt($event->id)) }}">modifier</a>
                                                     <form action="{{ route('event.destroy', $event->id) }}"
                                                         method="POST">
                                                         @method('DELETE')
                                                         @csrf
                                                         <div class="modal-footer">
                                                             <button type="submit" class="btn btn-danger">Supprimer</button>
-                                                            <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
-                                                                href="{{ route('event.edit', encrypt($event->id)) }}">modifier</a>
+
                                                         </div>
                                                     </form>
                                                 </td>

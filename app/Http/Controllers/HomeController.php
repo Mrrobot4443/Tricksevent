@@ -39,6 +39,10 @@ class HomeController extends Controller
     {
         return view('user.profile');
     }
+    public function calender()
+    {
+        return view('admin.calender.calender');
+    }
 
 
 

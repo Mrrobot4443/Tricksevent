@@ -14,6 +14,7 @@ Auth::routes(['verify'=>true]);
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('welcome')->middleware('verified');
+Route::get('/admin/calender', [HomeController::class, 'calender'])->name('calender')->middleware('verified');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::post('/updateProfile', [HomeController::class, 'updateProfile'])->name('updateProfile');
 

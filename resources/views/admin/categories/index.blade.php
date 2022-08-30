@@ -46,14 +46,15 @@
                                                 <td>{{ $category->created_at->diffForHumans() }}</td>
                                                 <td>{{ $category->updated_at->diffForHumans() }}</td>
                                                 <td>
+                                                    <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
+                                                        href="{{ route('category.edit', encrypt($category->id)) }}">modifier</a>
                                                     <form action="{{ route('category.destroy', $category->id) }}"
                                                         method="POST">
                                                         @method('DELETE')
                                                         @csrf
                                                         <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-danger">Supprimer</button>
-                                                            <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
-                                                                href="{{ route('category.edit', encrypt($category->id)) }}">modifier</a>
+                                                            <button type="submit" class="btn btn-danger ">Supprimer</button>
+
                                                         </div>
                                                     </form>
                                                 </td>
