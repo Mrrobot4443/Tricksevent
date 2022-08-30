@@ -22,14 +22,14 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="justify-content-between">
                                     @foreach ($users as $key => $users)
                                     @if ($users->user_type == 'user')
                                         <tr>
                                             <th>{{ $key + 1 }}</th>
                                             <td>{{ $users->name }}</td>
-                                            <td>{{ $users->email }}</td>
-                                            <td><img src="{{asset('images') }}/{{ $users->image }}" alt=""></td>
+                                            <td >{{ $users->email }}</td>
+                                            <td class="rounded-circle"><img src="{{asset('images') }}/{{ $users->image }}" alt="" class="rounded-circle " width="45px"></td>
                                             <td>{{ $users->created_at }}</td>
                                             <td>
                                                 <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"

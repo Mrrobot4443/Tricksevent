@@ -7,7 +7,7 @@
                     {{-- @include('inc.flash-message') --}}
                     <h2>Client edit profile</h2>
                     <hr>
-                    <form action="profile_user" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('updateProfile_user') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ms-5">
                             <label for="name">Username</label>

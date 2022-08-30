@@ -2,16 +2,16 @@
 @section('content')
     <div class="content">
         <div class="container-fluid">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center my-5 mt-4">
                 <div>
                     {{-- @include('inc.flash-message') --}}
-                    <h2>Client edit profile</h2>
+                    <h2 class="text-danger">Client edit profile</h2>
                     <hr>
-                    <form action="/profile" method="POST" enctype="multipart/form-data">
+                    <form action="/updateProfile" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ms-5">
                             <label for="name">Username</label>
-                            <input type="text" class="form-control" name="name" value="{{ auth()->user()->name }}"
+                            <input type="text" class="form-control " name="name" value="{{ auth()->user()->name }}"
                                 id="name">
                         </div>
                         <div class="form-group">

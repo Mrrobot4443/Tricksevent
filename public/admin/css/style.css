@@ -19729,7 +19729,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="overlay"] .content-body {
 [data-theme-version="dark"] h4,
 [data-theme-version="dark"] h5,
 [data-theme-version="dark"] h6 {
-    color: #c5c7de !important;
+    color: #9058dc !important;
 }
 
 [data-theme-version="dark"] a.link {
@@ -19794,7 +19794,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="overlay"] .content-body {
 }
 
 [data-theme-version="dark"] .card-title {
-    color: #c5c7de;
+    color: #0149e3;
 }
 
 [data-theme-version="dark"] .card-footer {

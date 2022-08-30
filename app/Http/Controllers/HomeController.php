@@ -17,18 +17,18 @@ class HomeController extends Controller
     public function home()
     {
         $events = Event::all();
-        return view('welcome',compact('events'));
+        return view('welcome', compact('events'));
     }
     public function detailles($id)
     {
         $events = Event::find($id);
         $tickets = Ticket::find($id);
-        return view('detailles.detailles',compact('events','tickets'));
+        return view('detailles.detailles', compact('events', 'tickets'));
     }
     public function guests()
     {
-        $users=User::all();
-        return view('admin.Guests.index',compact('users'));
+        $users = User::all();
+        return view('admin.Guests.index', compact('users'));
     }
     public function profile()
     {
@@ -60,7 +60,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->user_type == "admin"){
+        if (Auth::user()->user_type == "admin") {
             return redirect('admin/dashboard');
         } else {
             return view('user.dashboard');
@@ -101,6 +101,7 @@ class HomeController extends Controller
     }
     public function dashboard_user()
     {
+        // $users = User::all();
         return view('user.dashboard');
     }
 
@@ -108,56 +109,56 @@ class HomeController extends Controller
 
 
 
-    public function updateProfile( Request $request){
+    public function updateProfile(Request $request)
+    {
         Auth::user()->name = $request->name;
         Auth::user()->email = $request->email;
-        if($request->password){
+        if ($request->password) {
             Auth::user('admin')->password = Hash::make($request->password);
         }
 
-        if($request->file('image')){
+        if ($request->file('image')) {
             // Supprimer ancienne photo
-            $file_path = public_path().'/images/'.Auth::user()->photo;
+            $file_path = public_path() . '/images/' . Auth::user()->image;
             // unlink($file_path);
 
             // Upload Image
             $newName = uniqid(); // Exemple 4gh2ryf8
             $image = $request->file('image');
-            $newName.="." . $image->getClientOriginalExtension(); // .jpg
+            $newName .= "." . $image->getClientOriginalExtension(); // .jpg
             // echo $newName; // 4gh2ryf8.jpg
             $destinationPath = 'images';
             $image->move($destinationPath, $newName);
 
             Auth::user()->image = $newName;
-
-
         }
-        return view('admin.profile');
-
+        Auth::user()->update();
+        return redirect('/profile')->with('success', 'Admin modifier avec succes.. !');
     }
-    public function updateProfile_user(Request $request){
-        Auth::user()->name = $request->name;
-        Auth::user()->email = $request->email;
-        if($request->password){
+    public function updateProfile_user(Request $request)
+    {
+        Auth::user('user')->name = $request->name;
+        Auth::user('user')->email = $request->email;
+        if ($request->password) {
             Auth::user('user')->password = Hash::make($request->password);
         }
 
-        if($request->file('image')){
+        if ($request->file('image')) {
             // Supprimer ancienne photo
-            $file_path = public_path().'/images/'.Auth::user()->photo;
+            $file_path = public_path() . '/images/' . Auth::user('user')->photo;
             // unlink($file_path);
 
             // Upload Image
             $newName = uniqid(); // Exemple 4gh2ryf8
             $image = $request->file('image');
-            $newName.="." . $image->getClientOriginalExtension(); // .jpg
+            $newName .= "." . $image->getClientOriginalExtension(); // .jpg
             // echo $newName; // 4gh2ryf8.jpg
             $destinationPath = 'images';
             $image->move($destinationPath, $newName);
 
             Auth::user()->image = $newName;
         }
-        return view('user.profile');
-
+        Auth::user()->update();
+        return redirect('/profile_user')->with('success', 'Admin modifier avec succes.. !');
     }
 }

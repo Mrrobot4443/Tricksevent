@@ -93,7 +93,7 @@
                         <div class="dropdown-menu dropdown-menu-right" enctype="multipart/form-data"    >
                             <div class="dropdown-profile-header" >
                                 <img src="{{ asset('images') }}/{{ Auth::user()->image }}" alt="">
-                                <span class="avatar-name ml-2">Hello! Yassine</span>
+                                <span class="avatar-name ml-2">Hello! admins</span>
                             </div>
                             <a href="{{ route('profile') }}" class="dropdown-item">
                                 <i class="mdi mdi-account"></i>

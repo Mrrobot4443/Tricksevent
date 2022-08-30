@@ -15,9 +15,10 @@ Auth::routes(['verify'=>true]);
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('welcome')->middleware('verified');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
-Route::post('/profile', [HomeController::class, 'updateProfile'])->name('profile');
-Route::post('profile_user', [HomeController::class, 'profile_user'])->name('profile_user');
-Route::get('profile_user', [HomeController::class, 'updateProfile_user'])->name('profile_user');
+Route::post('/updateProfile', [HomeController::class, 'updateProfile'])->name('updateProfile');
+
+Route::get('/profile_user', [HomeController::class, 'profile_user'])->name('profile_user');
+Route::post('/updateProfile_user', [HomeController::class, 'updateProfile_user'])->name('updateProfile_user');
 
 Route::get('admin/dashboard', [HomeController::class, 'dashboard_admin'])->name('dashboard_admin')->middleware('auth','IsAdmin');
 Route::get('user/dashboard', [HomeController::class, 'dashboard_user'])->name('dashboard_user')->middleware('auth','User');
