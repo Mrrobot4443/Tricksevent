@@ -56,11 +56,11 @@ class TicketController extends Controller
         $tickets = new Ticket();
         $tickets->events_id= $request->events_id;
         $tickets->villes_id = $request->villes_id;
+        $tickets->users_id = $request->users_id;
         $tickets->category_id= $request->category_id;
         $tickets->quantity = $request->quantity;
         $tickets->ticket_price_1 = $request->ticket_price_1;
         $tickets->ticket_price_1 = $request->ticket_price_2;
-        $tickets->users_id = $request->users_id;
         // if ($request->hasFile('image')) {
         //     $ticket->image = $request->file('image')->store('images/events');
         // }
