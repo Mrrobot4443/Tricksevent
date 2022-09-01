@@ -14,4 +14,11 @@ class Ticket extends Model
     public function villes() {
         return $this->belongsTo(Villes::class);
     }
+    public function ligne() {
+        return $this->hasMany(Ligne::class);
+    }
+    public function events() {
+        return $this->hasMany(Event::class);
+    }
+
 }

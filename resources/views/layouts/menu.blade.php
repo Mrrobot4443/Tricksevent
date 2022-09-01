@@ -19,7 +19,7 @@
                 <div class="header-wrap">
                     <!-- Header Logo Start -->
                     <div class="header-logo header-logo-3">
-                        <a class="logo-black" href="/"><img src="{{ asset('assets/images/TE505.png') }}"
+                        <a class="logo-light" href="/"><img src="{{ asset('assets/images/TE505.png') }}"
                                 alt="Logo"></a>
                         {{-- <a class="logo-white" href="/"><img src="{{ asset('assets/images/logo-4.png') }}"
                                 alt="Logo"></a> --}}
@@ -35,25 +35,19 @@
                             <li><a href="about.html">About</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="sub-menu">
-
-                                    <li><a href="event-list.html">Event List</a></li>
-                                    <li><a href="event-single.html">Event Single</a></li>
+                                    <li><a href="event-list.html">Blog</a></li>
                                     <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="price.html">Pricing</a></li>
+                                </ul>
+                            </li>
+                            <li class="me-5"><a href="{{ route('contact') }}">Contact</a></li>
+                            <li><a href="#"></a>
+                                <ul class="sub-menu">
 
                                     <li><a href="/login">Login </a></li>
                                     <li><a href="/register">Register</a></li>
                                     <li><a href="{{ route('logout') }}">logout</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog.html">Blog Grid</a></li>
-                                    <li><a href="blog-standard.html">Latest News</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="me-5"><a href="{{ route('contact') }}">Contact</a></li>
 
                         </ul>
                         <!-- Header Navigation End -->
@@ -93,9 +87,7 @@
                             </div>
                             <div class="header-meta">
 
-                                <div class="header-btn d-none d-md-block">
-                                    <a href="price.html" class="btn-2">Buy Ticket</a>
-                                </div>
+
                                 <!-- Mini Cart Box Start -->
                                 <div class="meeta-mini-cart-box">
 

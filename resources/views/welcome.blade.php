@@ -2,9 +2,9 @@
 @section('title', 'Accueil')
 @section('content')
     <div class="meeta-hero-section-5 d-flex align-items-center"
-        style="background-image: url(assets/images/bg/hero-5-bg.jpg);">
-        <img class="image-1" src="assets/images/hero-5-img-1.png" alt="">
-        <img class="image-2" src="assets/images/hero-5-img-2.png" alt="">
+        style="background-image: url(assets/images/bg/hero-5-bg.)">
+        <img class="image-1" src="images/hello.png" alt="">
+        <img class="image-2" src="images/Ultra-HD.png" alt="">
         <img class="shape-1" src="assets/images/shape/hero-5-shape-1.png" alt="">
         <img class="shape-2" src="assets/images/shape/hero-5-shape-2.png" alt="">
         <div class="container">

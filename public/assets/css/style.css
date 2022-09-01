@@ -1205,7 +1205,7 @@ only screen and (max-width: 1199px) {
     font-family: "Big Shoulders Display", cursive;
     font-size: 16px;
     font-weight: 700;
-    color: #ffffff;
+    color: #F44336;
     background-color: transparent;
     border: 0;
     padding: 0;
@@ -1272,15 +1272,15 @@ only screen and (max-width: 1199px) {
 }
 
 .header-navigation .main-menu li.active-menu>a::after {
-    color: #fc097c;
+    color: #420e26;
 }
 
 .header-navigation .main-menu li:hover>a {
-    color: #fc097c;
+    color: #a45378;
 }
 
 .header-navigation .main-menu li:hover>a::after {
-    color: #fc097c;
+    color: #995072;
 }
 
 .header-navigation .main-menu li:hover>.sub-menu {
@@ -1365,8 +1365,8 @@ only screen and (max-width: 1199px) {
     left: 0;
     width: 100%;
     z-index: 91;
-    background-color: #311a79;
-    border-bottom-color: #311a79;
+    background-color: #13191a;
+    border-bottom-color: #1b262b;
     -webkit-animation: sticky 1s;
     animation: sticky 1s;
 }
@@ -3023,7 +3023,7 @@ only screen and (max-width: 1199px) {
 }
 
 .meeta-hero-section-5 {
-    background: #e5fefd;
+    background: #ffffff;
     padding-top: 290px;
     padding-bottom: 255px;
     position: relative;

@@ -43,6 +43,10 @@ class HomeController extends Controller
     {
         return view('admin.calender.calender');
     }
+    public function chekde()
+    {
+        return view('detaillechek');
+    }
 
 
 

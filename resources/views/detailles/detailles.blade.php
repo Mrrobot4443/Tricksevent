@@ -199,7 +199,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Sponsor End -->
+                                    <!-- Sponsor En
+                                        d -->
                                 </div>
                             </div>
                         </div>
@@ -210,7 +211,7 @@
                         <div class="event-single-sidebar">
 
                             <div class="btn-price">
-                                <a class="btn btn-primary" href="price.html">Buy Your Ticket</a>
+                                <a class="btn btn-primary" href="{{ route('check') }}">Buy Your Ticket</a>
                                 <div class="price">
                                     {{-- <span><sup>$</sup>{{ $events->prix }}</span> --}}
 

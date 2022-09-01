@@ -14,6 +14,8 @@ class Event extends Model
     public function villes() {
         return $this->belongsTo(Villes::class);
     }
-
+    public function event() {
+        return $this->hasMany(Event::class);
+    }
 
 }

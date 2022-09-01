@@ -37,16 +37,16 @@ class OrderController extends Controller
             // Redirection panier
             return redirect('/client/cart')->with('success', 'Produit commandee.');
         } else { // Commande en cours n'existe pas
-            $orders = new Comande();
-            $comande->client_id = Auth::user()->id;
+            $orders = new Order();
+            $orders->user_id = Auth::user()->id;
 
-            if($comande->save()){
+            if($orders->save()){
                 // Creation ligne de commande
-                $lc = new LigneComande();
-                $lc->qte = $request->qte;
-                $lc->product_id = $request->idproduct;
-                $lc->comande_id = $comande->id;
-                $lc->save();
+                $Li = new Ligne();
+                $Li->qte = $request->qte;
+                $Li->product_id = $request->idticket;
+                $Li->comande_id = $orders->id;
+                $Li->save();
 
                 // Redirection panier
                 return redirect('/client/cart')->with('success', 'Produit commandee.');
