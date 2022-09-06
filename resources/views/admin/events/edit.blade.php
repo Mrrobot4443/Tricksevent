@@ -51,10 +51,26 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
-                        <label for="prix">Prix</label>
-                        <input type="text" value="{{ $events->prix }}"
-                            class="form-control @error('prix') is-invalid @enderror" id="prix" name="prix">
-                        @error('prix')
+                        <label for="prix">Prix 1/label>
+                        <input type="text" value="{{ $events->prix_1 }}"
+                            class="form-control @error('prix') is-invalid @enderror" id="prix" name="prix_1">
+                        @error('prix_1')
+                            <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="prix">Prix 2</label>
+                        <input type="text" value="{{ $events->prix_2 }}"
+                            class="form-control @error('prix') is-invalid @enderror" id="prix" name="prix_2">
+                        @error('prix_2')
+                            <strong class="text-danger">{{ $message }}</strong>
+                        @enderror
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="prix">Prix 3</label>
+                        <input type="text" value="{{ $events->prix_3 }}"
+                            class="form-control @error('prix') is-invalid @enderror" id="prix" name="prix_3">
+                        @error('prix_3')
                             <strong class="text-danger">{{ $message }}</strong>
                         @enderror
                     </div>

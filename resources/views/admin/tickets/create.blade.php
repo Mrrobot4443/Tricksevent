@@ -22,44 +22,55 @@
                                             <select type="text" class="form-control" id="titre" placeholder=""
                                                 name="events_id">
                                                 @foreach ($events as $event)
-                                                <option value="{{ $event->id }}">{{ $event->titre }}</option>
+                                                    <option value="{{ $event->id }}">{{ $event->titre }}</option>
                                                 @endforeach
 
-                                                </select>
+                                            </select>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="category">Category</label>
-                                            <select id="category" class="form-control" name="category_id">
-                                                @foreach ($categories as $category)
-                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            <select id="category" class="form-control" name="events_id">
+                                                @foreach ($events as $event)
+                                                    <option value="{{ $event->id }}">{{ $event->category_id }}</option>
                                                 @endforeach
                                             </select>
-                                            @error('category_id')
+                                            {{-- @error('category_id')
                                                 <strong class="text-danger">{{ $message }}</strong>
-                                            @enderror
+                                            @enderror --}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="category">Prix</label>
+                                            <select id="category" class="form-control" name="events_id">
+                                                @foreach ($events as $event)
+                                                    <option value="{{ $event->id }}">{{ $event->prix_1 }}</option>
+                                                    <option value="{{ $event->id }}">{{ $event->prix_2 }}</option>
+                                                    <option value="{{ $event->id }}">{{ $event->prix_3 }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="ville">ville</label>
-                                            <select id="ville" class="form-control" name="villes_id" type="text">
-                                                @foreach ($villes as $villes)
-                                                    <option value="{{ $villes->id }}">{{ $villes->name }}</option>
+                                            <select id="ville" class="form-control" name="events_id" type="text">
+                                                @foreach ($events as $event)
+                                                    <option value="{{ $event->id }}">{{ $event->villes_id }}</option>
                                                 @endforeach
                                             </select>
-                                            @error('villes_id')
+                                            {{-- @error('events_id')
                                                 <strong class="text-danger">{{ $message }}</strong>
-                                            @enderror
+                                            @enderror --}}
                                         </div>
                                     </div>
                                     <div class="form-group">
 
 
                                         <label for="content">Content</label>
-                                        <select class="form-control" placeholder="Write the description"@error('Content') is-invalid @enderror id="content"
-                                        name="events_id">
-                                        @foreach ($events as $event)
-                                        <option value="{{ $event->id }}">{{ $event->content }}</option>
-                                        @endforeach
-                                    </select>
+                                        <select class="form-control"
+                                            placeholder="Write the description"@error('Content') is-invalid @enderror
+                                            id="content" name="events_id">
+                                            @foreach ($events as $event)
+                                                <option value="{{ $event->id }}">{{ $event->content }}</option>
+                                            @endforeach
+                                        </select>
 
                                         @error('Content')
                                             <strong class="text-danger">{{ $message }}</strong>
@@ -68,86 +79,58 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="Bronze">Bronze price</label>
-                                    <select id="Bronze" class="form-control" name="events_id" type="text">
+                                    <label for="start">Event Starts</label>
+                                    <select id="ville" class="form-control" name="events_id" type="text">
                                         @foreach ($events as $event)
-                                            <option value="{{ $event->id }}">{{ $event->prix }}</option>
+                                            <option value="{{ $event->id }}">{{ $event->date_debut }}</option>
                                         @endforeach
                                     </select>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="prix">silver price</label>
-                                    <input type="number" class="form-control" id="prix" placeholder="" name="ticket_price_1">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="prix">gold price</label>
-                                    <input type="number" class="form-control" id="prix" placeholder="" name="ticket_price_2">
-                                </div>
-                                <div class="form-group">
-                                    <label for="quantity">quantity</label>
-                                    <input class="form-control" type="number" placeholder="....."@error('quantity') is-invalid @enderror id="quantity"
-                                        name="quantity">
-                                    @error('quantity')
+                                    @error('start')
                                         <strong class="text-danger">{{ $message }}</strong>
                                     @enderror
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="start">Event Starts</label>
-                                        <select type="datetime" class="form-control" id="start" placeholder=""
-                                            name="events_id">
-                                            @foreach ($events as $event)
-                                            <option value="{{ $event->id }}">{{ $event->date_debut }}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('start')
-                                            <strong class="text-danger">{{ $message }}</strong>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="end">Event Starts</label>
-                                        <select type="datetime" class="form-control" id="end" placeholder=""
-                                            name="events_id">
-                                            @foreach ($events as $event)
-                                            <option value="{{ $event->id }}">{{ $event->date_end }}</option>
-                                            @endforeach
-                                        </select>
-
-                                        @error('end')
-                                            <strong class="text-danger">{{ $message }}</strong>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="admin">admin's</label>
-                                        <select type="text" class="form-control" id="admin" placeholder=""
+                                <div class="form-group col-md-6">
+                                    <label for="end">Event Ends</label>
+                                    <select id="ville" class="form-control" name="events_id" type="text">
+                                        @foreach ($events as $event)
+                                            <option value="{{ $event->id }}">{{ $event->date_fin}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('end')
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="admin">admin's</label>
+                                    <select type="text" class="form-control" id="admin" placeholder=""
                                         name="users_id">
                                         @foreach ($users as $user)
-                                        <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
                                         @endforeach
                                     </select>
 
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="image">image</label>
-                                        <select type="file" class="form-control @error('image') is-invalid @enderror"
-                                            id="image" name="events_id">
-                                            @foreach ($events as $event)
-                                            <option value="{{ $event->id }}">{{ $event->image }}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('image')
-                                            <strong class="text-danger">{{ $message }}</strong>
-                                        @enderror
-                                    </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Sign in</button>
-                                </form>
+
+                                <div class="form-group col-md-6">
+                                    <label for="image">image</label>
+                                    <select type="file" class="form-control @error('image') is-invalid @enderror"
+                                        id="image" name="events_id">
+                                        @foreach ($events as $event)
+                                            <option value="{{ $event->id }}">{{ $event->image }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('image')
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    @enderror
+                                </div>
                             </div>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection

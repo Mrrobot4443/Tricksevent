@@ -80,7 +80,7 @@
                     <div class="col">
                         <!-- Category Item Start -->
                         <div class="category-item">
-                            <a href="#"><img src="assets/images/cat-1.png" alt=""><span>Food Fest</span></a>
+                            <a href="#"><img src="{{ asset('assets/images/03.png') }}" alt=""><span class="mb-3">Wedding</span></a>
                         </div>
                         <!-- Category Item End -->
                     </div>

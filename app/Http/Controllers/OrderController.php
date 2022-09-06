@@ -18,9 +18,10 @@ class OrderController extends Controller
             // Si produit existe
             $existe = false;
             foreach($orders->ligne as $lignec){
-                if($lignec->ticket_id == $request->idticket){
+                if($lignec->event_id == $request->idevents){
                     $existe = true;
                     $lignec->qte += $request->qte;
+                    $lignec->price = $request->price;
                     $lignec->update();
                 }
             }
@@ -29,13 +30,14 @@ class OrderController extends Controller
                 // Creation ligne de commande
                 $lc = new Ligne();
                 $lc->qte = $request->qte;
-                $lc->ticket_id = $request->idticket;
                 $lc->order_id = $orders->id;
+                $lc->event_id = $request->idevents;
+                $lc->price = $request->price;
                 $lc->save();
             }
 
             // Redirection panier
-            return redirect('/client/cart')->with('success', 'Produit commandee.');
+            return redirect('/chekdetaills')->with('success', 'Produit commandee.');
         } else { // Commande en cours n'existe pas
             $orders = new Order();
             $orders->user_id = Auth::user()->id;
@@ -44,16 +46,30 @@ class OrderController extends Controller
                 // Creation ligne de commande
                 $Li = new Ligne();
                 $Li->qte = $request->qte;
-                $Li->product_id = $request->idticket;
-                $Li->comande_id = $orders->id;
+                $Li->event_id = $request->idevents;
+                $Li->order_id = $orders->id;
+                $Li->price = $request->price;
                 $Li->save();
 
                 // Redirection panier
-                return redirect('/client/cart')->with('success', 'Produit commandee.');
+                return redirect('/chekdetaills')->with('success', 'Produit commandee.');
             } else {
                 // Redirection panier
                 return redirect()->back()->with('error', 'Impossible de commander le produit.');
             }
         }
+    }
+
+    public function ligneDestroy($idlc){
+        $lc = Ligne::find($idlc);
+        $lc->delete();
+        return redirect()->back()->with('success', 'Ligne de commander supprimee.');
+    }
+
+    public function cart(){
+
+        $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
+
+        return view('detaillechek', compact('orders'));
     }
 }

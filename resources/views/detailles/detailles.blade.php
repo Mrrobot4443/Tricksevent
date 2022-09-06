@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
@@ -39,29 +39,9 @@
 
 </head>
 
-<body>
-    <!-- Page Banner Start -->
-    <div class="section page-banner-section">
-        <div class="shape-2"></div>
-        <div class="container">
-            <div class="page-banner-wrap">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <!-- Page Banner Content Start -->
-
-                            <h2 class="title">Event Single</h2>
-                            <ul class="breadcrumb justify-content-center">
-
-
-                            </ul>
-                        </div>
-                        <!-- Page Banner Content End -->
-                    </div>
-                    <li class="breadcrumb-item btn mt-5  "><a href="{{ route('home') }}">Home</a></li>
-                </div>
-            </div>
-        </div>
-    </div>
+<body> --}}
+@extends('layouts.app')
+@section('content')
     <!-- Page Banner End -->
 
     <!-- Event Single Start -->
@@ -99,8 +79,7 @@
                                             <div class="single-speker-3">
                                                 <div class="speker-img">
                                                     <a href="speaker-single.html"><img
-                                                            src="assets/images/speaker/speaker-7.jpg"
-                                                            alt=""></a>
+                                                            src="assets/images/speaker/speaker-7.jpg" alt=""></a>
                                                     <div class="speker-content text-center">
                                                         <h3 class="name">Mike Fermalin</h3>
                                                         <span class="designation">Lead Speaker</span>
@@ -114,8 +93,7 @@
                                             <div class="single-speker-3">
                                                 <div class="speker-img">
                                                     <a href="speaker-single.html"><img
-                                                            src="assets/images/speaker/speaker-8.jpg"
-                                                            alt=""></a>
+                                                            src="assets/images/speaker/speaker-8.jpg" alt=""></a>
                                                     <div class="speker-content text-center">
                                                         <h3 class="name">Megan Fox</h3>
                                                         <span class="designation">Graphic Designer</span>
@@ -129,8 +107,7 @@
                                             <div class="single-speker-3">
                                                 <div class="speker-img">
                                                     <a href="speaker-single.html"><img
-                                                            src="assets/images/speaker/speaker-9.jpg"
-                                                            alt=""></a>
+                                                            src="assets/images/speaker/speaker-9.jpg" alt=""></a>
                                                     <div class="speker-content text-center">
                                                         <h3 class="name">Joakim Ken</h3>
                                                         <span class="designation">Developer</span>
@@ -186,8 +163,7 @@
                                             </div>
                                             <div class="col-lg-3 col-sm-6">
                                                 <div class="meeta-sponsor-logo">
-                                                    <a href="#"><img
-                                                            src="{{ asset('assets/images/logo-sm-7.png') }}"
+                                                    <a href="#"><img src="{{ asset('assets/images/logo-sm-7.png') }}"
                                                             alt=""></a>
                                                 </div>
                                             </div>
@@ -200,7 +176,7 @@
                                         </div>
                                     </div>
                                     <!-- Sponsor En
-                                        d -->
+                                                    d -->
                                 </div>
                             </div>
                         </div>
@@ -209,80 +185,84 @@
                     <div class="col-lg-4">
                         <!-- Event Single Sidebar Start -->
                         <div class="event-single-sidebar">
+                            <form action="/store" method="POST">
+                                @csrf
+                                <input type="hidden" name="idevents" value="{{ $events->id }}">
+                                <div class="btn-price">
+                                  <button class="btn btn-primary" type="submit"></button>
+                                    <div class="price">
 
-                            <div class="btn-price">
-                                <a class="btn btn-primary" href="{{ route('check') }}">Buy Your Ticket</a>
-                                <div class="price">
-                                    {{-- <span><sup>$</sup>{{ $events->prix }}</span> --}}
+                                        <select id="prix" class="form-control" name="price">
+                                            <option class="disabled">Price</option>
+                                            <option>{{ $events->prix_1 }}</option>
+                                            <option>{{ $events->prix_2 }}</option>
+                                            <option>{{ $events->prix_3 }}</option>
 
-                                    <select id="prix" class="form-control" name="">
-                                        <option class="disabled">Price</option>
-                                        <option>{{ $events->prix }}</option>
-                                        <option>{{ $tickets->ticket_price_1 }}</option>
-                                        <option>{{ $tickets->ticket_price_2 }}</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="sidebar-item">
+                                        </select>
+                                    </div>
+                                    <div>
 
-                                <div class="event-details">
-                                    <h3 class="sidebar-title">Details</h3>
-                                    <ul>
-                                        <li>
-                                            <h5 class="title">Start:</h5>
-                                            <p>{{ $events->date_debut }}</p>
-                                        </li>
-                                        <li>
-                                            <h5 class="title">End:</h5>
-                                            <p>{{ $events->date_fin }}</p>
-                                        </li>
-                                        <li>
-                                            <h5 class="title">Location :</h5>
-                                            <p>{{ $events->villes->name }}</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sidebar-item">
-                                <div class="event-map">
-                                    <h3 class="sidebar-title">Location Map</h3>
-                                    <div class="google-map">
-                                        <iframe id="gmap_canvas"
-                                            src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
                                     </div>
                                 </div>
+                                <div class="sidebar-item">
+
+                                    <div class="event-details">
+                                        <h3 class="sidebar-title">Details</h3>
+                                        <ul>
+                                            <li>
+                                                <h5 class="title">Start:</h5>
+                                                <p>{{ $events->date_debut }}</p>
+                                            </li>
+                                            <li>
+                                                <input type="number" placeholder="quantity" class="btn btn-primary" name="qte">
+                                            </li>
+                            </form>
+                            <li>
+                                <h5 class="title">End:</h5>
+                                <p>{{ $events->date_fin }}</p>
+                            </li>
+                            <li>
+                                <h5 class="title">Location :</h5>
+                                <p>{{ $events->villes->name }}</p>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="event-map">
+                            <h3 class="sidebar-title">Location Map</h3>
+                            <div class="google-map">
+                                <iframe id="gmap_canvas"
+                                    src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
                             </div>
                         </div>
-                        <!-- Event Single Sidebar End -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Event Single End -->
-    <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+@endsection
+{{-- <script src="{{ asset('assets/js/vendor/modernizr-3.11.7.min.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
 
 
     <!-- Bootstrap JS -->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 
     <!-- Plugins JS -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/back-to-top.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/back-to-top.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/aos.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
 
 
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
 
 </body>
 
 
 
-</html>
+</html> --}}

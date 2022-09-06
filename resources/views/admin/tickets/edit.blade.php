@@ -34,6 +34,16 @@
                                             @enderror
                                         </div>
                                         <div class="form-group col-md-6">
+                                            <label for="category">Prix</label>
+                                            <select id="category" class="form-control" name="events_id">
+                                                @foreach ($events as $event)
+                                                    <option value="{{ $event->id }}">{{ $event->prix_1 }}</option>
+                                                    <option value="{{ $event->id }}">{{ $event->prix_2 }}</option>
+                                                    <option value="{{ $event->id }}">{{ $event->prix_3 }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
                                             <label for="ville">ville</label>
                                             <select id="ville" class="form-control" name="villes_id" type="text">
                                                 @foreach ($villes as $villes)
@@ -55,69 +65,45 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="prix">bronze price</label>
-                                    <input type="number" class="form-control" id="prix" placeholder=""
+                                    <label for="start">Event Starts</label>
+                                    <input type="datetime" class="form-control" id="start" placeholder=""
                                         name="events_id">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="prix">silver price</label>
-                                    <input type="number" class="form-control" id="prix" placeholder=""
-                                        name="ticket_price_1">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="prix">gold price</label>
-                                    <input type="number" class="form-control" id="prix" placeholder=""
-                                        name="ticket_price_2">
-                                </div>
-                                <div class="form-group">
-                                    <label for="content">Content</label>
-                                    <textarea class="form-control" placeholder="Write the description"@error('content') is-invalid @enderror id="content"
-                                        name="events_id"></textarea>
-                                    @error('content')
+                                    @error('start')
                                         <strong class="text-danger">{{ $message }}</strong>
                                     @enderror
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="start">Event Starts</label>
-                                        <input type="datetime" class="form-control" id="start" placeholder=""
-                                            name="events_id">
-                                        @error('start')
-                                            <strong class="text-danger">{{ $message }}</strong>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="end">Event Ends</label>
-                                        <input type="datetime" class="form-control" id="end" placeholder=""
-                                            name="events_id">
-                                        @error('end')
-                                            <strong class="text-danger">{{ $message }}</strong>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="admin">admin's</label>
-                                        <select id="ville" class="form-control" name="users_id" type="text">
-                                            @foreach ($users as $user)
-                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                            id="image" name="events_id">
-                                        @error('image')
-                                            <strong class="text-danger">{{ $message }}</strong>
-                                        @enderror
-                                    </div>
+                                <div class="form-group col-md-6">
+                                    <label for="end">Event Ends</label>
+                                    <input type="datetime" class="form-control" id="end" placeholder=""
+                                        name="events_id">
+                                    @error('end')
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    @enderror
                                 </div>
-                                <button type="submit" class="btn btn-primary">Valider</button>
-                                </form>
+                                <div class="form-group col-md-6">
+                                    <label for="admin">admin's</label>
+                                    <select id="ville" class="form-control" name="users_id" type="text">
+                                        @foreach ($users as $user)
+                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                        id="image" name="events_id">
+                                    @error('image')
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    @enderror
+                                </div>
                             </div>
+                            <button type="submit" class="btn btn-primary">Valider</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection

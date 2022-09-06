@@ -16,8 +16,6 @@ class CreateLignesTable extends Migration
         Schema::create('lignes', function (Blueprint $table) {
             $table->id();
             $table->integer('qte');
-            $table->unsignedBigInteger('ticket_id');
-            $table->foreign('ticket_id')->references('id')->on('tickets')->onDelete('cascade');
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->unsignedBigInteger('event_id');

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
 use App\Models\Event;
+use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -43,10 +44,7 @@ class HomeController extends Controller
     {
         return view('admin.calender.calender');
     }
-    public function chekde()
-    {
-        return view('detaillechek');
-    }
+
 
 
 

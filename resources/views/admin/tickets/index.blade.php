@@ -46,7 +46,6 @@
                                                 <td>{{ $tickets->titre }}</td>
                                                 <td>{{ $tickets->category->name }}</td>
                                                 <td>{{ $tickets->villes->name }}</td>
-                                                <td>{{ $tickets->content }}</td>
                                                 <td>{{ $tickets->prix}}</td>
                                                 <td>{{ $tickets->date_debut }}</td>
                                                 <td>{{ $tickets->date_fin }}</td>

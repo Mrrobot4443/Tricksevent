@@ -1,4 +1,3 @@
-
 @extends('admin.layouts.app');
 
 @section('content')
@@ -57,24 +56,41 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="prix">Prix</label>
-                                    <input type="number" class="form-control" id="prix" placeholder="" name="prix">
+                                    <label for="prix1">Prix</label>
+                                    <input type="number" class="form-control" id="prix1" placeholder="" name="prix_1">
+                                    @error('prix_1')
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="prix2">Prix</label>
+                                    <input type="number" class="form-control" id="prix2" placeholder="" name="prix_2">
+                                    @error('prix_2')
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="prix3">Prix</label>
+                                    <input type="number" class="form-control" id="prix3" placeholder="" name="prix_3">
+                                    @error('prix_3')
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    @enderror
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="start">Event Starts</label>
                                         <input type="datetime" class="form-control" id="start" placeholder=""
-                                        name="date_debut">
+                                            name="date_debut">
                                         @error('start')
                                             <strong class="text-danger">{{ $message }}</strong>
-                                            @enderror
+                                        @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="end">Event Ends</label>
                                         <input type="datetime" class="form-control" id="end" placeholder=""
-                                        name="date_fin">
+                                            name="date_fin">
                                         @error('end')
-                                        <strong class="text-danger">{{ $message }}</strong>
+                                            <strong class="text-danger">{{ $message }}</strong>
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
@@ -85,9 +101,9 @@
 
                                     <div class="form-group col-md-6">
                                         <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                        id="image" name="image">
+                                            id="image" name="image">
                                         @error('image')
-                                        <strong class="text-danger">{{ $message }}</strong>
+                                            <strong class="text-danger">{{ $message }}</strong>
                                         @enderror
                                     </div>
                                 </div>

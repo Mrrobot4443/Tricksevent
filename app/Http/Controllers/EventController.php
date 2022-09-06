@@ -46,7 +46,7 @@ class EventController extends Controller
             'category_id' => 'required',
             'villes_id' => 'required',
             'content' => 'required',
-            'prix' => 'required',
+            'prix_1' => 'required',
             'date_debut' => 'required',
 
         ]);
@@ -55,7 +55,9 @@ class EventController extends Controller
         $events->category_id= $request->category_id;
         $events->villes_id = $request->villes_id;
         $events->content = $request->content;
-        $events->prix = $request->prix;
+        $events->prix_1 = $request->prix_1;
+        $events->prix_2 = $request->prix_2;
+        $events->prix_3 = $request->prix_3;
         $events->date_debut = $request->date_debut;
         $events->date_fin = $request->date_fin;
         $events->user_type = $request->user_type;
@@ -102,7 +104,7 @@ class EventController extends Controller
     {
         $request->validate([
             'titre' => 'required',
-            'prix' => 'required',
+            'prix_1' => 'required',
             'content' => 'required',
 
 
@@ -113,7 +115,9 @@ class EventController extends Controller
         $events->category_id= $request->category_id;
         $events->villes_id = $request->villes_id;
         $events->content = $request->content;
-        $events->prix = $request->prix;
+        $events->prix_1 = $request->prix_1;
+        $events->prix_2 = $request->prix_2;
+        $events->prix_3 = $request->prix_3;
         $events->date_debut = $request->date_debut;
         $events->date_fin = $request->date_fin;
         $events->user_type = $request->user_type;

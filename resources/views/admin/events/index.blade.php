@@ -50,11 +50,12 @@
                                                 <td>{{ $event->titre }}</td>
                                                 <td>{{ $event->category->name }}</td>
                                                 <td>{{ $event->villes->name }}</td>
-                                                <td>{{ $event->content }}</td>
-                                                <td>{{ $event->prix }}</td>
+
+                                                <td>{{ $event->prix_1 }}</td>
+
                                                 <td>{{ $event->date_debut }}</td>
                                                 <td>{{ $event->date_fin }}</td>
-                                                <td>{{ $event->user_type }}</td>
+
                                                 <td>{{ $event->image }}</td>
                                                 <td>
                                                     <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
