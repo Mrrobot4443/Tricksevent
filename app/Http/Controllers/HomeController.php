@@ -18,13 +18,15 @@ class HomeController extends Controller
     public function home()
     {
         $events = Event::all();
-        return view('welcome', compact('events'));
+        $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
+        return view('welcome', compact('events','orders'));
     }
     public function detailles($id)
     {
         $events = Event::find($id);
         $tickets = Ticket::find($id);
-        return view('detailles.detailles', compact('events', 'tickets'));
+        $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
+        return view('detailles.detailles', compact('events', 'tickets','orders'));
     }
     public function guests()
     {
@@ -89,7 +91,8 @@ class HomeController extends Controller
     }
     public function showContactForm()
     {
-        return view('contact.contact');
+        $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
+        return view('contact.contact', compact('orders'));
     }
     public function submitContactForm(ContactRequest $request)
     {

@@ -60,10 +60,10 @@
 
                             <div class="header-actions">
                                 <div class="header-action">
-                                     <button class="icon-open-container ">
+                                     <a class="icon-open-container text-danger" href="/chekdetaills">
                                             <span class="action-text">My Cart</span>
                                             <i class="flaticon-shopping-cart"></i>
-                                            <span class="count">3</span>
+                                            <span class="count">{{ count($orders->ligne) }}</span>
                                        </a>
                                 </div>
                                 <div class="header-action d-none d-sm-block">

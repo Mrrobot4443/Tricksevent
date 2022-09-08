@@ -23,7 +23,7 @@
                                 <td class="align-middle">{{ $lc->price }} $</td>
                                 <td class="align-middle">{{ $lc->qte }}</td>
                                 <td class="align-middle">{{ $lc->price * $lc->qte }} $</td>
-                                <td class="align-middle"><a href="" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></a href=""></td>
+                                <td class="align-middle"><a href="/guests/lc/{{ $lc->id }}/destroy" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></a href=""></td>
                             </tr>
                         @endforeach
                     </tbody>
