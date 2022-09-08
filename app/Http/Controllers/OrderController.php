@@ -12,7 +12,8 @@ class OrderController extends Controller
     public function store(Request $request){
         // Verifier si une commande est en cours pour ce client
         $orders= Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
-
+        // dd($request->all());
+        // exit();
         // Creation commande
         if($orders){ // Commande en cours existe
             // Si produit existe

@@ -1,19 +1,28 @@
 @extends('layouts.app')
 @section('content')
-<div class="container-fluid pt-5">
+<div class="container-fluid ">
     @if ($orders)
         <div class="row px-xl-5">
             <div class="col-lg-8 table-responsive mb-5">
                 <table class="table table-bordered text-center mb-0">
 
                     <tbody class="align-middle">
+                        <thead class="bg-dark text-light border-white-50">
+                            <tr>
+                                <th class=" "scope="col">Event </th>
+                                <th class="">image</th>
+                                <th class="">Price</th>
+                                <th class="">Quantity</th>
+                                <th class="">Total</th>
+                            </tr>
+                        </thead>
                         @foreach ($orders->ligne as $lc)
                             <tr>
-                                <td class="align-middle"><img src="" alt="" style="width: 50px;"></td>
-                                <td class="align-middle">{{ $lc->events->titre }} DH</td>
-                                <td class="align-middle">{{ $lc->events->price }} DH</td>
+                                <td class="align-middle">{{ $lc->events->titre }}<img src="" alt="" style="width: 50px;"></td>
+                                <td class="align-middle"><img src="{{ $lc->events->image }}" alt="" width="100" height="100" class="bi-circle" ></td>
+                                <td class="align-middle">{{ $lc->price }} $</td>
                                 <td class="align-middle">{{ $lc->qte }}</td>
-                                <td class="align-middle">{{ $lc->events->price * $lc->qte }} DH</td>
+                                <td class="align-middle">{{ $lc->price * $lc->qte }} $</td>
                                 <td class="align-middle"><a href="" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></a href=""></td>
                             </tr>
                         @endforeach
@@ -36,7 +45,7 @@
                 </thead>
                 <tbody class="align-middle border-white-50">
                         <tr>
-                            <td class="align-middle">5555</td>
+                            <td class="align-middle"></td>
                             <td class="align-middle"></td>
                             <td class="align-middle"></td>
                         </tr>

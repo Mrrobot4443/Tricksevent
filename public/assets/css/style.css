@@ -3574,12 +3574,13 @@ only screen and (max-width: 1199px) {
 }
 
 .meeta-countdown .single-countdown .count {
-    font-size: 58px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 400;
     font-family: "Big Shoulders Display", cursive;
-    width: 110px;
-    height: 110px;
-    line-height: 110px;
+    width: 39px;
+    margin-top: 20px;
+    height: 53px;
+    line-height: 62px;
     display: block;
     text-align: center;
     color: #ffffff;
@@ -3637,9 +3638,10 @@ only screen and (max-width: 1199px) {
     background-color: #554bb9;
 }
 
-.meeta-countdown .single-countdown:nth-child(4)::before {
+
+/* .meeta-countdown .single-countdown:nth-child(4)::before {
     color: #554bb9;
-}
+} */
 
 .meeta-countdown .single-countdown:last-child::before {
     display: none;

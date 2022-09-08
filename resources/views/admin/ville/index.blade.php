@@ -37,21 +37,24 @@
                                             <th scope="col" class="text-white">Date de modification</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody >
                                         @foreach ($ville as $key => $villes)
                                             <tr>
                                                 <th>{{ $key + 1 }}</th>
                                                 <td>{{ $villes->name }}</td>
                                                 <td>{{ $villes->created_at->diffForHumans() }}</td>
                                                 <td>{{ $villes->updated_at->diffForHumans() }}</td>
-                                                <td>
+                                                <td class="justify-content-center align-items-center">
                                                     <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
-                                                        href="{{ route('ville.edit', encrypt($villes->id)) }}">modifier</a>
-                                                    <form action="{{ route('ville.destroy', $villes->id) }}" method="POST">
+                                                        href="{{ route('ville.edit', encrypt($villes->id)) }}"> <i
+                                                            class="fa fa-plus"></i> modifier </a>
+                                                    <form action="{{ route('ville.destroy', $villes->id) }}" method="POST" id="{{ ('villes->id') }}">
                                                         @method('DELETE')
                                                         @csrf
                                                         <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                                                            <button onclick="event.preventDefault();
+                                                            if(confirm('Voulez vous supprimer levenement {{ $villes->name}} ?'))document.getElementById ({{ $villes->id }}).submit()"  class="btn btn-danger btn-secondary " <span class="btn-icon-right"><i
+                                                class="fa fa-close"></i></span> Supprimer </button>
 
                                                         </div>
                                                     </form>

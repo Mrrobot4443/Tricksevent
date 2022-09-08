@@ -61,12 +61,12 @@
                                                     <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
                                                     href="{{ route('event.edit', encrypt($event->id)) }}">modifier</a>
                                                     <form action="{{ route('event.destroy', $event->id) }}"
-                                                        method="POST">
+                                                        method="POST"  id="{{ $event->id }}">
                                                         @method('DELETE')
                                                         @csrf
                                                         <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-danger">Supprimer</button>
-
+                                                            <button onclick="event.preventDefault();
+                                                            if(confirm('Voulez vous supprimer levenement {{ $event->name}} ?'))document.getElementById ({{ $event->id }}).submit()"  class="btn btn-danger ">Supprimer</button>
                                                         </div>
                                                     </form>
                                                 </td>

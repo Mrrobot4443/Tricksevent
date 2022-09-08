@@ -9,7 +9,7 @@ class Order extends Model
 {
     use HasFactory;
     public function ligne(){
-        return $this->hasMany(Ligne::class, 'ligne_id', 'id');
+        return $this->hasMany(Ligne::class);
     }
 
     public function client(){

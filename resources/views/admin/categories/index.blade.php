@@ -35,7 +35,7 @@
                                             <th scope="col" class="text-white">Nom de la catégorie</th>
                                             <th scope="col" class="text-white">Date de création</th>
                                             <th scope="col" class="text-white">Date de modification</th>
-                                            <th scope="col" class="text-white">Actions</th>
+                                            <th scope="col-md-4" class="text-white justify-content-center align-items-center">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -49,11 +49,12 @@
                                                     <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
                                                         href="{{ route('category.edit', encrypt($category->id)) }}">modifier</a>
                                                     <form action="{{ route('category.destroy', $category->id) }}"
-                                                        method="POST">
+                                                        method="POST" id="{{ $category->id }}">
                                                         @method('DELETE')
                                                         @csrf
                                                         <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-danger ">Supprimer</button>
+                                                            <button onclick="event.preventDefault();
+                                                            if(confirm('Voulez vous supprimer la catégorie {{ $category->name}}?'))document.getElementById ({{ $category->id }}).submit()"  class="btn btn-danger ">Supprimer</button>
 
                                                         </div>
                                                     </form>

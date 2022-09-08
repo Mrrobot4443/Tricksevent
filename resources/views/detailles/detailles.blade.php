@@ -69,7 +69,7 @@
 
                             </div>
                             <!-- Video End -->
-                            <p>{{ $events->content }}</p>
+                            <textarea rows="10" cols="91" class="border-white bg-white mt-5 text-black text-bold fst-italic" disabled>{{ $events->content }}</textarea>
                             <div class="event-single-item">
                                 <h3 class="title">Event Speakers</h3>
                                 <div class="speakers-content-wrap">
@@ -176,7 +176,7 @@
                                         </div>
                                     </div>
                                     <!-- Sponsor En
-                                                    d -->
+                                                                d -->
                                 </div>
                             </div>
                         </div>
@@ -189,11 +189,11 @@
                                 @csrf
                                 <input type="hidden" name="idevents" value="{{ $events->id }}">
                                 <div class="btn-price">
-                                  <button class="btn btn-primary" type="submit"></button>
+                                    <button class="btn btn-primary" type="submit">Get You're Ticket</button>
                                     <div class="price">
 
                                         <select id="prix" class="form-control" name="price">
-                                            <option class="disabled">Price</option>
+                                            <option class="disabled bg-warning">Price</option>
                                             <option>{{ $events->prix_1 }}</option>
                                             <option>{{ $events->prix_2 }}</option>
                                             <option>{{ $events->prix_3 }}</option>
@@ -210,16 +210,17 @@
                                         <h3 class="sidebar-title">Details</h3>
                                         <ul>
                                             <li>
-                                                <h5 class="title">Start:</h5>
-                                                <p>{{ $events->date_debut }}</p>
+                                                <h5 class="title ">Start:</h5>
+                                                <p class="text-bold fst-italic fw-bold">{{ $events->date_debut }}</p>
                                             </li>
                                             <li>
-                                                <input type="number" placeholder="quantity" class="btn btn-primary" name="qte">
+                                                <input type="number" placeholder="quantity" class="btn-light"
+                                                    name="qte">
                                             </li>
                             </form>
                             <li>
                                 <h5 class="title">End:</h5>
-                                <p>{{ $events->date_fin }}</p>
+                                <p class="text-bold fst-italic fw-bold">{{ $events->date_fin }}</p>
                             </li>
                             <li>
                                 <h5 class="title">Location :</h5>
@@ -228,21 +229,36 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="sidebar-item">
-                        <div class="event-map">
-                            <h3 class="sidebar-title">Location Map</h3>
-                            <div class="google-map">
-                                <iframe id="gmap_canvas"
-                                    src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+                    <div>
+                        <!-- Countdown Start -->
+                        <div class="meeta-countdown countdown" data-countdown="2022/12/31" data-format="short">
+                            <div class="single-countdown">
+                                <span class="count countdown__time daysLeft"></span>
+                                <span class="value countdown__time daysText"></span>
                             </div>
+                            <div class="single-countdown">
+                                <span class="count countdown__time hoursLeft"></span>
+                                <span class="value countdown__time hoursText"></span>
+                            </div>
+                            <div class="single-countdown">
+                                <span class="count countdown__time minsLeft"></span>
+                                <span class="value countdown__time minsText"></span>
+                            </div>
+                            <div class="single-countdown">
+                                <span class="count countdown__time secsLeft"></span>
+                                <span class="value countdown__time secsText"></span>
+                            </div>
+                            <br>
+                            <br>
+                            <!-- Countdown End -->
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
-{{-- <script src="{{ asset('assets/js/vendor/modernizr-3.11.7.min.js') }}"></script>
+    @endsection
+    {{-- <script src="{{ asset('assets/js/vendor/modernizr-3.11.7.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
 
 

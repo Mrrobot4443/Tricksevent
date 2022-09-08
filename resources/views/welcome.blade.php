@@ -1,8 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Accueil')
+{{-- @section('title', 'Accueil') --}}
 @section('content')
-    <div class="meeta-hero-section-5 d-flex align-items-center"
-        style="background-image: url(assets/images/bg/hero-5-bg.)">
+    <div class="meeta-hero-section-5 d-flex align-items-center" style="background-image: url(assets/images/bg/hero-5-bg.)">
         <img class="image-1" src="images/hello.png" alt="">
         <img class="image-2" src="images/Ultra-HD.png" alt="">
         <img class="shape-1" src="assets/images/shape/hero-5-shape-1.png" alt="">
@@ -27,21 +26,21 @@
                                         @endforeach
                                     </div>
                                     <div class="single-form">
-                                        {{-- <label class="form-label"><i class="fas fa-list-alt"></i> Category</label> --}}
+                                        <label class="form-label"><i class="fas fa-list-alt"></i> Category</label>
                                         <select>
                                             <option value="0">Select Category</option>
-                                            {{-- @foreach ($events as $event)
+                                            @foreach ($events as $event)
                                                 <option value="1">{{ $event->category->name }}</option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="single-form">
                                         <label class="form-label"><i class="fas fa-map"></i> Location</label>
                                         <select>
                                             <option value="0">Select Location</option>
-                                            {{-- @foreach ($events as $event)
+                                            @foreach ($events as $event)
                                                 <option value="1">{{ $event->villes->name }}</option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-btn">
@@ -54,7 +53,7 @@
                             <span class="label">Popular:</span>
                             @foreach ($events as $event)
                                 <ul>
-                                    {{-- <li ><a href="#"> {{$event->category->name }} </a></li> --}}
+                                    <li ><a href="#"> {{$event->category->name }} </a></li>
 
                                 </ul>
                             @endforeach
@@ -69,7 +68,7 @@
     <!-- Category Section Start -->
     <!-- Category Section Start -->
     <div class="meeta-category-section section-padding-02">
-        <div class="container">
+        <div class="">
             <div class="meeta-category-wrap">
                 <!-- Section Title Start -->
                 <div class="meeta-section-title section-title-4 text-center">
@@ -80,7 +79,8 @@
                     <div class="col">
                         <!-- Category Item Start -->
                         <div class="category-item">
-                            <a href="#"><img src="{{ asset('assets/images/03.png') }}" alt=""><span class="mb-3">Wedding</span></a>
+                            <a href="#"><img src="{{ asset('assets/images/03.png') }}" alt=""><span
+                                    class="mb-3">Wedding</span></a>
                         </div>
                         <!-- Category Item End -->
                     </div>
@@ -233,12 +233,13 @@
                                                     <div class="featured-content">
                                                         {{-- <span class="category color-4 mt-5">{{ $event->category->name }}</span> --}}
                                                         <br>
-                                                        <h3 class="title text-black mt-4"><a
-                                                                href="event-single.html">{{ $event->titre }}</a></h3>
-                                                        <span class="meta mt-3"><i class="fas fa-map-marker-alt"></i>
-                                                            {{-- {{ $event->villes->name }}</span> --}}
-                                                            <span class="meta mt-5"><i
-                                                                    class="fas fa-map-marker-alt"></i><strong>{{ $event->prix }}Dhs</strong></span>
+                                                        <h2 class="title text-black mt-4 text-bold fs-5 "><a
+                                                                href="event-single.html">{{ $event->titre }}</a></h2>
+                                                        <span class="meta mt-3 text-black me-5 ms-2 mb-3"><i class="fas fa-map-marker-alt"></i>
+                                                            {{ $event->villes->name }}</span>
+                                                        <span class="meta mt-5">
+                                                               <strong class="text-danger">{{ $event->prix_1 }}
+                                                                $</strong></span>
                                                     </div>
                                                 </div>
                                                 <!-- Single Item End -->

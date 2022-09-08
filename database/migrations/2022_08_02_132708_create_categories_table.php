@@ -17,8 +17,6 @@ class CreateCategoriesTable extends Migration
             $table->id();
            $table->string('name');
            $table->string('slug')->unique();
-           $table->string('event-type')->nullable();
-           $table->string('ticket-type')->nullable();
             $table->timestamps();
         });
     }

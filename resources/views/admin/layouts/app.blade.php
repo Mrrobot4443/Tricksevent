@@ -19,6 +19,7 @@
 
     @include('admin.layouts.top_menu')
     @include('admin.layouts.side_bar')
+    @yield('card')
     <br>
     <br>
     <br>

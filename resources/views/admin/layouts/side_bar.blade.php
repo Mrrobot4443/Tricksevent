@@ -29,14 +29,8 @@
                     <li><a href="{{ route('event.index') }}">Listes des des evenements</a></li>
                 </ul>
             </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-map"></i><span
-                        class="nav-text">Tickets</span></a>
-                <ul aria-expanded="false">
-                    <li><a href="{{ route('ticket.create') }}">Ajouter un ticket</a></li>
-                    <li><a href="{{ route('ticket.index') }}">Listes des tickets</a></li>
-                </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-map"></i><span
+
+            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-account"></i><span
                         class="nav-text">Users</span></a>
                 <ul aria-expanded="false">
                     <li><a href="{{ route('guests') }}">Users Liste</a></li>
@@ -46,6 +40,4 @@
         </ul>
     </div>
 </div>
-<!--**********************************
-    Sidebar end
-***********************************-->
+

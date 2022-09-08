@@ -15,6 +15,6 @@ class Ligne extends Model
         return $this->belongsTo(Ticket::class);
     }
     public function events() {
-        return $this->belongsTo(Event::class);
+        return $this->belongsTo(Event::class, 'event_id');
     }
 }
