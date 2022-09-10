@@ -31,6 +31,7 @@ class HomeController extends Controller
     public function guests()
     {
         $users = User::all();
+
         return view('admin.Guests.index', compact('users'));
     }
     public function profile()
@@ -91,18 +92,16 @@ class HomeController extends Controller
     }
     public function showContactForm()
     {
-        $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
-        return view('contact.contact', compact('orders'));
-    }
-    public function submitContactForm(ContactRequest $request)
-    {
-        Mail::to('yazo-yazo@hotmail.com')->send(new ContactMail(
-            $request->name,
-            $request->email,
-            $request->phone,
-            $request->content
-        ));
-        return back();
+        function submitContactForm(ContactRequest $request){
+
+            Mail::to('yazo-yazo@hotmail.com')->send(new ContactMail(
+               $request->name,
+               $request->email,
+               $request->phone,
+               $request->content
+           ));
+           return back();
+        }
     }
     public function submitEvents()
     {

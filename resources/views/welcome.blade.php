@@ -53,7 +53,7 @@
                             <span class="label">Popular:</span>
                             @foreach ($events as $event)
                                 <ul>
-                                    <li ><a href="#"> {{$event->category->name }} </a></li>
+                                    <li><a href="#"> {{ $event->category->name }} </a></li>
 
                                 </ul>
                             @endforeach
@@ -235,10 +235,11 @@
                                                         <br>
                                                         <h2 class="title text-black mt-4 text-bold fs-5 "><a
                                                                 href="event-single.html">{{ $event->titre }}</a></h2>
-                                                        <span class="meta mt-3 text-black me-5 ms-2 mb-3"><i class="fas fa-map-marker-alt"></i>
+                                                        <span class="meta mt-3 text-black me-5 ms-2 mb-3"><i
+                                                                class="fas fa-map-marker-alt"></i>
                                                             {{ $event->villes->name }}</span>
                                                         <span class="meta mt-5">
-                                                               <strong class="text-danger">{{ $event->prix_1 }}
+                                                            <strong class="text-danger">{{ $event->prix_1 }}
                                                                 $</strong></span>
                                                     </div>
                                                 </div>
@@ -567,6 +568,4 @@
                     </div>
                 </div>
                 <!-- Blog End -->
-
-
             @endsection

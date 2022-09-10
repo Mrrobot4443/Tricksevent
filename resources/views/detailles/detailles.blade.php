@@ -193,10 +193,10 @@
                                     <div class="price">
 
                                         <select id="prix" class="form-control" name="price">
-                                            <option class="disabled bg-warning">Price</option>
-                                            <option>{{ $events->prix_1 }}</option>
-                                            <option>{{ $events->prix_2 }}</option>
-                                            <option>{{ $events->prix_3 }}</option>
+                                            <option class="disabled text-danger text-bold fst-italic fw-bold " >Price</option>
+                                            <option  class="text-bold fst-italic fw-bold">{{ $events->prix_1 }}</option>
+                                            <option class="text-bold fst-italic fw-bold">{{ $events->prix_2 }}</option>
+                                            <option class="text-bold fst-italic fw-bold">{{ $events->prix_3 }}</option>
 
                                         </select>
                                     </div>

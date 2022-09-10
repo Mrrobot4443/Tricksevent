@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\StripController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\VillesController;
 use Illuminate\Support\Facades\Auth;
@@ -38,4 +39,6 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('contact-us', [HomeController::class, 'showContactForm'])->name('contact');
 Route::post('contact-us', [HomeController::class, 'submitContactForm'])->name('contact');
 Route::post('/admin/profile/update', [HomeController::class, 'updateProfile'])->name('update-profile');
+Route::get('stripe', [StripController::class , 'stripe']);
+Route::post('stripe', [StripController::class, 'stripePost'])->name('stripe.post');
 
