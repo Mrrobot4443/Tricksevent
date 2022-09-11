@@ -44,20 +44,22 @@
                                 <ul class="sub-menu">
 
                                     @if (Auth::user())
-                                    <div class="navbar-nav ml-auto py-0">
-                                      @if (Auth::user('admin'))
-                                      <a href="{{ route('dashboard_admin') }}" class="nav-item nav-link">Dashboard</a>
-                                      @else
-                                      <a href="{{ route('dashboard_user') }}" class="nav-item nav-link">Dashboard</a>
-                                      @endif
-                                        <a href="{{ route('logout') }}" class="nav-item nav-link mb-5">logout</a>
-                                    </div>
-                                @else
-                                    <div class="navbar-nav ml-auto py-0">
-                                        <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
-                                        <a href="{{ route('register') }}" class="nav-item nav-link">Register</a>
-                                    </div>
-                                @endif
+                                        <div class="navbar-nav ml-auto py-0">
+                                            @if (Auth::user('admin'))
+                                                <a href="{{ route('dashboard_admin') }}"
+                                                    class="nav-item nav-link">Dashboard</a>
+                                            @elseif (Auth::user('user'))
+                                                <a href="{{ route('dashboard_user') }}"
+                                                    class="nav-item nav-link">Dashboard</a>
+                                            @endif
+                                            <a href="{{ route('logout') }}" class="nav-item nav-link mb-5">logout</a>
+                                        </div>
+                                    @else
+                                        <div class="navbar-nav ml-auto py-0">
+                                            <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
+                                            <a href="{{ route('register') }}" class="nav-item nav-link">Register</a>
+                                        </div>
+                                    @endif
                                 </ul>
                             </li>
 
@@ -72,11 +74,11 @@
 
                             <div class="header-actions">
                                 <div class="header-action">
-                                     <a class="icon-open-container text-danger" href="" id="my cart">
-                                            <span class="action-text">My Cart</span>
-                                            <i class="flaticon-shopping-cart"></i>
-                                            {{-- <span class="count">{{ count($orders->ligne) }}</span> --}}
-                                       </a>
+                                    <a class="icon-open-container text-danger" href="" id="my cart">
+                                        <span class="action-text">My Cart</span>
+                                        <i class="flaticon-shopping-cart"></i>
+                                        {{-- <span class="count">{{ count($orders->ligne) }}</span> --}}
+                                    </a>
                                 </div>
                                 <div class="header-action d-none d-sm-block">
                                     <div class="header-search">
