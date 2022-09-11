@@ -10276,6 +10276,10 @@ only screen and (max-width: 767px) {
     border-radius: 5px;
 }
 
+.form-control {
+    font-size: 1.5rem;
+}
+
 .meeta-footer-3 .footer-widget-wrap .footer-widget .widget-form .form-control:focus {
     box-shadow: none;
 }

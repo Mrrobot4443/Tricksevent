@@ -43,6 +43,14 @@
       <script src="{{asset ('admin/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
       <script src="{{ asset('admin/js/plugins-init/datatables.init.js') }}"></script>
 
+      <div class=""></div>
+
+      <script src="{{ asset('admin/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/jquery-slimscroll/jquery.slimscroll.min.js') }}" ></script>
+
+    <!--endRemoveIf(production)-->
+    <script src="{{asset ('admin/vendor/highlightjs/highlight.pack.min.js') }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 

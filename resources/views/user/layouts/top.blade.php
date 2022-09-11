@@ -36,6 +36,10 @@
             <div class="collapse navbar-collapse justify-content-end">
 
                 <ul class="navbar-nav header-right">
+                    <li class="nav-item border-0">
+                        <a class="btn btn-primary create-event-btn" href="{{ route('home') }}"><i
+                                class="fa fa-home"></i> Home</a>
+                    </li>
                     <li class="nav-item dropdown notification_dropdown">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
@@ -96,7 +100,7 @@
                             <div class="dropdown-profile-header">
                                 <img src="{{ asset('images') }}/{{ Auth::user()->image }}" alt="">
                                 {{-- @foreach ($users as $u) --}}
-                                    <span class="avatar-name ml-2">user</span>
+                                <span class="avatar-name ml-2">user</span>
                                 {{-- @endforeach --}}
                             </div>
 
