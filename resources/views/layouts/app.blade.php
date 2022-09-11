@@ -87,6 +87,11 @@
 
     <script src="{{ asset('assets/js/vendor/modernizr-3.11.7.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <!-- Main JS -->
+
+
     <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/back-to-top.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
@@ -95,31 +100,15 @@
     <script src="{{ asset('assets/js/aos.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
 
-    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <!-- Main JS -->
+
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    <!-- Main JS -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <!-- Bootstrap JS -->
 
     <!-- Plugins JS -->
 
-    <script src="{{ asset('assets/js/vendor/modernizr-3.11.7.min.js') }}"></script>
-    <script src="{{ asset('assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
-    <!-- Here is navigation script -->
-    <script src="{{ asset('admin/vendor/quixnav/quixnav.min.js') }}"></script>
-    <script src="{{ asset('admin/js/quixnav-init.js') }}"></script>
-    <script src="{{ asset('admin/js/custom.min.js') }}"></script>
-    <!--removeIf(production)-->
-    <!-- Demo scripts -->
-    <script src="{{ asset('admin/js/styleSwitcher.js') }}"></script>
-    <!--endRemoveIf(production)-->
-    <script src="{{ asset('admin/vendor/highlightjs/highlight.pack.min.js') }}"></script>
+
     <script>
         hljs.initHighlightingOnLoad();
     </script>
@@ -181,6 +170,7 @@
 
         });
     </script>
+
 </body>
 
 

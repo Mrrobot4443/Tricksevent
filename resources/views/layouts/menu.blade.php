@@ -32,7 +32,7 @@
                             <li class="active-menu"><a href="{{ route('home') }}">Home</a>
 
                             </li>
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="/About">About</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="sub-menu">
                                     <li><a href="event-list.html">Blog</a></li>
@@ -40,13 +40,17 @@
                                 </ul>
                             </li>
                             <li class="me-5"><a href="{{ route('contact') }}">Contact</a></li>
-                            <li><a href="#"></a>
+                            <li><a href="#">Connexion</a>
                                 <ul class="sub-menu">
 
                                     @if (Auth::user())
                                     <div class="navbar-nav ml-auto py-0">
-                                        <a href="{{ route('dashboard_admin') }}" class="nav-item nav-link">Dashboard</a>
-                                        <a href="{{ route('logout') }}" class="nav-item nav-link">logout</a>
+                                      @if (Auth::user('admin'))
+                                      <a href="{{ route('dashboard_admin') }}" class="nav-item nav-link">Dashboard</a>
+                                      @else
+                                      <a href="{{ route('dashboard_user') }}" class="nav-item nav-link">Dashboard</a>
+                                      @endif
+                                        <a href="{{ route('logout') }}" class="nav-item nav-link mb-5">logout</a>
                                     </div>
                                 @else
                                     <div class="navbar-nav ml-auto py-0">

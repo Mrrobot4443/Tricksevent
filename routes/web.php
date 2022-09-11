@@ -29,6 +29,7 @@ Route::get('admin/dashboard', [HomeController::class, 'dashboard_admin'])->name(
 Route::get('user/dashboard', [HomeController::class, 'dashboard_user'])->name('dashboard_user')->middleware('auth','User');
 Route::get('/detailles/{id}', [HomeController::class, 'detailles'])->name('detailles');
 Route::get('/admin/guests', [HomeController::class, 'guests'])->name('guests');
+Route::get('/About', [HomeController::class, 'About'])->name('About');
 
 Route::resource('category', CategoryController::class)->middleware('auth','admin');
 Route::resource('ville', VillesController::class)->middleware('auth','admin');

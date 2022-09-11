@@ -176,7 +176,7 @@
                                         </div>
                                     </div>
                                     <!-- Sponsor En
-                                                                d -->
+                                                                    d -->
                                 </div>
                             </div>
                         </div>
@@ -188,19 +188,19 @@
                             <form action="/store" method="POST">
                                 @csrf
                                 <input type="hidden" name="idevents" value="{{ $events->id }}">
-                                <div class="btn-price">
-                                    <button class="btn btn-primary" type="submit">Get You're Ticket</button>
-                                    <div class="price">
-
-                                        <select id="prix" class="form-control" name="price">
-                                            <option class="disabled text-danger text-bold fst-italic fw-bold " >Price</option>
-                                            <option  class="text-bold fst-italic fw-bold">{{ $events->prix_1 }}</option>
-                                            <option class="text-bold fst-italic fw-bold">{{ $events->prix_2 }}</option>
-                                            <option class="text-bold fst-italic fw-bold">{{ $events->prix_3 }}</option>
-
-                                        </select>
-                                    </div>
+                                <button class="btn btn-primary mb-2" type="submit">Get You're Ticket</button>
+                                <div class="btn-price mt-4">
                                     <div>
+                                        <div class="price">
+
+                                            <select id="prix" class="select-box " name="price">
+                                                <option class="disabled text-danger text-bold fs-3">Price</option>
+                                                <option class="text-bold fst-italic fw-bold">{{ $events->prix_1 }}</option>
+                                                <option class="text-bold fst-italic fw-bold">{{ $events->prix_2 }}</option>
+                                                <option class="text-bold fst-italic fw-bold">{{ $events->prix_3 }}</option>
+
+                                            </select>
+                                        </div>
 
                                     </div>
                                 </div>

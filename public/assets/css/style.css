@@ -1371,16 +1371,16 @@ only screen and (max-width: 1199px) {
     animation: sticky 1s;
 }
 
-.header-search .search-btn {
+.header-search .search-btn::before {
     font-size: 16px;
     border-radius: 50%;
     text-align: center;
-    color: #ffffff;
-    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    color: #000000;
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.header-search .search-btn:hover {
-    color: #fc097c;
+.header-search .search-btn:after {
+    color: #ffffff;
 }
 
 .search-wrap {
@@ -1392,7 +1392,7 @@ only screen and (max-width: 1199px) {
     top: 0;
     left: 0;
     z-index: 121;
-    background: rgba(5, 65, 218, 0.6);
+    background: rgba(45, 46, 46, 0.6);
 }
 
 .search-wrap .search-inner {
@@ -2040,7 +2040,7 @@ only screen and (max-width: 1199px) {
     padding: 50px;
     text-align: center;
     position: relative;
-    z-index: 1;
+    z-index: 99999;
 }
 
 @media only screen and (max-width: 575px) {
@@ -3062,7 +3062,7 @@ only screen and (max-width: 1199px) {
 }
 
 .meeta-hero-section-5 .hero-content .title-wrap .title {
-    font-size: 120px;
+    font-size: 100px;
     line-height: 1;
     font-family: "Archivo", sans-serif;
     font-weight: 700;
@@ -8536,7 +8536,7 @@ only screen and (max-width: 767px) {
 }
 
 .event-single-sidebar .btn-price .price span {
-    font-size: 30px;
+    font-size: 18px;
     line-height: 1;
     font-family: "Archivo", sans-serif;
     font-weight: 700;

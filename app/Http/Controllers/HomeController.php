@@ -47,6 +47,10 @@ class HomeController extends Controller
     {
         return view('admin.calender.calender');
     }
+    public function About()
+    {
+        return view('About');
+    }
 
 
 
@@ -92,6 +96,8 @@ class HomeController extends Controller
     }
     public function showContactForm()
     {
+        return view('contact.contact');
+
         function submitContactForm(ContactRequest $request){
 
             Mail::to('yazo-yazo@hotmail.com')->send(new ContactMail(

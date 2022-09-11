@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container-fluid ">
+{{-- <div class="container-fluid ">
     @if ($orders)
         <div class="row px-xl-5">
             <div class="col-lg-8 table-responsive mb-5">
@@ -78,6 +78,72 @@
         </div>
     </div>
     @endif
-</div>
+</div> --}}
+<div class="container px-3 my-5 clearfix">
+    @if ($orders)
+    <!-- Shopping cart table -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Shopping Cart</h2>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+              <table class="table m-0">
+                <thead>
+                  <tr>
+                    <!-- Set columns width -->
+                    <th class="text-center py-3 px-4" style="min-width: 400px;"></th>
+                    <th class="text-right py-3 px-4 text-center" style="width: 100px;">Price</th>
+                    <th class="text-center py-3 px-4" style="width: 120px;">Quantity</th>
+                    <th class="text-right py-3 px-4" style="width: 100px;">Total</th>
+                    <th class="text-center align-middle py-3 px-0" style="width: 40px;"><a href="#" class="shop-tooltip float-none text-light" title="" data-original-title="Clear cart"><i class="ino ion-md-trash"></i></a></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach ($orders->ligne as $lc)
 
+                  <tr>
+                    <td class="p-4 ">
+                      <div class="media align-items-center">
+                        <img src="{{ $lc->events->image }}" class=" " height="175px" width="250px" alt="" style="border-radius:12px;background-size:cover">
+                        <a href="#" class="  ms-5 text-dark fs-3 text-bold fw-bold">{{ $lc->events->titre }}</a>
+                        <div class="media-body">
+
+                            <span class="ui-product-color ui-product-color-sm align-text-bottom" style="background:#e81e2c;"></span> &nbsp;
+                            <span class="text-muted"></span>
+
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-right font-weight-semibold align-middle p-4 text-center" >{{ $lc->price }} $</td>
+                    <td class="align-middle p-4 text-center">{{ $lc->qte }}</td>
+                    <td class="text-right font-weight-semibold align-middle p-4">{{ $lc->price * $lc->qte }} $</td>
+                    <td class="text-center align-middle px-0"><a href="/guests/lc/{{ $lc->id }}/destroy" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
+                  </tr>
+
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
+            {{-- <!-- / Shopping cart table -->
+
+            <div class="d-flex flex-wrap justify-content-between align-items-center pb-4">
+                <div class="text-right mt-4">
+                  <label class="text-muted font-weight-normal m-0">Total price</label>
+                  <div class="text-large"><strong>{{ $lc->price * $lc->qte }}</strong></div>
+                </div>
+              </div>
+            </div> --}}
+
+
+
+            <div class="float-right mt-5">
+              <button type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">Back to shopping</button>
+              <a class="btn btn-lg btn-primary mt-2 btn" href="stripe">Checkout</a>
+            </div>
+
+          </div>
+      </div>
+  </div>
+  @endif
 @endsection
