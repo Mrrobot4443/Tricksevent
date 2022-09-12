@@ -36,7 +36,7 @@
     <script src="{{asset('admin/js/quixnav-init.js')  }}"></script>
     <script src="{{asset('admin/js/custom.min.js')  }}"></script>
     <!--removeIf(production)-->
-    <!-- Demo scripts -->
+    <!- - Demo scripts -->
     <script src="{{asset('admin/js/styleSwitcher.js')  }}"></script>
     <!--endRemoveIf(production)-->
 
@@ -49,7 +49,8 @@
     <script src="{{asset('admin/vendor/datatables/js/jquery.dataTables.min.js')  }}"></script>
     <script src="{{asset('admin/js/plugins-init/datatables.init.js')  }}"></script>
 
-
+    <script src="{{ asset('vendor/chart.js/Chart.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/plugins-init/chartjs-init.js') }} "></script>
 </body>
 
 
