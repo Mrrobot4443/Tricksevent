@@ -135,7 +135,7 @@
               </div>
             </div> --}}
 
-
+           <h1>{{ $orders->getTotal() }} $</h1>
 
             <div class="float-right mt-5">
               <button type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">Back to shopping</button>

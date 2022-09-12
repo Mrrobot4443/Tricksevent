@@ -19,13 +19,14 @@
                         </div>
                         <div class="search-form-wrap" data-aos-delay="900" data-aos="fade-up">
                             <div class="search-form-inner">
-                                <form class="search-form" action="#">
+                                <form class="search-form" action="search" method="POST">
+                                    @csrf
                                     <div class="single-form">
                                         <label class="form-label"><i class="fas fa-search"></i></label>
-                                        <input type="text" placeholder="Type Event Name">
-                                        @foreach ($events as $event)
+                                        <input type="text" placeholder="Type Event Name" name="key" >
+                                        {{-- @foreach ($events as $event)
                                             <i>{{ $event->titre }}</i>
-                                        @endforeach
+                                        @endforeach --}}
                                     </div>
                                     <div class="single-form">
                                         <label class="form-label"><i class="fas fa-list-alt"></i> Category</label>
@@ -225,12 +226,12 @@
                     <h2 class="main-title"><span class="title-shape-1">Featured </span>Events</h2>
                 </div>
                 <!-- Section Title End -->
-                <div class="meeta-event-featured">
-                    <div class="row">
+                <div class="meeta-event-featured " style="max-height: 90rem;">
+                    <div class="row" style="max-height: 90rem;">
                         @foreach ($events as $event)
                             <div class="col-lg-3 col-md-4 col-sm-6">
                                 <!-- Single Item Start -->
-                                <div class="single-item">
+                                <div class="single-item "  >
                                     <div class="featured-img">
                                         <a href="/detailles/{{ $event->id }}"><img src="{{ asset($event->image) }}"
                                                 alt=""></a>

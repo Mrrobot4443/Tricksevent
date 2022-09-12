@@ -43,4 +43,5 @@ Route::post('contact-us', [HomeController::class, 'showContactForm'])->name('con
 Route::post('/admin/profile/update', [HomeController::class, 'updateProfile'])->name('update-profile');
 Route::get('stripe', [StripController::class , 'stripe']);
 Route::post('stripe', [StripController::class, 'stripePost'])->name('stripe.post');
+Route::post('search', [HomeController::class, 'search']);
 

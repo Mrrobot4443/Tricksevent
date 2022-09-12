@@ -45,15 +45,12 @@
 
                                     @if (Auth::user())
                                         <div class="navbar-nav ml-auto py-0">
-                                            @if (Auth::user('admin'))
-                                                <a href="{{ route('dashboard_admin') }}"
-                                                    class="nav-item nav-link">Dashboard</a>
-                                            @elseif (Auth::user('user'))
-                                                <a href="{{ route('dashboard_user') }}"
-                                                    class="nav-item nav-link">Dashboard</a>
-                                            @endif
-                                            <a href="{{ route('logout') }}" class="nav-item nav-link mb-5">logout</a>
-                                        </div>
+
+                                                <a href="/login" class="nav-item nav-link">Dashboard</a>
+
+                                                <a href="{{ route('logout') }}"
+                                                    class="nav-item nav-link mb-5">logout</a>
+                                            </div>
                                     @else
                                         <div class="navbar-nav ml-auto py-0">
                                             <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
@@ -87,7 +84,8 @@
                                             <div class="search-inner">
                                                 <i id="search-close" class="flaticon-close search-close"></i>
                                                 <div class="search-cell">
-                                                    <form action="#">
+                                                    <form action="search" method="POST" name="key">
+                                                        @csrf
                                                         <div class="search-field-holder">
                                                             <input class="main-search-input" type="search"
                                                                 placeholder="Search Your Keyword...">

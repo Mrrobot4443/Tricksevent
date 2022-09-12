@@ -18,6 +18,7 @@ class HomeController extends Controller
     public function home()
     {
         $events = Event::all();
+
         $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
         return view('welcome', compact('events', 'orders'));
     }
@@ -34,6 +35,14 @@ class HomeController extends Controller
 
         return view('admin.Guests.index', compact('users'));
     }
+
+    public function search(Request $request)
+    {
+        $events = Event::where('titre', 'LIKE', '%' . $request->key . '%');
+
+        return view('welcome', compact('events'));
+    }
+
     public function profile()
     {
         // $user = User::where(Auth::user())->get();

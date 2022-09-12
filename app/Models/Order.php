@@ -14,13 +14,15 @@ class Order extends Model
 
     public function client(){
         return $this->belongsTo(User::class, 'user_id', 'id');
+
+
     }
 
     public function getTotal(){
         $total = 0;
         // Liste des ligne de commande
         foreach($this->ligne as $lc){
-            $total += $lc->ticket->price * $lc->qte;
+            $total += $lc->price * $lc->qte;
         }
         return $total;
     }
