@@ -19,14 +19,14 @@ class HomeController extends Controller
     {
         $events = Event::all();
         $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
-        return view('welcome', compact('events','orders'));
+        return view('welcome', compact('events', 'orders'));
     }
     public function detailles($id)
     {
         $events = Event::find($id);
         $tickets = Ticket::find($id);
         $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
-        return view('detailles.detailles', compact('events', 'tickets','orders'));
+        return view('detailles.detailles', compact('events', 'tickets', 'orders'));
     }
     public function guests()
     {
@@ -94,20 +94,16 @@ class HomeController extends Controller
             return view('admin.auth.login');
         }
     }
-    public function showContactForm()
+    public function showContactForm(ContactRequest $request)
     {
+
+        Mail::to('yazo-yazo@hotmail.com')->send(new ContactMail(
+            $request->name,
+            $request->email,
+            $request->phone,
+            $request->content
+        ));
         return view('contact.contact');
-
-        function submitContactForm(ContactRequest $request){
-
-            Mail::to('yazo-yazo@hotmail.com')->send(new ContactMail(
-               $request->name,
-               $request->email,
-               $request->phone,
-               $request->content
-           ));
-           return back();
-        }
     }
     public function submitEvents()
     {

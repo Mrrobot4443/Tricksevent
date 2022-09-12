@@ -1,6 +1,8 @@
 @extends('admin.layouts.app');
 
 @section('content')
+@include('admin.layouts.top_menu')
+@include('admin.layouts.side_bar')
     <div class="content-body">
         <div class="container-fluid">
             <div class="row page-titles mx-0">
