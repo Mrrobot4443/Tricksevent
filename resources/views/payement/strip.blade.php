@@ -21,11 +21,11 @@
                             </div>
                         @endif
 
-                        <form role="form" action="{{ route('stripe.post') }}" method="post" class="require-validation"
+                        <form role="form" action="{{ route('checkout') }}" method="post" class="require-validation"
                             data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
                             @csrf
 
-
+                            <input type="hidden" name="orders" value="{{ $orders->id }}">
 
                             <div class='form-row row mt-5'>
                                 <div class='col-xs-12 form-group required'>

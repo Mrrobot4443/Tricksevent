@@ -4,9 +4,17 @@
         <ul class="metismenu" id="menu">
             <li class="nav-label text-white">Navigation</li>
             <li>
+                @if (Auth::user())
+                    @if (Auth::user()->user_type == 'admin')
+                        <a href="{{ route('dashboard_admin') }}"><i class="mdi mdi-home"></i><span
+                                class="nav-text">Dashboard</span></a>
+                    @endif
+                    @if (Auth::user()->user_type == 'user')
+                        <a href="{{ route('dashboard_admin') }}"><i class="mdi mdi-home"></i><span
+                                class="nav-text">Dashboard</span></a>
+                    @endif
+                @endif
 
-                <a href="{{ route('dashboard_admin') }}"><i class="mdi mdi-home"></i><span
-                        class="nav-text">Dashboard</span></a>
             </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-guitar-acoustic"></i><span class="nav-text">Categories</span></a>
@@ -40,4 +48,3 @@
         </ul>
     </div>
 </div>
-

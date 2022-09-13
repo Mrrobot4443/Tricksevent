@@ -21,6 +21,7 @@ Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::post('/updateProfile', [HomeController::class, 'updateProfile'])->name('updateProfile');
 Route::get('/chekdetaills', [OrderController::class, 'cart'])->name('cart');
 Route::post('/store', [OrderController::class, 'store'])->name('store');
+Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout')->middleware('auth','User');
 
 Route::get('/profile_user', [HomeController::class, 'profile_user'])->name('profile_user');
 Route::post('/updateProfile_user', [HomeController::class, 'updateProfile_user'])->name('updateProfile_user');

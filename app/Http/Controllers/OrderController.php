@@ -73,4 +73,11 @@ class OrderController extends Controller
 
         return view('detaillechek', compact('orders'));
     }
+    public function checkout(Request $request){
+        $orders = Order::find($request->orders);
+        $orders->etat = "payee";
+        $orders->update();
+
+        return redirect('/home')->with('success', 'Commande payee avec succes...');
+    }
 }

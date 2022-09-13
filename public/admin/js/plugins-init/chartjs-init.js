@@ -4,7 +4,7 @@
     //basic bar chart
 
     const barChart_1 = document.getElementById("barChart_1").getContext('2d');
-    
+
     barChart_1.height = 100;
 
     new Chart(barChart_1, {
@@ -23,7 +23,7 @@
             ]
         },
         options: {
-            legend: false, 
+            legend: false,
             scales: {
                 yAxes: [{
                     ticks: {
@@ -60,13 +60,13 @@
                     data: [65, 59, 80, 81, 56, 55, 40],
                     borderColor: barChart_2gradientStroke,
                     borderWidth: "0",
-                    backgroundColor: barChart_2gradientStroke, 
+                    backgroundColor: barChart_2gradientStroke,
                     hoverBackgroundColor: barChart_2gradientStroke
                 }
             ]
         },
         options: {
-            legend: false, 
+            legend: false,
             scales: {
                 yAxes: [{
                     ticks: {
@@ -97,7 +97,7 @@
     const barChart_3gradientStroke3 = barChart_3.createLinearGradient(50, 100, 50, 50);
     barChart_3gradientStroke3.addColorStop(0, "rgba(40, 199, 111, 1)");
     barChart_3gradientStroke3.addColorStop(1, "rgba(40, 199, 111, 1)");
-    
+
     barChart_3.height = 100;
 
     let barChartData = {
@@ -106,7 +106,7 @@
         datasets: [{
             label: 'Red',
             backgroundColor: barChart_3gradientStroke,
-            hoverBackgroundColor: barChart_3gradientStroke, 
+            hoverBackgroundColor: barChart_3gradientStroke,
             data: [
                 '12',
                 '12',
@@ -119,7 +119,7 @@
         }, {
             label: 'Green',
             backgroundColor: barChart_3gradientStroke2,
-            hoverBackgroundColor: barChart_3gradientStroke2, 
+            hoverBackgroundColor: barChart_3gradientStroke2,
             data: [
                 '12',
                 '12',
@@ -132,7 +132,7 @@
         }, {
             label: 'Blue',
             backgroundColor: barChart_3gradientStroke3,
-            hoverBackgroundColor: barChart_3gradientStroke3, 
+            hoverBackgroundColor: barChart_3gradientStroke3,
             data: [
                 '12',
                 '12',
@@ -152,7 +152,7 @@
         options: {
             legend: {
                 display: false
-            }, 
+            },
             title: {
                 display: false
             },
@@ -196,7 +196,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             }
         }
     });
-    
+
     lineChart_1.height = 100;
 
     new Chart(lineChart_1, {
@@ -207,23 +207,23 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             datasets: [
                 {
                     label: "My First dataset",
-                    data: [25, 20, 60, 41, 66, 45, 80],
+                    data: [0, 20, 60, 41, 66, 45, 80],
                     borderColor: 'rgba(56, 164, 248, 1)',
                     borderWidth: "2",
-                    backgroundColor: 'transparent',  
+                    backgroundColor: 'transparent',
                     pointBackgroundColor: 'rgba(56, 164, 248, 1)'
                 }
             ]
         },
         options: {
-            legend: false, 
+            legend: false,
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true, 
-                        max: 100, 
-                        min: 0, 
-                        stepSize: 20, 
+                        beginAtZero: true,
+                        max: 100,
+                        min: 0,
+                        stepSize: 20,
                         padding: 10
                     }
                 }],
@@ -235,7 +235,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             }
         }
     });
-    
+
 
 
 //gradient line chart
@@ -261,7 +261,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             }
         }
     });
-        
+
     lineChart_2.height = 100;
 
     new Chart(lineChart_2, {
@@ -275,24 +275,24 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
                     data: [25, 20, 60, 41, 66, 45, 80],
                     borderColor: lineChart_2gradientStroke,
                     borderWidth: "2",
-                    backgroundColor: 'transparent', 
+                    backgroundColor: 'transparent',
                     pointBackgroundColor: 'rgba(26, 51, 213, 0.5)'
                 }
             ]
         },
         options: {
-            legend: false, 
+            legend: false,
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true, 
-                        max: 100, 
-                        min: 0, 
-                        stepSize: 20, 
+                        beginAtZero: true,
+                        max: 100,
+                        min: 0,
+                        stepSize: 20,
                         padding: 10
                     }
                 }],
-                xAxes: [{ 
+                xAxes: [{
                     ticks: {
                         padding: 5
                     }
@@ -329,7 +329,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             }
         }
     });
-        
+
     lineChart_3.height = 100;
 
     new Chart(lineChart_3, {
@@ -343,31 +343,31 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
                     data: [25, 20, 60, 41, 66, 45, 80],
                     borderColor: lineChart_3gradientStroke1,
                     borderWidth: "2",
-                    backgroundColor: 'transparent', 
+                    backgroundColor: 'transparent',
                     pointBackgroundColor: 'rgba(26, 51, 213, 0.5)'
                 }, {
                     label: "My First dataset",
                     data: [5, 20, 15, 41, 35, 65, 80],
                     borderColor: lineChart_3gradientStroke2,
                     borderWidth: "2",
-                    backgroundColor: 'transparent', 
+                    backgroundColor: 'transparent',
                     pointBackgroundColor: 'rgba(56, 164, 248, 1)'
                 }
             ]
         },
         options: {
-            legend: false, 
+            legend: false,
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true, 
-                        max: 100, 
-                        min: 0, 
-                        stepSize: 20, 
+                        beginAtZero: true,
+                        max: 100,
+                        min: 0,
+                        stepSize: 20,
                         padding: 10
                     }
                 }],
-                xAxes: [{ 
+                xAxes: [{
                     ticks: {
                         padding: 5
                     }
@@ -375,13 +375,13 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             }
         }
     });
-    
+
 
 
 //basic area chart
 
     const areaChart_1 = document.getElementById("areaChart_1").getContext('2d');
-    
+
     areaChart_1.height = 100;
 
     new Chart(areaChart_1, {
@@ -395,24 +395,24 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
                     data: [25, 20, 60, 41, 66, 45, 80],
                     borderColor: 'rgba(0, 0, 1128, .3)',
                     borderWidth: "1",
-                    backgroundColor: 'rgba(0, 171, 197, .5)', 
+                    backgroundColor: 'rgba(0, 171, 197, .5)',
                     pointBackgroundColor: 'rgba(0, 0, 1128, .3)'
                 }
             ]
         },
         options: {
-            legend: false, 
+            legend: false,
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true, 
-                        max: 100, 
-                        min: 0, 
-                        stepSize: 20, 
+                        beginAtZero: true,
+                        max: 100,
+                        min: 0,
+                        stepSize: 20,
                         padding: 10
                     }
                 }],
-                xAxes: [{ 
+                xAxes: [{
                     ticks: {
                         padding: 5
                     }
@@ -429,7 +429,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
     const areaChart_2gradientStroke = areaChart_2.createLinearGradient(500, 0, 100, 0);
     areaChart_2gradientStroke.addColorStop(0, "rgba(26, 51, 213, 1)");
     areaChart_2gradientStroke.addColorStop(1, "rgba(26, 51, 213, 0.5)");
-    
+
     areaChart_2.height = 100;
 
     new Chart(areaChart_2, {
@@ -448,18 +448,18 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             ]
         },
         options: {
-            legend: false, 
+            legend: false,
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true, 
-                        max: 100, 
-                        min: 0, 
-                        stepSize: 20, 
+                        beginAtZero: true,
+                        max: 100,
+                        min: 0,
+                        stepSize: 20,
                         padding: 10
                     }
                 }],
-                xAxes: [{ 
+                xAxes: [{
                     ticks: {
                         padding: 5
                     }
@@ -467,12 +467,12 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             }
         }
     });
-    
+
 
 //gradient area chart
 
     const areaChart_3 = document.getElementById("areaChart_3").getContext('2d');
-    
+
     areaChart_3.height = 100;
 
     new Chart(areaChart_3, {
@@ -487,7 +487,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
                     borderColor: 'rgb(0, 171, 197)',
                     borderWidth: "1",
                     backgroundColor: 'rgba(0, 171, 197, .5)'
-                }, 
+                },
                 {
                     label: "My First dataset",
                     data: [5, 25, 20, 41, 36, 75, 70],
@@ -498,18 +498,18 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             ]
         },
         options: {
-            legend: false, 
+            legend: false,
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true, 
-                        max: 100, 
-                        min: 0, 
-                        stepSize: 20, 
+                        beginAtZero: true,
+                        max: 100,
+                        min: 0,
+                        stepSize: 20,
                         padding: 10
                     }
                 }],
-                xAxes: [{ 
+                xAxes: [{
                     ticks: {
                         padding: 5
                     }
@@ -517,10 +517,10 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             }
         }
     });
-    
 
 
-    
+
+
     //radar chart
     const radar_chart = document.getElementById("radar_chart").getContext('2d');
 
@@ -557,7 +557,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
         },
         options: {
             legend: false,
-            maintainAspectRatio: false, 
+            maintainAspectRatio: false,
             scale: {
                 ticks: {
                     beginAtZero: true
@@ -565,7 +565,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             }
         }
     });
-    
+
 
 
 //pie chart
@@ -579,7 +579,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             defaultFontFamily: 'Poppins',
             datasets: [{
                 data: [45, 25, 20, 10],
-                borderWidth: 0, 
+                borderWidth: 0,
                 backgroundColor: [
                     "rgba(0, 171, 197, .9)",
                     "rgba(0, 171, 197, .7)",
@@ -597,19 +597,19 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             labels: [
                 "one",
                 "two",
-                "three", 
+                "three",
                 "four"
             ]
         },
         options: {
-            responsive: true, 
-            legend: false, 
+            responsive: true,
+            legend: false,
             maintainAspectRatio: false
         }
     });
-    
-    
-    
+
+
+
     //doughut chart
     const doughnut_chart = document.getElementById("doughnut_chart").getContext('2d');
     // doughnut_chart.height = 100;
@@ -619,7 +619,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             defaultFontFamily: 'Poppins',
             datasets: [{
                 data: [45, 25, 20, 10],
-                borderWidth: 0, 
+                borderWidth: 0,
                 backgroundColor: [
                     "rgba(0, 0, 128, .9)",
                     "rgba(0, 0, 128, .7)",
@@ -646,9 +646,9 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             maintainAspectRatio: false
         }
     });
-    
-    
-    
+
+
+
     //polar chart
     const polar_chart = document.getElementById("polar_chart").getContext('2d');
     // polar_chart.height = 100;
@@ -658,7 +658,7 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             defaultFontFamily: 'Poppins',
             datasets: [{
                 data: [15, 18, 9, 6, 19],
-                borderWidth: 0, 
+                borderWidth: 0,
                 backgroundColor: [
                     "rgba(0, 171, 197, .5)",
                     "rgba(0, 0, 128, .5)",
@@ -670,13 +670,14 @@ let draw = Chart.controllers.line.__super__.draw; //draw shadow
             }]
         },
         options: {
-            responsive: true, 
+            responsive: true,
             maintainAspectRatio: false
         }
     });
 
-    
+
 
 
 
 })(jQuery);
+

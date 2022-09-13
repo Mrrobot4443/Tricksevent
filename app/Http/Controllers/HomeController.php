@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
 use App\Models\Event;
+use App\Models\Ligne;
 use App\Models\Order;
 use App\Models\Ticket;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -18,9 +20,11 @@ class HomeController extends Controller
     public function home()
     {
         $events = Event::all();
-
-        $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
-        return view('welcome', compact('events', 'orders'));
+        if (Auth::user()) {
+            $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
+            return view('welcome', compact('orders'));
+        }
+        return view('welcome', compact('events'));
     }
     public function detailles($id)
     {
@@ -90,7 +94,12 @@ class HomeController extends Controller
     }
     public function dashboard_admin()
     {
-        return view('admin.dashboard');
+        $firstDay = Carbon::now()->subDays(7)->format('d');
+        $lastDay = Carbon::now()->subDays(0)->format('d');
+        $users = User::select('id', 'created_at')->where('created_at', '>=', $firstDay)->get()->groupBy(function($day){
+            return Carbon::parse($day->created_at)->format('d');
+        });
+        return view('admin.dashboard',compact('firstDay', 'lastDay', 'users'));
     }
     public function login_admin()
     {
