@@ -256,7 +256,7 @@
                         label: "My First dataset",
                         data: [
                             @foreach ($users as $u)
-                                {{ count($u)}},
+                                {{ count($u) * 10}},
                             @endforeach
                         ],
                         borderColor: 'rgba(56, 164, 248, 1)',
@@ -271,10 +271,10 @@
                         yAxes: [{
                             ticks: {
                                 beginAtZero: true,
-                                max: 10,
+                                max: 100,
                                 min: 0,
-                                stepSize: 2,
-                                padding: 1
+                                stepSize: 20,
+                                padding: 10
                             }
                         }],
                         xAxes: [{

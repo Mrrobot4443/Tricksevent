@@ -36,7 +36,7 @@
 
     //change the sidebar position controller
     sidebarPositionSelect.on('change', function() {
-        this.value === "fixed" && body.attr('data-sidebar-style') === "modern" && body.attr('data-layout') === "vertical" ? 
+        this.value === "fixed" && body.attr('data-sidebar-style') === "modern" && body.attr('data-layout') === "vertical" ?
         alert("Sorry, Modern sidebar layout dosen't support fixed position!") :
         body.attr('data-sidebar-position', this.value);
 
@@ -45,7 +45,7 @@
                 position: "right",
                 size: "5px",
                 height: "100%",
-                color: "transparent"
+                color: "dark"
             })
         } else {
             $('.quixnav-scroll').slimscroll({

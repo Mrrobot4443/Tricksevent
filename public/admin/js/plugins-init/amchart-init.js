@@ -395,7 +395,7 @@
                 "hh": "h ",
                 "mm": "min",
                 "ss": ""
-            }, 
+            },
             "gridColor": "#ddd"
         }],
         "graphs": [{

@@ -20,9 +20,12 @@ class HomeController extends Controller
     public function home()
     {
         $events = Event::all();
+        //   $ligns=Ligne::all();
+
         if (Auth::user()) {
             $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
-            return view('welcome', compact('orders'));
+
+            return view('welcome', compact('orders','events'));
         }
         return view('welcome', compact('events'));
     }
@@ -131,6 +134,12 @@ class HomeController extends Controller
     {
         // $users = User::all();
         return view('user.dashboard');
+    }
+    public function orders()
+    {
+        $users = User::all();
+        $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
+        return view('admin.orders.orders',compact('users','orders'));
     }
 
 

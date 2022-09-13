@@ -4,11 +4,11 @@
 
     new quixSettings({
         sidebarStyle: "full",
-        navheaderBg: "color_2",
-        sidebarBg: "color_2",
+        navheaderBg: "light",
+        sidebarBg: "",
         headerPosition: "fixed",
-        version: "dark",
-        // layout: "horizontal"
+        version: "light",
+        layout: "horizontal"
 
     });
 
