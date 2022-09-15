@@ -133,6 +133,18 @@ class HomeController extends Controller
     {
         return view('admin.events.index');
     }
+    public function browse()
+    {
+        $events = Event::all();
+
+        return view('browse',compact('events'));
+    }
+    public function blog()
+    {
+        $events = Event::all();
+
+        return view('blog',compact('events'));
+    }
     public function dashboard_user()
     {
         // $users = User::all();

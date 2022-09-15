@@ -35,8 +35,8 @@
                             <li><a href="/About">About</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="sub-menu">
-                                    <li><a href="event-list.html">Blog</a></li>
-                                    <li><a href="gallery.html">Gallery</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/browse">Gallery</a></li>
                                 </ul>
                             </li>
                             <li class="me-5"><a href="{{ route('contact') }}">Contact</a></li>
