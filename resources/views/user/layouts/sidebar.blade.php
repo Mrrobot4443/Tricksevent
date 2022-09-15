@@ -10,7 +10,7 @@
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                         class="mdi mdi-guitar-acoustic"></i><span class="nav-text">tickets</span></a>
                 <ul aria-expanded="false">
-                    <li><a href="">You're tickets</a></li>
+                    <li><a href="{{ route('orders_user') }}">You're tickets</a></li>
 
                 </ul>
         </ul>

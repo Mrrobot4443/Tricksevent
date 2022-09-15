@@ -22,7 +22,7 @@
             <!-- row -->
 
 
-            <div class="row">
+            <div class="row text-black" >
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
@@ -32,22 +32,22 @@
                             <div class="table-responsive">
                                 <table id="example">
                                     <thead>
-                                        <tr class="text-white">
-                                            <th scope="col" class="text-white">n°</th>
-                                            <th scope="col" class="text-white">Nom de la ville</th>
-                                            <th scope="col" class="text-white">Date de création</th>
-                                            <th scope="col" class="text-white">Date de modification</th>
+                                        <tr class="text-dark">
+                                            <th scope="col" class="text-dark">n°</th>
+                                            <th scope="col" class="text-dark">Nom de la ville</th>
+                                            <th scope="col" class="text-dark">Date de création</th>
+                                            <th scope="col" class="text-dark">Date de modification</th>
                                         </tr>
                                     </thead>
                                     <tbody >
                                         @foreach ($ville as $key => $villes)
                                             <tr>
-                                                <th>{{ $key + 1 }}</th>
-                                                <td>{{ $villes->name }}</td>
-                                                <td>{{ $villes->created_at->diffForHumans() }}</td>
-                                                <td>{{ $villes->updated_at->diffForHumans() }}</td>
-                                                <td class="justify-content-center align-items-center">
-                                                    <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
+                                                <th class="text-dark">{{ $key + 1 }}</th>
+                                                <td class="text-dark">{{ $villes->name }}</td>
+                                                <td class="text-dark">{{ $villes->created_at->diffForHumans() }}</td>
+                                                <td class="text-dark">{{ $villes->updated_at->diffForHumans() }}</td>
+                                                <td class="justify-content-center align-items-center text-black">
+                                                    <a class="btn btn-secondary " data-bs-dismiss="modal"
                                                         href="{{ route('ville.edit', encrypt($villes->id)) }}"> <i
                                                             class="fa fa-plus"></i> modifier </a>
                                                     <form action="{{ route('ville.destroy', $villes->id) }}" method="POST" id="{{ ('villes->id') }}">

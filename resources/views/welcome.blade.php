@@ -226,23 +226,21 @@
                     <h2 class="main-title"><span class="title-shape-1">Featured </span>Events</h2>
                 </div>
                 <!-- Section Title End -->
-                <div class="meeta-event-featured " style="max-height: 90rem;">
-                    <div class="row" style="max-height: 90rem;">
+                <div class="meeta-event-featured " >
+                    <div class="row" >
                         @foreach ($events as $event)
                             <div class="col-lg-3 col-md-4 col-sm-6">
                                 <!-- Single Item Start -->
-                                <div class="single-item "  >
+                                <div class="single-item flex-wrap"  >
                                     <div class="featured-img">
-                                        <a href="/detailles/{{ $event->id }}"><img src="{{ asset($event->image) }}"
+                                        <a href="/detailles/{{ $event->id }}"><img src="{{ asset($event->image) }}" width="150px" height="150px"
                                                 alt=""></a>
-                                        <div class="top-meta">
-                                            <span class="date">{{ $event->date_debut }}</span></span>
-                                        </div>
+
                                     </div>
-                                    <div class="featured-content">
+                                    <div class="featured-content card" style="max-height: 170px">
                                         {{-- <span class="category color-4 mt-5">{{ $event->category->name }}</span> --}}
                                         <h3 class="title text-black mt-4 text-bold fs-5 "><a
-                                                href="event-single.html">{{ $event->titre }}</a></h3>
+                                                href="/detailles/{{ $event->id }}">{{ $event->titre }}</a></h3>
                                         <br>
                                         <span class="meta mt-3 text-black me-5 ms-2 mb-3"><i
                                                 class="fas fa-map-marker-alt"></i>

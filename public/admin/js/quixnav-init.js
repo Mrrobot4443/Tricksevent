@@ -8,7 +8,7 @@
         sidebarBg: "",
         headerPosition: "fixed",
         version: "light",
-        layout: "horizontal"
+        // layout: "horizontal"
 
     });
 

@@ -5,8 +5,8 @@
 
     <div class="col-md-6 offset-md-3">
         <div class="card mt-5 shadow">
-            <div class="card-body">
-                <form action="{{ route('event.update', $events->id) }}" method="POST">
+            <div class="card-body text-black">
+                <form action="{{ route('event.update', $events->id) }}" method="POST" class="text-black">
                     @csrf
                     @method('PUT')
                     <div class="form-group mb-3">

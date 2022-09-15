@@ -40,6 +40,7 @@ Route::resource('ticket', TicketController::class)->middleware('auth','admin');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('contact-us', [HomeController::class, 'showContactForm'])->name('contact');
 Route::post('contact-us', [HomeController::class, 'showContactForm'])->name('contact');
+Route::get('orders_user', [HomeController::class, 'orders_user'])->name('orders_user');
 
 Route::get('orders', [HomeController::class, 'orders'])->name('orders');
 // Route::post('contact-us', [HomeController::class, 'submitContactForm'])->name('contact');

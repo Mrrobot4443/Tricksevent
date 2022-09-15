@@ -188,12 +188,12 @@
                             <form action="/store" method="POST">
                                 @csrf
                                 <input type="hidden" name="idevents" value="{{ $events->id }}">
-                                <button class="btn btn-primary mb-2" type="submit">Get You're Ticket</button>
                                 <div class="btn-price mt-4">
+                                    <button class="btn btn-primary mb-2 rounded" type="submit">Get You're Ticket</button>
                                     <div>
                                         <div class="price">
 
-                                            <select id="prix" class="select-box " name="price">
+                                           <button disabled> <select id="prix" class="select-box " name="price"></button>
                                                 <option class="disabled text-danger text-bold fs-3">Price</option>
                                                 <option class="text-bold fst-italic fw-bold">{{ $events->prix_1 }}</option>
                                                 <option class="text-bold fst-italic fw-bold">{{ $events->prix_2 }}</option>
@@ -231,7 +231,7 @@
                     </div>
                     <div>
                         <!-- Countdown Start -->
-                        <div class="meeta-countdown countdown" data-countdown="2022/12/31" data-format="short">
+                        <div class="meeta-countdown countdown" data-countdown="2022/09/15" data-format="short">
                             <div class="single-countdown">
                                 <span class="count countdown__time daysLeft"></span>
                                 <span class="value countdown__time daysText"></span>

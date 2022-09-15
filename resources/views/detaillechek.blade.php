@@ -79,7 +79,7 @@
     </div>
     @endif
 </div> --}}
-<div class="container px-3 my-5 clearfix">
+<div class="container px-3 my-5 clearfix" style="filter: drop-shadow(0.50rem 0.50rem 0.50rem rgb(113, 107, 108))" >
     @if ($orders)
     <!-- Shopping cart table -->
     <div class="card">
@@ -105,7 +105,7 @@
                   <tr>
                     <td class="p-4 ">
                       <div class="media align-items-center">
-                        <img src="{{ $lc->events->image }}" class=" " height="175px" width="250px" alt="" style="border-radius:12px;background-size:cover">
+                        <img src="{{ $lc->events->image }}" class=" " height="175px" width="250px" alt="" style="border-radius:12px;background-size:cover;filter: drop-shadow(0.50rem 0.50rem 0.50rem rgb(113, 107, 108))">
                         <a href="#" class="  ms-5 text-dark fs-3 text-bold fw-bold">{{ $lc->events->titre }}</a>
                         <div class="media-body">
 

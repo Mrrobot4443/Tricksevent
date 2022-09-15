@@ -51,13 +51,13 @@
                                                 <th >{{ $key + 1 }}</th>
 
                                                 <td class="me-5 text-black">{{ $event->titre }}</td>
-                                                <td>{{ $event->category->name }}</td>
-                                                <td>{{ $event->villes->name }}</td>
+                                                <td class="text-dark">{{ $event->category->name }}</td>
+                                                <td class="text-dark">{{ $event->villes->name }}</td>
 
-                                                <td>{{ $event->prix_1 }}</td>
+                                                <td class="text-dark">{{ $event->prix_1 }}</td>
 
-                                                <td>{{ $event->date_debut }}</td>
-                                                <td>{{ $event->date_fin }}</td>
+                                                <td class="text-dark">{{ $event->date_debut }}</td>
+                                                <td class="text-dark">{{ $event->date_fin }}</td>
 
                                                 <td><img src="{{ asset($event->image) }}" class="rounded" width="200px" style="filter: drop-shadow(0 0 0.75rem crimson);"></td>
                                                 <td>

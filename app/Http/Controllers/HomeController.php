@@ -31,10 +31,12 @@ class HomeController extends Controller
     }
     public function detailles($id)
     {
+        $lastDay = Carbon::now()->subDays(0)->format('d');
         $events = Event::find($id);
         $tickets = Ticket::find($id);
+
         $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
-        return view('detailles.detailles', compact('events', 'tickets', 'orders'));
+        return view('detailles.detailles', compact('events', 'tickets', 'orders','lastDay'));
     }
     public function guests()
     {
@@ -99,10 +101,11 @@ class HomeController extends Controller
     {
         $firstDay = Carbon::now()->subDays(7)->format('d');
         $lastDay = Carbon::now()->subDays(0)->format('d');
+        $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
         $users = User::select('id', 'created_at')->where('created_at', '>=', $firstDay)->get()->groupBy(function($day){
             return Carbon::parse($day->created_at)->format('d');
         });
-        return view('admin.dashboard',compact('firstDay', 'lastDay', 'users'));
+        return view('admin.dashboard',compact('firstDay', 'lastDay', 'users','orders'));
     }
     public function login_admin()
     {
@@ -137,9 +140,17 @@ class HomeController extends Controller
     }
     public function orders()
     {
-        $users = User::all();
+        $order = Order::all();
         $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
-        return view('admin.orders.orders',compact('users','orders'));
+
+        return view('admin.orders.orders',compact('orders','order'));
+    }
+    public function orders_user()
+    {
+        $order = Order::where('user_id', Auth::user()->id)->get();
+        $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
+
+        return view('user.orders_user.orders',compact('orders','order'));
     }
 
 

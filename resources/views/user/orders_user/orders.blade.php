@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('user.layouts.app')
 @section('content')
     <div class="content-body">
         <div class="container-fluid">
@@ -30,7 +30,7 @@
                                 <table class="table table-hover table-responsive-sm">
                                     <thead>
                                         <tr>
-                                            <th>tickets</th>
+                                            <th>Users</th>
                                             <th>payements Statuts</th>
                                             <th>Total</th>
                                             <th>Date</th>
