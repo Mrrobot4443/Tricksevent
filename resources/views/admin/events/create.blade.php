@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <div class="card">
+                    <div class="card text-dark">
                         <div class="card-header">
                             <h4 class="card-title">Create Event</h4>
                         </div>
                         <div class="card-body">
-                            <div class="create-event-form">
+                            <div class="create-event-form text-dark">
                                 <form action="{{ route('event.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <h5 class="mb-3">General Info</h5>

@@ -48,6 +48,6 @@ Route::post('/admin/profile/update', [HomeController::class, 'updateProfile'])->
 Route::get('stripe', [StripController::class , 'stripe']);
 Route::post('stripe', [StripController::class, 'stripePost'])->name('stripe.post');
 Route::post('search', [HomeController::class, 'search']);
-Route::get('/browse', [HomeController::class, 'browse'])->name('browse');
+Route::get('/browse/{id} ', [HomeController::class, 'browse'])->name('browse');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 

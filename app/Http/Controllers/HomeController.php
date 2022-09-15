@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
+use App\Models\Category;
 use App\Models\Event;
 use App\Models\Ligne;
 use App\Models\Order;
@@ -20,14 +21,14 @@ class HomeController extends Controller
     public function home()
     {
         $events = Event::all();
-        //   $ligns=Ligne::all();
+        $categories = Category::all();
+
 
         if (Auth::user()) {
             $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
-
-            return view('welcome', compact('orders','events'));
+            return view('welcome', compact('orders','events', 'categories'));
         }
-        return view('welcome', compact('events'));
+        return view('welcome', compact('events','categories'));
     }
     public function detailles($id)
     {
@@ -133,11 +134,12 @@ class HomeController extends Controller
     {
         return view('admin.events.index');
     }
-    public function browse()
+    public function browse($idcategory)
     {
         $events = Event::all();
-
-        return view('browse',compact('events'));
+        $category = Category::find($idcategory);
+        $event = $category->event;
+        return view('browse',compact('events','event'));
     }
     public function blog()
     {

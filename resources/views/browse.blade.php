@@ -5,17 +5,17 @@
         <div class="container">
             <div class="meeta-blog-grid-wrap">
                 <div class="row">
-                    @foreach ($events as $event)
+                    @foreach ($event as $e)
                         <div class="col-lg-4 col-md-6">
                             <!-- Single Blog Start -->
                             <div class="single-blog">
                                 <div class="blog-image">
-                                    <a href="blog-details.html"><img src="{{ asset($event->image) }}" alt=""></a>
+                                    <a href="blog-details.html"><img src="{{ asset($e->image) }}" alt=""></a>
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">
-                                        <span class="category">{{ $event->titre }}</span>
-                                        <span class="date">{{ $event->date_debut }}</span>
+                                        <span class="category">{{ $e->titre }}</span>
+                                        <span class="date">{{ $e->date_debut }}</span>
                                     </div>
                                     <h3 class="title"><a href="blog-details.html">Registration for opening workshop </a>
                                     </h3>

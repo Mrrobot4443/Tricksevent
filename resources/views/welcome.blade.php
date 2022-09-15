@@ -82,8 +82,8 @@
                     <div class="col">
                         <!-- Category Item Start -->
                         <div class="category-item">
-                            <a href="/browse">
-                                <img src="assets/images/cat-1.png" alt=""></a>
+                            <a href="/browse/{{ $c->id }}">
+                                <img src="{{ asset($c->image) }}" alt=""></a>
                         </div>
                         <!-- Category Item End -->
 

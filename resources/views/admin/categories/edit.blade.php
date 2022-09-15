@@ -19,6 +19,13 @@
                         <strong class="text-danger">{{ $message }}</strong>
                     @enderror
                 </div>
+                <div class="form-group mb-3">
+                    <label for="image">image</label>
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
+                    @error('image')
+                        <strong class="text-danger">{{ $message }}</strong>
+                    @enderror
+                </div>
                 <div class="form-group mb-4">
                     <button class="btn btn-primary w-100">Sauvegarder</button>
                 </div>

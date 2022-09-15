@@ -32,21 +32,23 @@
                             <div class="table-responsive">
                                 <table id="example">
                                     <thead>
-                                        <tr class="text-white">
-                                            <th scope="col" class="text-white">n°</th>
-                                            <th scope="col" class="text-white">Nom de la catégorie</th>
-                                            <th scope="col" class="text-white">Date de création</th>
-                                            <th scope="col" class="text-white">Date de modification</th>
-                                            <th scope="col-md-4" class="text-white justify-content-center align-items-center">Actions</th>
+                                        <tr class="text-dark">
+                                            <th scope="col" class="text-dark">n°</th>
+                                            <th scope="col" class="text-dark">Nom de la catégorie</th>
+                                            <th scope="col" class="text-dark">Date de création</th>
+                                            <th scope="col" class="text-dark">Date de modification</th>
+                                            <th scope="col" class="text-dark">image</th>
+                                            <th scope="col-md-4" class="text-dark justify-content-center align-items-center">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($categories as $key => $category)
                                             <tr>
                                                 <th>{{ $key + 1 }}</th>
-                                                <td>{{ $category->name }}</td>
-                                                <td>{{ $category->created_at->diffForHumans() }}</td>
-                                                <td>{{ $category->updated_at->diffForHumans() }}</td>
+                                                <td class="text-dark">{{ $category->name }}</td>
+                                                <td class="text-dark">{{ $category->created_at->diffForHumans() }}</td>
+                                                <td class="text-dark">{{ $category->updated_at->diffForHumans() }}</td>
+                                                <td class="text-dark"><img src="{{ asset($category->image) }}" alt="" width="100px" height="100px"></td>
                                                 <td>
                                                     <a class="btn btn-secondary text-white" data-bs-dismiss="modal"
                                                         href="{{ route('category.edit', encrypt($category->id)) }}">modifier</a>
