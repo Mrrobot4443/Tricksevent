@@ -44,7 +44,7 @@
                     <li><a href="{{ route('guests') }}">Users Liste</a></li>
                 </ul>
             </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-account"></i><span
+            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-currency-usd"></i><span
                         class="nav-text">orders</span></a>
                 <ul aria-expanded="false">
                     <li><a href="{{ route('orders') }}">orders</a></li>

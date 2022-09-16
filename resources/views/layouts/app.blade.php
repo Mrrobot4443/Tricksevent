@@ -159,7 +159,7 @@
         hljs.initHighlightingOnLoad();
     </script>
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         $(function() {
 
             var $form = $(".require-validation");
@@ -219,7 +219,7 @@
     <!-- Create a HoverEffect object and pass an id/className of HTML element(s) you want to create the effect to -->
     <script>
         let myHover3D = new Hover3D(".card"); // Yep! That's it.
-    </script>
+    </script> --}}
 </body>
 </body>
 

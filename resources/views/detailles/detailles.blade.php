@@ -231,7 +231,7 @@
                     </div>
                     <div>
                         <!-- Countdown Start -->
-                        <div class="meeta-countdown countdown" data-countdown="2022/09/15" data-format="short">
+                        <div class="meeta-countdown countdown" data-countdown="{{ $events->date_debut }}" data-format="short">
                             <div class="single-countdown">
                                 <span class="count countdown__time daysLeft"></span>
                                 <span class="value countdown__time daysText"></span>

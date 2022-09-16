@@ -3,21 +3,21 @@
     <!-- Blog Start -->
     <div class="meeta-blog section-padding">
         <div class="container">
-            <div class="meeta-blog-grid-wrap">
+            <div class="meeta-blog-grid-wrap " >
                 <div class="row">
                     @foreach ($event as $e)
                         <div class="col-lg-4 col-md-6">
                             <!-- Single Blog Start -->
-                            <div class="single-blog">
+                            <div class="single-blog card" style="height: 370px">
                                 <div class="blog-image">
-                                    <a href="blog-details.html"><img src="{{ asset($e->image) }}" alt=""></a>
+                                    <a href="blog-details.html"><img src="{{ asset($e->image) }}" alt="" width="200px" height="200px"></a>
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">
                                         <span class="category">{{ $e->titre }}</span>
                                         <span class="date">{{ $e->date_debut }}</span>
                                     </div>
-                                    <h3 class="title"><a href="blog-details.html">Registration for opening workshop </a>
+                                    <h3 class="title"><a href="/detailles/{id}">Registration for opening workshop </a>
                                     </h3>
                                 </div>
                             </div>

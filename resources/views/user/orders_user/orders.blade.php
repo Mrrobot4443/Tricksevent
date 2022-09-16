@@ -40,7 +40,7 @@
                                     <tbody>
                                         @foreach ($order as $key => $order)
                                                 <tr>
-                                                    <th>{{ $order->client->name }}</th>
+                                                    <th>{{ $order->event }}</th>
                                                     <td><span class="badge badge-success">{{ $order->etat }}</span></td>
                                                     <td><span class="badge badge-primary">{{ $order->getTotal() }}</span>
                                                     </td>

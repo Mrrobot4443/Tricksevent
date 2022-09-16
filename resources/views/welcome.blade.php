@@ -233,9 +233,7 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="featured-more text-center">
-                        <a class="btn-2" href="event-single.html">More Featured Events</a>
-                    </div>
+
                 </div>
             </div>
         </div>

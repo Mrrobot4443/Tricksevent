@@ -20,9 +20,9 @@
 
     <div class="content-body">
         <div class="container-fluid">
-            <div class="row page-titles">
-                <div class="col-sm-6">
-                    <div class="breadcrumb-range-picker">
+            <div class="row page-titles ">
+                <div class="col-sm-6 text-dark">
+                    <div class="breadcrumb-range-picker text-dark" >
                         <span><i class="icon-calender"></i></span>
                         <span class="ml-1">ChartJS</span>
                     </div>

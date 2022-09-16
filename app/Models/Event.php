@@ -17,5 +17,8 @@ class Event extends Model
     public function ligne() {
         return $this->hasMany(Ligne::class);
     }
+    public function orders() {
+        return $this->belongsTo(Order::class);
+    }
 
 }

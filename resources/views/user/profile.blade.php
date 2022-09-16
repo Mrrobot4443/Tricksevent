@@ -1,8 +1,8 @@
 @extends('user.layouts.app')
 @section('content')
     <div class="content">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
+        <div class="container-fluid text-dark">
+            <div class="row justify-content-center  my-5 mt-4">
                 <div>
                     {{-- @include('inc.flash-message') --}}
                     <h2>Client edit profile</h2>
@@ -23,13 +23,13 @@
                             <label for="password">Mot de passe</label>
                             <input type="password" class="form-control" name="password" id="password">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 custom-file">
                             @if (auth()->user()->image)
-                                <label for="image">Modifier image</label>
+                                <label for="image" class="custom-file-label">Modifier image</label>
                             @else
-                                <label for="image">Ajouter image</label>
+                                <label for="image" class="custom-file-label">Ajouter image</label>
                             @endif
-                            <input class="form-control" name="image" id="image" type="file"
+                            <input class="form-control custom-file-input" name="image" id="image" type="file"
                                 placeholder="Tapper image produit...">
                             @error('image')
                                 <div class="alert alert-danger">
