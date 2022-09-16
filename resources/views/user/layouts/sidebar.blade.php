@@ -16,3 +16,21 @@
         </ul>
     </div>
 </div>
+
+<head>
+    Yassine Bessabess 23 ans
+</head>
+
+<body>
+    <ul>
+
+        <li> Baccalauréat science expérimental</li>
+        <li>Diplôme d'études universitaires Économie et gestion (Deug)</li>
+        <li>Diplôme d'études universitaires Économie et gestion (License) en cours</li>
+        <li>Formation 3W </li>
+    </ul>
+
+
+
+
+</body>

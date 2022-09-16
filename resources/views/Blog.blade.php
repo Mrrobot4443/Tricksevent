@@ -18,10 +18,10 @@
                             <div class="blog-content">
                                 <span class="category color-4">Conference</span>
                                 <div class="blog-meta">
-                                    <span class="meta"><i class="far fa-user"></i>  <a href="#"> Adam Hirachin</a></span>
-                                    <span class="meta"><i class="far fa-calendar-alt"></i> Octobor 09, 2022</span>
+                                    <span class="meta"><i class="far fa-user"></i>  <a href="#">Yassine Bessabess</a></span>
+                                    <span class="meta"><i class="far fa-calendar-alt"></i> 13 Août, 2022</span>
                                 </div>
-                                <h3 class="title">Registration for opening workshop </h3>
+                                <h3 class="title">CEO EVENTRICKS </h3>
                                 <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their knees, try new things, to be vulnerable, epic adventures oday most people get on average 4 to 6 hours of exercise every day, and make sure that everything they put in their mouths is not filled with sugars or preservatives.</p>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                             <!-- Blog Blockquote Start -->
                             <div class="blog-quote">
                                 <blockquote class="blockquote">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their knees, try new things, to be vulnerable, epic adventures oday most people </p>
+                                    <p>Progress is impossible without change, and those who cannot change their minds cannot change anything. </p>
                                 </blockquote>
                             </div>
                             <!-- Blog Blockquote End -->

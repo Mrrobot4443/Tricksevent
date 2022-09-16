@@ -256,10 +256,10 @@
                         <div class="swiper-slide">
                             <div class="project-item">
                                 <div class="event-project-thumb"
-                                    style="background-image: url(assets/images/up-event-1.jpg);">
+                                    style="background-image: url(assets/sky-concert.jpeg);">
                                 </div>
                                 <div class="event-project-content">
-                                    <h3 class="title">Mindfull App Pi Meets Soundproof Booth 2021 summer</h3>
+                                    <h3 class="title"> sky Festival         </h3>
                                     <div class="event-meta">
                                         <span><i class="far fa-clock"></i> 29 July - 30 July</span>
                                         <span><i class="fas fa-map-marker-alt"></i> Sand diego, Canada</span>
@@ -268,7 +268,7 @@
                                         <div class="meeta-register-countdown-wrapper">
 
                                             <!-- Countdown Start -->
-                                            <div class="meeta-countdown countdown" data-countdown="2024/10/24"
+                                            <div class="meeta-countdown countdown" data-countdown="2022/09/21"
                                                 data-format="short">
                                                 <div class="single-countdown">
                                                     <span class="count countdown__time daysLeft"></span>
@@ -407,10 +407,10 @@
                             <div class="meeta-sponsor-item-box sponsor-box-1">
 
                                 <div class="meeta-sponsor-logo sponsor-logo-1">
-                                    <a href="#"><img src="assets/images/sponsors-5.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('assets/casa-events.png') }}" width="170 px" height="200px" alt=""></a>
                                 </div>
                                 <div class="meeta-sponsor-logo sponsor-logo-2">
-                                    <a href="#"><img src="assets/images/sponsors-9.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('assets/hit-radio.webp') }}"width="200px" height="160px" alt=""></a>
                                 </div>
 
                             </div>
@@ -421,7 +421,7 @@
                             <div class="meeta-sponsor-item-box sponsor-box-2">
 
                                 <div class="meeta-sponsor-logo sponsor-logo-3">
-                                    <a href="#"><img src="assets/images/sponsors-7.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('assets/uradio.png') }}" alt="" width="200px" height="100px"></a>
                                 </div>
                                 <div class="meeta-sponsor-logo sponsor-logo-4">
                                     <a href="#"><img src="assets/images/sponsors-11.png" alt=""></a>
@@ -451,7 +451,7 @@
                                     <a href="#"><img src="assets/images/sponsors-8.png" alt=""></a>
                                 </div>
                                 <div class="meeta-sponsor-logo sponsor-logo-8">
-                                    <a href="#"><img src="assets/images/sponsors-12.png" alt=""></a>
+                                    <a href="#"><img src="{{ asset('assets/3w.jpg') }}" alt="" width="200px" height="100px"></a>
                                 </div>
 
                             </div>

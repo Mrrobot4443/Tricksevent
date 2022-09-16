@@ -27,8 +27,28 @@
                 <!-- About Content Start -->
                 <div class="meeta-about-content">
 
-                    <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their knees, try new things, to be vulnerable, and to have epic adventures</p>
-                    <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their knees, try new things, to be vulnerable, and to have epic adventures together, this time both in-person</p>
+                    <p><strong>Eventricks</strong> est une plateforme innovante dédiée aux bonnes affaires en ligne. Véritable guichet unique, le site internet et l’application <strong>EVENTRICKS</strong> vous permettent d’acheter en un clic vos tickets d’événements à prix coûtant ou de profiter de deals à prix réduits.
+
+                        Tout est simplifié pour vous permettre d’économiser du temps, de l’énergie et de l’argent. Chaque produit ou service qui vous intéresse fait l’objet d’un compte à rebours.
+
+                        Vous êtes acheteur
+                        La démarche d’inscription est simple. En 60 secondes chrono, vous pouvez créer votre compte utilisateur pour acheter des tickets ou pour profiter de deals. Les transactions se font en ligne : choisissez le(s) produits ou services qui vous intéressent, ajoutez-les dans le panier en un clic, optez pour un mode de paiement (sécurisé online, Wafacash ou autre), enregistrez ou imprimez votre bon d’achat envoyé par e-mail… Ensuite, rendez-vous à votre événement (billetterie) ou chez votre vendeur (deal).
+
+                        Vous êtes vendeur
+                        Inscrivez-vous en ligne ou contactez notre service commercial pour connaître nos conditions de vente. Proposez votre produit ou service à vendre en indiquant soigneusement le prix, les quantités, les dates de mise à disposition et autres modalités. Suivez en temps réel l’évolution de votre offre à travers divers indicateurs : compte à rebours, nombre de clics, d’achats, de
+
+                        1. BILLETS & TICKETS
+                         <strong>EVENTRICKS</strong> simplifie vos achats/ventes de tickets et billets pour tous types d’événements (pièces de théâtre, matchs de football, concerts de musique, festivals, formations, etc.).
+
+                        Pour en savoir plus
+                        <strong>EVENTRICKS</strong> est une plateforme d’intermédiation entre clients et vendeurs développée par l’entreprise Guichet Maroc SARL basée à Casablanca. Créée en 2018, Guichet Maroc est une société spécialisée dans la vente et la commercialisation de la billetterie.
+
+                        {{-- Contact
+                        <strong>EVENTRICKS</strong> – eventricks Maroc
+                        Casablanca
+                        Fixe : +212 522 22 23 22
+                        GSM : +212 621 546 847
+                        Email : yazo-yazo@hotmail.com</p> --}}
 
                 </div>
                 <!-- About Content End -->
@@ -61,7 +81,7 @@
                         </div>
                         <div class="feature-content">
                             <h3 class="title"><a href="#">Trainings & Awards</a></h3>
-                            <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their </p>
+                            <p></p>
                         </div>
                     </div>
                     <!-- Features Item End -->
@@ -74,7 +94,7 @@
                         </div>
                         <div class="feature-content">
                             <h3 class="title"><a href="#">World Class Speaker</a></h3>
-                            <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their </p>
+                            <p></p>
                         </div>
                     </div>
                     <!-- Features Item End -->
@@ -85,7 +105,7 @@
                         </div>
                         <div class="feature-content">
                             <h3 class="title"><a href="#">Evening Concert</a></h3>
-                            <p>We’re inviting the top creatives in the tech industry from all over the world to come learn, grow, scrape their </p>
+                            <p> </p>
                         </div>
                     </div>
                     <!-- Features Item End -->

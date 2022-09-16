@@ -8,28 +8,17 @@
                 <div class="footer-widget-wrap">
                     <div class="row">
 
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-3 col-md-8">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
-                                <h4 class="widget-title">Organized By</h4>
-                                <a class="footer-logo" href="index.html"><img src="assets/images/footer-logo-2.png"
-                                        alt="Logo"></a>
+
+                                <a class="footer-logo " href="/"><img src="{{ asset('assets/images/TE505.png') }}"
+                                        alt="Logo" style="padding-right: 46px;"></a>
                             </div>
                             <!-- Footer Widget End -->
                         </div>
-                        <div class="col-lg-3 col-md-6">
-                            <!-- Footer Widget Start -->
-                            <div class="footer-widget">
-                                <h4 class="widget-title">Event Details</h4>
-                                <div class="widget-text">
-                                    <span class="date">21 - 23 Octobor 2022</span>
-                                    <p>66 Road Broklyn Street BNG 275 New York. United States of America.</p>
-                                    <a class="btn-2" href="price.html">Buy Ticket</a>
-                                </div>
-                            </div>
-                            <!-- Footer Widget End -->
-                        </div>
-                        <div class="col-lg-3 col-md-6">
+
+                        <div class="col-lg-3 col-md-8">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
                                 <h4 class="widget-title">Contact Us</h4>
@@ -40,7 +29,7 @@
                                                 <i class="flaticon-phone-call"></i>
                                             </div>
                                             <div class="info-text">
-                                                <span><a href="#">+91 458 654 528</a></span>
+                                                <span><a href="#">+212 621 546 847</a></span>
                                             </div>
                                         </li>
                                         <li>
@@ -48,7 +37,7 @@
                                                 <i class="far fa-envelope-open"></i>
                                             </div>
                                             <div class="info-text">
-                                                <span><a href="#">info@example.com </a></span>
+                                                <span><a href="#">yazo-yazo@hotmail.com</a></span>
                                             </div>
                                         </li>
                                         <li>
@@ -56,7 +45,7 @@
                                                 <i class="fas fa-map-marker-alt"></i>
                                             </div>
                                             <div class="info-text">
-                                                <span>60 East 65th Street, NY</span>
+                                                <span>Casablanca</span>
                                             </div>
                                         </li>
                                     </ul>
@@ -64,7 +53,7 @@
                             </div>
                             <!-- Footer Widget End -->
                         </div>
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-3 col-md-4 ms-5">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
                                 <h4 class="widget-title">Event Details</h4>
@@ -75,10 +64,10 @@
                                     </form>
                                 </div>
                                 <div class="footer-widget-social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                                    <a href="#"><i class="fab fa-github"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://www.facebook.com/bess.yassine06"><i class="fab fa-twitter"target="blank"></i></a>
+                                    <a href="https://www.instagram.com/?__coig_login=1"><i class="fab fa-instagram"target="blank"></i></a>
+                                    <a href="https://github.com/Mrrobot4443"><i class="fab fa-github"target="blank"></i></a>
+                                    <a href="https://www.linkedin.com/in/yassine-bess-50b04a168/" target="blank"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                             <!-- Footer Widget End -->
@@ -91,7 +80,7 @@
             <div class="footer-copyright text-center">
                 <div class="container">
                     <div class="copyright-text">
-                        <p>2022 Copyright Meeta Designed by Pixelcurve. All Rights Reserved</p>
+                        <p>2022 Copyright Eventricks All Rights Reserved</p>
                     </div>
                 </div>
             </div>
