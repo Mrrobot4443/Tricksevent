@@ -50,4 +50,5 @@ Route::post('stripe', [StripController::class, 'stripePost'])->name('stripe.post
 Route::post('search', [HomeController::class, 'search']);
 Route::get('/browse/{id} ', [HomeController::class, 'browse'])->name('browse');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('/Gallery', [HomeController::class, 'Gallery'])->name('Gallery');
 

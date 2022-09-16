@@ -36,7 +36,7 @@
                             <li><a href="#">Pages</a>
                                 <ul class="sub-menu">
                                     <li><a href="/blog">Blog</a></li>
-                                    <li><a href="/browse/{id}">Gallery</a></li>
+                                    <li><a href="/Gallery">Gallery</a></li>
                                 </ul>
                             </li>
                             <li class="me-5"><a href="{{ route('contact') }}">Contact</a></li>

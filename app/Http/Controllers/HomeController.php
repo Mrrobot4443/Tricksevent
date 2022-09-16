@@ -100,7 +100,7 @@ class HomeController extends Controller
     }
     public function dashboard_admin()
     {
-        $firstDay = Carbon::now()->subDays(4)->format('d');
+        $firstDay = Carbon::now()->subDays(7)->format('d');
         $lastDay = Carbon::now()->subDays(0)->format('d');
         $orders = Order::where('user_id', Auth::user()->id)->where('etat', 'en cours')->first();
         $users = User::select('id', 'created_at')->where('created_at', '>=', $firstDay)->get()->groupBy(function($day){
@@ -133,6 +133,10 @@ class HomeController extends Controller
     public function submitEvents()
     {
         return view('admin.events.index');
+    }
+    public function Gallery()
+    {
+        return view('Gallery');
     }
     public function browse($idcategory)
     {
